@@ -1,4 +1,5 @@
 *.swp
 *~
+private_env_vars
 build/
 dist/

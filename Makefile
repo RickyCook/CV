@@ -10,4 +10,7 @@ check_pandoc:
 dirs:
 	@mkdir -p build dist
 
-.PHONY: check_pandoc
+clean:
+	@rm -rf build dist
+
+.PHONY: check_pandoc clean

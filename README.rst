@@ -24,10 +24,10 @@ Code Skills
 -----------
 My core skillset that I have been using for the past 3 years has been centred
 around Python, Django, JavaScript, Perl and Mojolicious. Prior to this, my main
-competencies were a combination of PHP and Java with many and varies frameworks
-in both. Though most of my experiences lie with back-end specifics of RESTful
-micro services, I have also been heavily involved with UI maintenance and
-development in YUI and jQuery.
+competencies were a combination of PHP and Java with many and various
+frameworks in both. Though most of my experiences lie with back-end specifics
+of RESTful micro services, I have also been heavily involved with UI
+maintenance and development in YUI and jQuery.
 
 Application Skills
 ------------------

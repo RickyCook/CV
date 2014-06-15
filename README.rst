@@ -31,3 +31,8 @@ that are available.
 
 Writing code or a CV makes no difference; My editor will likely be the same. I
 use Sublime Text, with a number of plugins to help.
+
+Over the past years, I have been exposed to some truly amazing technologies. 
+Recenty, of particular note are Docker (and raw LXC/AuFS at a lower level), 
+ElasticSearch, Gunicorn and PostGIS. All of these have proven an enormous boon
+to the projects that have been using them.

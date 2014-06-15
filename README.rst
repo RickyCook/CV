@@ -12,6 +12,13 @@ Ricky Cook
 
 Objectives
 ----------
+I'm a self confessed and passionate technologist and geek. I love technology,
+and I love working with technology to see how far it can be pushed. As such, I
+love keeping up with all the new things that are happening in the tech sphere, 
+both in my professional life and to relax at home with. In a career, I want to
+be able to explore opportunities to implement and design new and interesting
+solutions to the problems we face every day, or simply that grind on us to do
+manually.
 
 Code Skills
 -----------

@@ -3,3 +3,4 @@
 private_env_vars
 build/
 dist/
+node_modules/

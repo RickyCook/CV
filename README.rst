@@ -70,9 +70,6 @@ Achievements
   a talk (that at time of writing has yet to be given) at the Melbourne Search
   user's group [2]_
 
-.. [1] http://www.meetup.com/Infrastructure-Coders/events/127899532/
-.. [2] http://www.meetup.com/melbourne-search/events/187267272/
-
 **2009-2012** - Systems Developer, myPanda Finance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Technologies:** PHP5, Java 7, Ubuntu, Apache2, MySQL, CSS3, HTML5, Bouncy
@@ -144,3 +141,6 @@ References
 +-----------------------------------------------------------------------------+
 | **Email:** ${sam_email}                                                     |
 +-----------------------------------------------------------------------------+
+
+.. [1] http://www.meetup.com/Infrastructure-Coders/events/127899532/
+.. [2] http://www.meetup.com/melbourne-search/events/187267272/

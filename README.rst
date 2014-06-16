@@ -64,11 +64,11 @@ Achievements
   for the team. My solution was an LXC-based container system that used AuFS
   for the root file system and was managed by Puppet in the background. This
   set Infoxchange on a path to very quickly adopt Docker when it was released.
-  I then did a talk on my solution at Infracoders Melbourne[1]_.
+  I then did a talk on my solution at Infracoders Melbourne [1]_.
 - Played a vital role redeveloping Infoxchange's legacy search application from
   the ground up using Docker, ElasticSearch and Django. Again, this lead to
   a talk (that at time of writing has yet to be given) at the Melbourne Search
-  user's group[2]_
+  user's group [2]_
 
 .. [1] http://www.meetup.com/Infrastructure-Coders/events/127899532/
 .. [2] http://www.meetup.com/melbourne-search/events/187267272/

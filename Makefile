@@ -33,4 +33,4 @@ dirs:
 clean:
 	@rm -rf build dist
 
-.PHONY: check_pandoc clean
+.PHONY: check_rst2html clean

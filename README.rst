@@ -140,5 +140,8 @@ References
 ----------
 **Sam McLeod** - Operations Team Leader, Infoxchange
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Phone:** ${sam_phone}
-**Email:** ${sam_email} (*preferred contact*)
++-----------------------------------------------+
+| **Phone:** ${sam_phone}                       |
++-----------------------------------------------+
+| **Email:** ${sam_email} (*preferred contact*) |
++-----------------------------------------------+

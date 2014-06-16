@@ -6,6 +6,8 @@ module.exports = function(grunt) {
     cssUrlEmbed: {
       encodeDirectly: {
         files: {
+          'build/static-font-lato.css': ['build/font-lato.css'],
+          'build/static-font-typicons.css': ['build/font-typicons.css'],
           'build/style.css': ['style.css']
         }
       }

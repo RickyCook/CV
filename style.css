@@ -1,4 +1,5 @@
-@import url(build/font-lato.css);
+@import url(build/static-font-lato.css);
+@import url(build/static-font-typicons.css);
 html {
     display: table;
     margin: auto;

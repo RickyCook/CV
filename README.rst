@@ -33,8 +33,8 @@ Application Skills
 ------------------
 I am a competant and passionate Linux user, with my OS of choice being Arch
 Linux for the desktop, and Debian on servers. I have prior, limited experience
-with Fedora, and FreeBSD so feel comfortable around most flavours of *nix OSes
-that are available.
+with Fedora, and FreeBSD so feel comfortable around most flavours of `*nix`
+OSes that are available.
 
 Writing code or a CV makes no difference; My editor will likely be the same. I
 use Sublime Text, with a number of plugins to help.

@@ -111,11 +111,10 @@ Responsibilities
 
 Achievements
 ````````````
-- I count the server setup that I did for Hotpot a major achievement. The PHP
-  and JavaScript that I had done, I was absolutely confident with everything I
-  was doing because I have planned and implemented solutions for years. The
-  servers however were my first time using AWS, and they turned out
-  beautifully.
+- The server setup that I did for Hotpot a major achievement. The PHP and
+  JavaScript that I had done, I was absolutely confident with everything I was
+  doing because I have planned and implemented solutions for years. The servers
+  however were my first time using AWS, and they turned out beautifully.
 
 Education
 ---------

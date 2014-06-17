@@ -148,5 +148,7 @@ References
 | **Email:** ${danni_email}                                                   |
 +-----------------------------------------------------------------------------+
 
+-------------------------------------------------------------------------------
+
 .. [1] http://www.meetup.com/Infrastructure-Coders/events/127899532/
 .. [2] http://www.meetup.com/melbourne-search/events/187267272/

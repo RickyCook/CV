@@ -7,10 +7,35 @@ html {
 body {
     position: relative;
     font-family: 'Roboto Slab', sans-serif;
-    font-weight: 300;
+    font-weight: 350;
     max-width: 1000px;
     display: table-cell;
     vertical-align: middle;
+}
+@media print {
+    body {
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+    a {
+        font-style: italic;
+    }
+    a:link {
+        color: black;
+        text-decoration: none;
+    }
+    a:visited {
+        color: black;
+        text-decoration: none;
+    }
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+    a:active {
+        color: black;
+        text-decoration: none;
+    }
 }
 
 h1.title {

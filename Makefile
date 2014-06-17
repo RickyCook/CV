@@ -41,7 +41,7 @@ check_wkhtmltopdf:
 on-gh-pages:
 	git checkout gh-pages
 	git pull
-	git merge master
+	git merge -m 'Update from master' master
 
 dirs:
 	@mkdir -p build dist

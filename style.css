@@ -13,11 +13,16 @@ body {
     vertical-align: middle;
 }
 
-#header+table {
+h1.title+table {
     position: absolute;
     top: 10px;
     right: 0px;
 }
-#header+table td {
+h1.title+table td {
     text-align: right;
 }
+
+table, td {
+    border-style: none;
+}
+

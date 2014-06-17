@@ -5,6 +5,12 @@ pdf: check_wkhtmltopdf dirs html
 html: check_rst2html build/style.css
 	cat README.rst | ./bash_tpl_process.sh | rst2html.py --stylesheet build/style.css > dist/cv.html
 
+publish: on-gh-pages html
+	cat dist/cv.html > index.html
+	git commit -m 'Publish from make' index.html
+	git push
+	git checkout master
+
 # FONTS
 build/lato.ttf: dirs
 	@echo "Downloading Lato font (TTF)"
@@ -31,6 +37,11 @@ check_rst2html:
 check_wkhtmltopdf:
 	# Requires wkhtmltopdf static, or an X server
 	@which wkhtmltopdf || exit 1
+
+on-gh-pages:
+	git checkout gh-pages
+	git pull
+	git merge master
 
 dirs:
 	@mkdir -p build dist

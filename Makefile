@@ -28,6 +28,9 @@ build/questrial.ttf: dirs
 build/roboto-regular.ttf: dirs
 	@echo "Downloading Roboto Slab Regular font (TTF)"
 	@curl $(curl_opts) -o build/roboto-regular.ttf http://themes.googleusercontent.com/static/fonts/robotoslab/v3/y7lebkjgREBJK96VQi37Zp0EAVxt0G0biEntp43Qt6E.ttf
+build/roboto-light.ttf: dirs
+	@echo "Downloading Roboto Slab Light font (TTF)"
+	@curl $(curl_opts) -o build/roboto-light.ttf http://themes.googleusercontent.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJbfB31yxOzP-czbf6AAKCVo.ttf
 build/roboto-bold.ttf: dirs
 	@echo "Downloading Roboto Slab Bold font (TTF)"
 	@curl $(curl_opts) -o build/roboto-bold.ttf http://themes.googleusercontent.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJZ_TkvowlIOtbR7ePgFOpF4.ttf
@@ -44,10 +47,11 @@ build/font-questrial.css: build/questrial.ttf
 	@echo "Downloading Questrial font (CSS)"
 	@curl $(curl_opts) -o build/font-questrial.css http://fonts.googleapis.com/css?family=Questrial
 	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/questrial/v4/MYWJ4lYm5dbZ1UBuYox79KCWcynf_cDxXwCLxiixG1c\.ttf|questrial\.ttf|' build/font-questrial.css
-build/font-roboto.css: build/roboto-regular.ttf build/roboto-bold.ttf
+build/font-roboto.css: build/roboto-regular.ttf build/roboto-light.ttf build/roboto-bold.ttf
 	@echo "Downloading Roboto Slab font (CSS)"
-	@curl $(curl_opts) -o build/font-roboto.css http://fonts.googleapis.com/css?family=Roboto+Slab:400,700
+	@curl $(curl_opts) -o build/font-roboto.css http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700
 	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/y7lebkjgREBJK96VQi37Zp0EAVxt0G0biEntp43Qt6E\.ttf|roboto-regular\.ttf|' build/font-roboto.css
+	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJbfB31yxOzP-czbf6AAKCVo\.ttf|roboto-light\.ttf|' build/font-roboto.css
 	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJZ_TkvowlIOtbR7ePgFOpF4\.ttf|roboto-bold\.ttf|' build/font-roboto.css
 build/font-typicons.css: build/typicons.ttf
 	@echo "Downloading Typicons font (CSS)"

@@ -7,6 +7,7 @@ html {
 body {
     position: relative;
     font-family: 'Roboto Slab', sans-serif;
+    font-weight: 300;
     max-width: 1000px;
     display: table-cell;
     vertical-align: middle;

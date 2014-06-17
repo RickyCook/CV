@@ -2,10 +2,17 @@ curl_opts = --progress-bar
 
 pdf: check_wkhtmltopdf dirs html
 	wkhtmltopdf -s A4 dist/cv.html dist/cv.pdf
-html: check_rst2html build/style.css
-	cat README.rst | ./bash_tpl_process.sh | rst2html.py --stylesheet build/style.css > dist/cv.html
+html: check_rst2html build/style.css rst_tpl rst_to_html
+html_publish: check_rst2html build/style.css rst_publish rst_to_html
 
-publish: on-gh-pages html
+rst_tpl:
+	cat README.rst | ./bash_tpl_process.sh > build/README.rst
+rst_publish:
+	cp README.rst build/README.rst
+rst_to_html:
+	cat build/README.rst | rst2html.py --stylesheet build/style.css > dist/cv.html
+
+publish: on-gh-pages html_publish
 	cat dist/cv.html > index.html
 	git commit -m 'Publish from make' index.html
 	git push

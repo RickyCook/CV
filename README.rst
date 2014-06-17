@@ -115,8 +115,8 @@ Achievements
 
 Education
 ---------
-**2008-2009** - Swinburne University of Technology, Hawthorne, Victoria
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**2008-2009** - Swinburne University of Technology, Hawthorn, Victoria
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Studied a double degree: Bachelor of Science (Computer Science and Software
 Engineering) / Bachelor of Multimedia (Games and Interactivity).
 

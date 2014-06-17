@@ -15,7 +15,7 @@ build/typicons.ttf: dirs
 build/font-lato.css: build/lato.ttf
 	@echo "Downloading Lato font (CSS)"
 	@curl $(curl_opts) -o build/font-lato.css http://fonts.googleapis.com/css?family=Lato
-	@sed -i .bak 's|http://themes\.googleusercontent\.com/static/fonts/lato/v7/v0SdcGFAl2aezM9Vq_aFTQ\.ttf|lato\.ttf|' build/font-lato.css
+	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/lato/v7/v0SdcGFAl2aezM9Vq_aFTQ\.ttf|lato\.ttf|' build/font-lato.css
 build/font-typicons.css: build/typicons.ttf
 	@echo "Downloading Typicons font (CSS)"
 	@curl $(curl_opts) -o build/font-typicons.css https://raw.githubusercontent.com/stephenhutchings/typicons.font/master/src/font/typicons.min.css

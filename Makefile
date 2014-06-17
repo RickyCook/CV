@@ -1,5 +1,7 @@
 curl_opts = --progress-bar
 
+pdf: check_wkhtmltopdf dirs html
+	wkhtmltopdf -s A4 dist/cv.html dist/cv.pdf
 html: check_rst2html build/style.css
 	cat README.rst | ./bash_tpl_process.sh | rst2html.py --stylesheet build/style.css > dist/cv.html
 
@@ -26,6 +28,9 @@ build/style.css: build/font-lato.css build/font-typicons.css
 
 check_rst2html:
 	@which rst2html.py || exit 1
+check_wkhtmltopdf:
+	# Requires wkhtmltopdf static, or an X server
+	@which wkhtmltopdf || exit 1
 
 dirs:
 	@mkdir -p build dist

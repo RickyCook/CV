@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./private_env_vars
+source "$1"
 
 # http://stackoverflow.com/a/2916159/509043
 while IFS= read line ; do

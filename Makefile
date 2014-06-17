@@ -2,13 +2,13 @@ curl_opts = --progress-bar
 
 pdf: check_wkhtmltopdf dirs html
 	wkhtmltopdf -s A4 dist/cv.html dist/cv.pdf
-html: check_rst2html build/style.css rst_tpl rst_to_html
+html: check_rst2html build/style.css rst_private rst_to_html
 html_publish: check_rst2html build/style.css rst_publish rst_to_html
 
-rst_tpl:
-	cat README.rst | ./bash_tpl_process.sh > build/README.rst
+rst_private:
+	cat README.rst | ./bash_tpl_process.sh private_env_vars > build/README.rst
 rst_publish:
-	cp README.rst build/README.rst
+	cat README.rst | ./bash_tpl_process.sh private_env_vars.example > build/README.rst
 rst_to_html:
 	cat build/README.rst | rst2html.py --stylesheet build/style.css > dist/cv.html
 

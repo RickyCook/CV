@@ -1,5 +1,4 @@
-@import url(build/static-font-lato.css);
-@import url(build/static-font-typicons.css);
+@import url(build/static-font-roboto.css);
 html {
     display: table;
     margin: auto;
@@ -7,12 +6,15 @@ html {
 
 body {
     position: relative;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
     max-width: 1000px;
     display: table-cell;
     vertical-align: middle;
 }
 
+h1.title {
+    text-transform: uppercase;
+}
 h1.title+table {
     position: absolute;
     top: 10px;

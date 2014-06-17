@@ -7,6 +7,8 @@ module.exports = function(grunt) {
       encodeDirectly: {
         files: {
           'build/static-font-lato.css': ['build/font-lato.css'],
+          'build/static-font-questral.css': ['build/font-questral.css'],
+          'build/static-font-roboto.css': ['build/font-roboto.css'],
           'build/static-font-typicons.css': ['build/font-typicons.css'],
           'build/style.css': ['style.css']
         }

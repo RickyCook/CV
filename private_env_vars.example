@@ -1,7 +1,7 @@
 DEFAULT='Contact for info'
 email="$DEFAULT"
 phone="$DEFAULT"
-sam_email="$DEFAULT"
-sam_phone="$DEFAULT"
 danni_email="$DEFAULT"
 danni_phone="$DEFAULT"
+sam_email="$DEFAULT"
+sam_phone="$DEFAULT"

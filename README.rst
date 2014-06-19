@@ -14,7 +14,7 @@ Ricky Cook
 
 Objectives
 ----------
-I'm a self confessed and passionate technologist and geek. I love technology,
+I'm a self-confessed and passionate technologist and geek. I love technology,
 and I love working with technology to see how far it can be pushed. As such, I
 love keeping up with all the new things that are happening in the tech sphere, 
 both in my professional life and to relax at home with. In a career, I want to
@@ -33,7 +33,7 @@ maintenance and development in YUI and jQuery.
 
 Application Skills
 ------------------
-I am a competant and passionate Linux user, with my OS of choice being Arch
+I am a competent and passionate Linux user, with my OS of choice being Arch
 Linux for the desktop, and Debian on servers. I have prior, limited experience
 with Fedora, and FreeBSD so feel comfortable around most flavours of `*nix`
 OSes that are available.
@@ -42,7 +42,7 @@ Writing code or a CV makes no difference; My editor will likely be the same. I
 use Sublime Text, with a number of plugins to help.
 
 Over the past years, I have been exposed to some truly amazing technologies. 
-Recenty, of particular note are Docker (and raw LXC/AuFS at a lower level), 
+Recently, of particular note are Docker (and raw LXC/AuFS at a lower level),
 ElasticSearch, Gunicorn and PostGIS. All of these have proven an enormous boon
 to the projects that have been using them.
 
@@ -55,8 +55,8 @@ CSS3, HTML5, jQuery, YUI, Debian, Perl, Mojolicious, and many, *many* more.
 
 Responsibilities
 ````````````````
-- Develop and debug complex web applications in both legacy and cutting edge
-  environments.
+- Develop and debug complex web applications in environments with  both legacy
+  and cutting edge technology, using agile methods.
 - Judge and create releases as part of a CI/CD process, run retrospectives and
   generally participate in a highly flexible and free agile team.
 
@@ -80,7 +80,8 @@ Castle
 Responsibilities
 ````````````````
 - Managing my own time to develop software and algorithms for statistical
-  analysis, data display, connection to brokers and many more complex problems.
+  analysis, data display, connection to brokers, automated/assisted trading,
+  and transformation of data between formats.
 - Selecting technology (both hardware, and off the shelf software and
   libraries) that suited project needs.
 - Designing databases and software to link projects together to share
@@ -89,7 +90,7 @@ Responsibilities
 Achievements
 ````````````
 - Developed a data visualizer for 4-dimensional (3 dimensions and a heat map)
-  statistial data analysis. This was a particular success because of the
+  statistical data analysis. This was a particular success because of the
   insight it gave into market trend analysis.
 - Created an abstraction framework that allowed creation of trade applications
   and tools in both real (via RPC to proprietary broker software), or mocked
@@ -110,17 +111,17 @@ Responsibilities
 
 Achievements
 ````````````
-- The server setup that I did for Hotpot a major achievement. The PHP and
-  JavaScript that I had done, I was absolutely confident with everything I was
-  doing because I have planned and implemented solutions for years. The servers
-  however were my first time using AWS, and they turned out beautifully.
+- The server setup that I did for Hotpot was a major achievement. The PHP and
+  JavaScript that wrote, I was absolutely confident with because I have planned
+  and implemented solutions for years. The servers however were my first time
+  using AWS, and they turned out beautifully.
 
 Education
 ---------
 **2008-2009** - Swinburne University of Technology, Hawthorn, Victoria
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Studied a double degree: Bachelor of Science (Computer Science and Software
-Engineering) / Bachelor of Multimedia (Games and Interactivity).
+Studied a double degree (incomplete): Bachelor of Science (Computer Science and
+Software Engineering) / Bachelor of Multimedia (Games and Interactivity).
 
 This course gave me a stable footing in systems design, usability design, Java
 programming, C and C++ programming, 3D modeling and various other facets of the

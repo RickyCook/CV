@@ -1,6 +1,8 @@
 DEFAULT='Contact for info'
 email="$DEFAULT"
 phone="$DEFAULT"
+cam_email="$DEFAULT"
+cam_phone="$DEFAULT"
 danni_email="$DEFAULT"
 danni_phone="$DEFAULT"
 sam_email="$DEFAULT"

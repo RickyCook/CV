@@ -54,3 +54,6 @@ table, td {
     border-style: none;
 }
 
+.great { color: #00AA00; }
+.good  { color: #00AAAA; }
+.competent  { color: #0000AA; }

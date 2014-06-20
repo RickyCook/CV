@@ -1,3 +1,7 @@
+.. role:: great
+.. role:: good
+.. role:: competent
+
 ==========
 Ricky Cook
 ==========
@@ -10,6 +14,9 @@ Ricky Cook
 | **Phone:** ${phone}                                                         |
 +-----------------------------------------------------------------------------+
 | **Twitter:** https://twitter.com/thatpandadev                               |
++-----------------------------------------------------------------------------+
+| Competencies will be marked as :great:`great`, :good:`good`, or             |
+| :competent:`competent`                                                      |
 +-----------------------------------------------------------------------------+
 
 Objectives
@@ -25,33 +32,37 @@ manually.
 Code Skills
 -----------
 My core skillset that I have been using for the past 3 years has been centred
-around Python, Django, JavaScript, Perl and Mojolicious. Prior to this, my main
-competencies were a combination of PHP and Java with many and various
-frameworks in both. Though most of my experiences lie with back-end specifics
-of RESTful micro services, I have also been heavily involved with UI
-maintenance and development in YUI and jQuery.
+around :great:`Python`, :great:`Django`, :good:`JavaScript`, :great:`Perl` and
+:competent:`Mojolicious`. Prior to this, my main competencies were a
+combination of :great:`PHP` and :good:`Java` with many and various frameworks
+in both. Though most of my experiences lie with back-end specifics of RESTful
+micro services, I have also been heavily involved with UI maintenance and
+development in YUI and :great:`jQuery`.
 
 Application Skills
 ------------------
-I am a competent and passionate Linux user, with my OS of choice being Arch
-Linux for the desktop, and Debian on servers. I have prior, limited experience
-with Fedora, and FreeBSD so feel comfortable around most flavours of `*nix`
-OSes that are available.
+I am a competent and passionate :good:`Linux` user, with my OS of choice being
+Arch Linux for the desktop, and :good:`Debian` on servers. I have prior,
+limited experience with :competent:`Fedora`, and :competent:`FreeBSD` so feel
+comfortable around most flavours of `*nix` OSes that are available.
 
 Writing code or a CV makes no difference; My editor will likely be the same. I
 use Sublime Text, with a number of plugins to help.
 
 Over the past years, I have been exposed to some truly amazing technologies. 
-Recently, of particular note are Docker (and raw LXC/AuFS at a lower level),
-ElasticSearch, Gunicorn and PostGIS. All of these have proven an enormous boon
-to the projects that have been using them.
+Recently, of particular note are :good:`Docker` (and raw
+:good:`LXC`/:good:`AuFS` at a lower level), :great:`ElasticSearch`,
+:competent:`Gunicorn` and :good:`PostGIS`. All of these have proven an enormous
+boon to the projects that have been using them.
 
 Employment History
 ------------------
 **2012-2014** - Web Applications Developer, Infoxchange Australia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** Python, Django, Docker, ElasticSearch, PostgreSQL, LESS,
-CSS3, HTML5, jQuery, YUI, Debian, Perl, Mojolicious, and many, *many* more.
+**Technologies:** :great:`Python`, :great:`Django`, :good:`Docker`,
+:great:`ElasticSearch`, :good:`PostgreSQL`, :competent:`LESS`, :good:`CSS3`,
+:good:`HTML5`, :great:`jQuery`, :competent:`YUI`, :good:`Debian`,
+:great:`Perl`, :competent:`Mojolicious`, and many, *many* more.
 
 Responsibilities
 ````````````````
@@ -74,8 +85,9 @@ Achievements
 
 **2009-2012** - Systems Developer, myPanda Finance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** PHP5, Java 7, Ubuntu, Apache2, MySQL, CSS3, HTML5, Bouncy
-Castle
+**Technologies:** :great:`PHP5`, :good:`Java 7`, :good:`Ubuntu`,
+:good:`Apache2`, :competent:`MySQL`, :good:`CSS3`, :good:`HTML5`,
+:competent:`Bouncy Castle`
 
 Responsibilities
 ````````````````
@@ -98,8 +110,10 @@ Achievements
 
 **2011-2012** - Web Developer/Systems Administrator, Hotpot Creative
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** AWS (EC2, Route56, EBS, VPC), Nginx, MySQL, Courier Email,
-PHP5, PHP-FPM, HTML5, CSS3, MooTools, jQuery, Concrete 5, WordPress
+**Technologies:** :good:`AWS` (EC2, Route56, EBS, VPC), :good:`Nginx`,
+:competent:`MySQL`, :competent:`Courier Email`, :great:`PHP5`,
+:competent:`PHP-FPM`, :good:`HTML5`, :good:`CSS3`, :competent:`MooTools`,
+:great:`jQuery`, :good:`Concrete 5`, :good:`WordPress`
 
 Responsibilities
 ````````````````
@@ -124,8 +138,8 @@ Studied a double degree (incomplete): Bachelor of Science (Computer Science and
 Software Engineering) / Bachelor of Multimedia (Games and Interactivity).
 
 This course gave me a stable footing in systems design, usability design, Java
-programming, C and C++ programming, 3D modeling and various other facets of the
-game development profession. 
+programming, :competent:`C` and :competent:`C++` programming, 3D modeling and
+various other facets of the game development profession. 
 
 **2002-2007** - Yarra Valley Grammar, Ringwood, Victoria
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

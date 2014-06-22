@@ -1,3 +1,7 @@
+.. role:: great
+.. role:: good
+.. role:: competent
+
 ==========
 Ricky Cook
 ==========
@@ -50,71 +54,89 @@ Employment History
 ------------------
 **2012-2014** - Web Applications Developer, Infoxchange Australia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** Python, Django, Docker, ElasticSearch, PostgreSQL, LESS,
-CSS3, HTML5, jQuery, YUI, Debian, Perl, Mojolicious, and many, *many* more.
-
-Responsibilities
-````````````````
-- Develop and debug complex web applications in environments with  both legacy
-  and cutting edge technology, using agile methods.
-- Judge and create releases as part of a CI/CD process, run retrospectives and
-  generally participate in a highly flexible and free agile team.
-
-Achievements
-````````````
-- Months before Docker was released, I was tasked with building a new CI server
-  for the team. My solution was an LXC-based container system that used AuFS
-  for the root file system and was managed by Puppet in the background. This
-  set Infoxchange on a path to very quickly adopt Docker when it was released.
-  I then did a talk on my solution at Infracoders Melbourne [1]_.
-- Played a vital role redeveloping Infoxchange's legacy search application from
-  the ground up using Docker, ElasticSearch and Django. Again, this lead to
-  a talk (that at time of writing has yet to be given) at the Melbourne Search
-  user's group [2]_
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    |                        |
+| - Develop and debug complex web applications in    | :great:`Great`:        |
+|   environments with both legacy and cutting edge   | Python, Django,        |
+|   technology, using agile methods.                 | ElasticSearch, jQuery, |
+| - Judge and create releases as part of a CI/CD     | Perl                   |
+|   process, run retrospectives and generally        |                        |
+|   participate in a highly flexible and free agile  | :good:`Good`:          |
+|   team.                                            | Docker, PostgreSQL,    |
++----------------------------------------------------+ CSS3, HTML5, Debian    |
+| **Achievements**                                   |                        |
+|                                                    | :competent:`Competent`:|
+| - Months before Docker was released, I was tasked  | LESS, YUI, Mojolicios  |
+|   with building a new CI server for the team. My   |                        |
+|   solution was an LXC-based container system that  | And many, *many* more  |
+|   used AuFS for the root file system and was       |                        |
+|   managed by Puppet in the background. This set    |                        |
+|   Infoxchange on a path to very quickly adopt      |                        |
+|   Docker when it was released. I then did a talk   |                        |
+|   on my solution at Infracoders Melbourne [1]_.    |                        |
+| - Played a vital role redeveloping Infoxchange's   |                        |
+|   legacy search application from the ground up     |                        |
+|   using Docker, ElasticSearch and Django. Again,   |                        |
+|   this lead to a talk (that at time of writing     |                        |
+|   has yet to be given) at the Melbourne Search     |                        |
+|   user's group [2]_                                |                        |
++----------------------------------------------------+------------------------+
 
 **2009-2012** - Systems Developer, myPanda Finance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** PHP5, Java 7, Ubuntu, Apache2, MySQL, CSS3, HTML5, Bouncy
-Castle
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    |                        |
+| - Managing my own time to develop software and     | :great:`Great`: PHP5   |
+|   algorithms for statistical analysis, data        |                        |
+|   display, connection to brokers,                  | :good:`Good`:          |
+|   automated/assisted trading, and transformation   | Java 7, Ubuntu,        |
+|   of data between formats.                         | Apache2, CSS3, HTML5   |
+| - Selecting technology (both hardware, and off the |                        |
+|   shelf software and libraries) that suited        | :competent:`Competent`:|
+|   project needs.                                   | MySQL, Bouncy Castle   |
+| - Designing databases and software to link         |                        |
+|   projects together to share data between each     |                        |
+|   other.                                           |                        |
++----------------------------------------------------+                        |
+| **Achievements**                                   |                        |
+|                                                    |                        |
+| - Developed a data visualizer for 4-dimensional (3 |                        |
+|   dimensions and a heat map) statistical data      |                        |
+|   analysis. This was a particular success because  |                        |
+|   of the insight it gave into market trend         |                        |
+|   analysis.                                        |                        |
+| - Created an abstraction framework that allowed    |                        |
+|   creation of trade applications and tools in both |                        |
+|   real (via RPC to proprietary broker software),   |                        |
+|   or mocked environments using the same interfaces.|                        |
++----------------------------------------------------+------------------------+
 
-Responsibilities
-````````````````
-- Managing my own time to develop software and algorithms for statistical
-  analysis, data display, connection to brokers, automated/assisted trading,
-  and transformation of data between formats.
-- Selecting technology (both hardware, and off the shelf software and
-  libraries) that suited project needs.
-- Designing databases and software to link projects together to share
-  data between each other.
-
-Achievements
-````````````
-- Developed a data visualizer for 4-dimensional (3 dimensions and a heat map)
-  statistical data analysis. This was a particular success because of the
-  insight it gave into market trend analysis.
-- Created an abstraction framework that allowed creation of trade applications
-  and tools in both real (via RPC to proprietary broker software), or mocked
-  environments using the same interfaces.
 
 **2011-2012** - Web Developer/Systems Administrator, Hotpot Creative
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Technologies:** AWS (EC2, Route56, EBS, VPC), Nginx, MySQL, Courier Email,
-PHP5, PHP-FPM, HTML5, CSS3, MooTools, jQuery, Concrete 5, WordPress
-
-Responsibilities
-````````````````
-- Researched technologies to make the process of creating websites for clients
-  a lot easier, and to increase the value of the end product to the client.
-- Setup and maintained the Nginx-based EC2 servers used to host client websites
-  (this included high use of EBS volumes so that client sites can be switched
-  between servers depending on load).
-
-Achievements
-````````````
-- The server setup that I did for Hotpot was a major achievement. The PHP and
-  JavaScript that wrote, I was absolutely confident with because I have planned
-  and implemented solutions for years. The servers however were my first time
-  using AWS, and they turned out beautifully.
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    |                        |
+| - Researched technologies to make the process of   | :great:`Great`:        |
+|   creating websites for clients a lot easier, and  | PHP5, jQuery           |
+|   to increase the value of the end product to the  |                        |
+|   client.                                          | :good:`Good`:          |
+| - Setup and maintained the Nginx-based EC2 servers | AWS (EC2, Route56, EBS,|
+|   used to host client websites (this included high | VPC), Nginx, HTML5,    |
+|   use of EBS volumes so that client sites can be   | CSS3, Concrete 5,      |
+|   switched between servers depending on load).     | WordPress              |
++----------------------------------------------------+                        |
+| **Achievements**                                   | :competent:`Competent`:|
+|                                                    | MySQL, Courier Mail,   |
+| - The server setup that I did for Hotpot was a     | PHP-FPM, MooTools      |
+|   major achievement. The PHP and JavaScript that   |                        |
+|   wrote, I was absolutely confident with because I |                        |
+|   have planned and implemented solutions for       |                        |
+|   years. The servers however were my first time    |                        |
+|   using AWS, and they turned out beautifully.      |                        |
++----------------------------------------------------+------------------------+
 
 Education
 ---------

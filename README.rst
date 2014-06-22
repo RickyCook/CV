@@ -18,37 +18,33 @@ Ricky Cook
 
 Objectives
 ----------
-I'm a self-confessed and passionate technologist and geek. I love technology,
-and I love working with technology to see how far it can be pushed. As such, I
-love keeping up with all the new things that are happening in the tech sphere, 
-both in my professional life and to relax at home with. In a career, I want to
-be able to explore opportunities to implement and design new and interesting
-solutions to the problems we face every day, or simply that grind on us to do
-manually.
+I'm a self-confessed and passionate technologist and geek. I love working with
+technology to see how far it can be pushed. I try to keep up with as many new
+things that are happening in the tech sphere as I can,  both in my professional
+life and for personal projects in my down time. I'm looking for a career that
+will allow me to explore opportunities to implement and design new and
+interesting solutions to the problems we face every day.
 
 Code Skills
 -----------
-My core skillset that I have been using for the past 3 years has been centred
+The core skillset that I have been using for the past 3 years has been centred
 around Python, Django, JavaScript, Perl and Mojolicious. Prior to this, my main
-competencies were a combination of PHP and Java with many and various
-frameworks in both. Though most of my experiences lie with back-end specifics
-of RESTful micro services, I have also been heavily involved with UI
-maintenance and development in YUI and jQuery.
+competencies were a combination of PHP and Java with a variety of frameworks in
+both. Most of my experiences lie with back-end specifics of RESTful micro
+services, though I have also been heavily involved with UI maintenance and
+development in YUI and jQuery.
 
 Application Skills
 ------------------
-I am a competent and passionate Linux user, with my OS of choice being Arch
-Linux for the desktop, and Debian on servers. I have prior, limited experience
-with Fedora, and FreeBSD so feel comfortable around most flavours of `*nix`
-OSes that are available.
+I am a competent and passionate Linux user, with a solid knowledge of Arch
+Linux for the desktop, and Debian on servers. I also have some experience with
+Fedora, and FreeBSD and feel comfortable around most of the `*nix` OS flavours
+that are available.
 
-Writing code or a CV makes no difference; My editor will likely be the same. I
-use Sublime Text, with a number of plugins to help.
-
-Over the past years, I have been exposed to some truly amazing technologies. 
-Recently, of particular note are Docker (and raw LXC/AuFS at a lower level),
-ElasticSearch, Gunicorn and PostGIS. All of these have proven an enormous boon
-to the projects that have been using them.
+Over the past years, I have been exposed to some truly amazing technologies. Of
+particular note are Docker (and raw LXC/AuFS at a lower level), ElasticSearch,
+Gunicorn and PostGIS. These have proven an enormous boon to the projects that
+have implemented them.
 
 Employment History
 ------------------

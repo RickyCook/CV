@@ -63,10 +63,10 @@ Employment History
 +----------------------------------------------------+ CSS3, HTML5, Debian    |
 | **Achievements**                                   |                        |
 |                                                    | :competent:`Competent`:|
-| - Months before Docker was released, I was tasked  | LESS, YUI, Mojolicios  |
-|   with building a new CI server for the team. My   |                        |
-|   solution was an LXC-based container system that  | And many, *many* more  |
-|   used AuFS for the root file system and was       |                        |
+| - Months before Docker was released, I was tasked  | LESS, YUI, Mojolicios, |
+|   with building a new CI server for the team. My   | HHVM                   |
+|   solution was an LXC-based container system that  |                        |
+|   used AuFS for the root file system and was       | And many, *many* more  |
 |   managed by Puppet in the background. This set    |                        |
 |   Infoxchange on a path to very quickly adopt      |                        |
 |   Docker when it was released. I then did a talk   |                        |

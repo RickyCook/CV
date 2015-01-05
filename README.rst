@@ -28,9 +28,9 @@ interesting solutions to the problems we face every day.
 Code Skills
 -----------
 The core skillset that I have been using for the past 3 years has been centred
-around Python, Django, JavaScript, Perl and Mojolicious. Prior to this, my main
-competencies were a combination of PHP and Java with a variety of frameworks in
-both. Most of my experiences lie with back-end specifics of RESTful micro
+around Python, Django, Puppet, and AWS. Prior to this, my main competencies
+were a combination of Perl, PHP, and Java with a variety of frameworks in
+all. Most of my experiences lie with back-end specifics of RESTful micro
 services, though I have also been heavily involved with UI maintenance and
 development in YUI and jQuery.
 
@@ -38,7 +38,7 @@ Application Skills
 ------------------
 I am a competent and passionate Linux user, with a solid knowledge of Arch
 Linux for the desktop, and Debian on servers. I also have some experience with
-Fedora, and FreeBSD and feel comfortable around most of the `*nix` OS flavours
+RHEL, and FreeBSD and feel comfortable around most of the `*nix` OS flavours
 that are available.
 
 Over the past years, I have been exposed to some truly amazing technologies. Of
@@ -48,6 +48,28 @@ have implemented them.
 
 Employment History
 ------------------
+**2014-Present** - DevOps Engineer, Odecee - A Cognizant Company
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    |                        |
+| - Oversee the implementation of highly scalable CI | :great:`Great`:        |
+|   platform in very complex environments            | Python, AWS, boto      |
+| - Consult with many stakeholders, including        |                        |
+|   developers, systems, architects, security, and   | :good:`Good`:          |
+|   managers to find a good solution for all         | Ansible, Bamboo, Stash |
++----------------------------------------------------+ RHEL, XCode, Puppet    |
+| **Achievements**                                   |                        |
+|                                                    |                        |
+| - Implemented a fully automated iOS build cluster  |                        |
+|   using both Ansible, and existing Puppet          |                        |
+|   manifests to build, and test iOS apps in the     |                        |
+|   same way as existing server apps                 |                        |
+| - Provided workarounds for the many drawbacks in   |                        |
+|   Bamboo using custom scripts to help the          |                        |
+|   transition between CI platforms                  |                        |
++----------------------------------------------------+------------------------+
+
 **2012-2014** - Web Applications Developer, Infoxchange Australia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
@@ -64,7 +86,7 @@ Employment History
 | **Achievements**                                   |                        |
 |                                                    | :competent:`Competent`:|
 | - Months before Docker was released, I was tasked  | LESS, YUI, Mojolicios, |
-|   with building a new CI server for the team. My   | HHVM                   |
+|   with building a new CI server for the team. My   | HHVM, Puppet           |
 |   solution was an LXC-based container system that  |                        |
 |   used AuFS for the root file system and was       | And many, *many* more  |
 |   managed by Puppet in the background. This set    |                        |
@@ -109,31 +131,6 @@ Employment History
 |   or mocked environments using the same interfaces.|                        |
 +----------------------------------------------------+------------------------+
 
-
-**2011-2012** - Web Developer/Systems Administrator, Hotpot Creative
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+----------------------------------------------------+------------------------+
-| **Responsibilities**                               | **Technologies**       |
-|                                                    |                        |
-| - Researched technologies to make the process of   | :great:`Great`:        |
-|   creating websites for clients a lot easier, and  | PHP5, jQuery           |
-|   to increase the value of the end product to the  |                        |
-|   client.                                          | :good:`Good`:          |
-| - Setup and maintained the Nginx-based EC2 servers | AWS (EC2, Route56, EBS,|
-|   used to host client websites (this included high | VPC), Nginx, HTML5,    |
-|   use of EBS volumes so that client sites can be   | CSS3, Concrete 5,      |
-|   switched between servers depending on load).     | WordPress              |
-+----------------------------------------------------+                        |
-| **Achievements**                                   | :competent:`Competent`:|
-|                                                    | MySQL, Courier Mail,   |
-| - The server setup that I did for Hotpot was a     | PHP-FPM, MooTools      |
-|   major achievement. The PHP and JavaScript that   |                        |
-|   wrote, I was absolutely confident with because I |                        |
-|   have planned and implemented solutions for       |                        |
-|   years. The servers however were my first time    |                        |
-|   using AWS, and they turned out beautifully.      |                        |
-+----------------------------------------------------+------------------------+
-
 Education
 ---------
 **2008-2009** - Swinburne University of Technology, Hawthorn, Victoria
@@ -143,7 +140,7 @@ Software Engineering) / Bachelor of Multimedia (Games and Interactivity).
 
 This course gave me a stable footing in systems design, usability design, Java
 programming, C and C++ programming, 3D modeling and various other facets of the
-game development profession. 
+game development profession.
 
 **2002-2007** - Yarra Valley Grammar, Ringwood, Victoria
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

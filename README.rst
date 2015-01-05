@@ -53,8 +53,8 @@ Employment History
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |
 |                                                    |                        |
-| - Oversee the implementation of highly scalable CI | :great:`Great`:        |
-|   platform in very complex environments            | Python, AWS, boto      |
+| - Oversee the implementation of a highly scalable  | :great:`Great`:        |
+|   CI platform in a very complex environment        | Python, AWS, boto      |
 | - Consult with many stakeholders, including        |                        |
 |   developers, systems, architects, security, and   | :good:`Good`:          |
 |   managers to find a good solution for all         | Ansible, Bamboo,       |

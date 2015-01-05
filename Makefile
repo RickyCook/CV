@@ -1,5 +1,7 @@
 curl_opts = --progress-bar
 
+sed_osx_extension = bak
+
 pdf: check_wkhtmltopdf dirs html
 	wkhtmltopdf -s A4 dist/cv.html dist/cv.pdf
 html: check_rst2html build/style.css rst_private rst_to_html
@@ -17,6 +19,10 @@ publish: on-gh-pages html_publish
 	git commit -m 'Publish from make' index.html
 	git push
 	git checkout master
+
+# NPM DEPS
+npm_deps:
+	npm install
 
 # FONTS
 build/lato.ttf: dirs
@@ -42,23 +48,23 @@ build/typicons.ttf: dirs
 build/font-lato.css: build/lato.ttf
 	@echo "Downloading Lato font (CSS)"
 	@curl $(curl_opts) -o build/font-lato.css http://fonts.googleapis.com/css?family=Lato
-	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/lato/v7/v0SdcGFAl2aezM9Vq_aFTQ\.ttf|lato\.ttf|' build/font-lato.css
+	@sed -i $(sed_osx_extension) 's|http://themes\.googleusercontent\.com/static/fonts/lato/v7/v0SdcGFAl2aezM9Vq_aFTQ\.ttf|lato\.ttf|' build/font-lato.css
 build/font-questrial.css: build/questrial.ttf
 	@echo "Downloading Questrial font (CSS)"
 	@curl $(curl_opts) -o build/font-questrial.css http://fonts.googleapis.com/css?family=Questrial
-	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/questrial/v4/MYWJ4lYm5dbZ1UBuYox79KCWcynf_cDxXwCLxiixG1c\.ttf|questrial\.ttf|' build/font-questrial.css
+	@sed -i $(sed_osx_extension) 's|http://themes\.googleusercontent\.com/static/fonts/questrial/v4/MYWJ4lYm5dbZ1UBuYox79KCWcynf_cDxXwCLxiixG1c\.ttf|questrial\.ttf|' build/font-questrial.css
 build/font-roboto.css: build/roboto-regular.ttf build/roboto-light.ttf build/roboto-bold.ttf
 	@echo "Downloading Roboto Slab font (CSS)"
 	@curl $(curl_opts) -o build/font-roboto.css http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700
-	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/y7lebkjgREBJK96VQi37Zp0EAVxt0G0biEntp43Qt6E\.ttf|roboto-regular\.ttf|' build/font-roboto.css
-	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJbfB31yxOzP-czbf6AAKCVo\.ttf|roboto-light\.ttf|' build/font-roboto.css
-	@sed -i 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJZ_TkvowlIOtbR7ePgFOpF4\.ttf|roboto-bold\.ttf|' build/font-roboto.css
+	@sed -i $(sed_osx_extension) 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/y7lebkjgREBJK96VQi37Zp0EAVxt0G0biEntp43Qt6E\.ttf|roboto-regular\.ttf|' build/font-roboto.css
+	@sed -i $(sed_osx_extension) 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJbfB31yxOzP-czbf6AAKCVo\.ttf|roboto-light\.ttf|' build/font-roboto.css
+	@sed -i $(sed_osx_extension) 's|http://themes\.googleusercontent\.com/static/fonts/robotoslab/v3/dazS1PrQQuCxC3iOAJFEJZ_TkvowlIOtbR7ePgFOpF4\.ttf|roboto-bold\.ttf|' build/font-roboto.css
 build/font-typicons.css: build/typicons.ttf
 	@echo "Downloading Typicons font (CSS)"
 	@curl $(curl_opts) -o build/font-typicons.css https://raw.githubusercontent.com/stephenhutchings/typicons.font/master/src/font/typicons.min.css
 
 # MAIN STYLE
-build/style.css: build/font-roboto.css build/font-typicons.css
+build/style.css: build/font-roboto.css build/font-typicons.css npm_deps
 	node_modules/.bin/grunt
 
 check_rst2html:

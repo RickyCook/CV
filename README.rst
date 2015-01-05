@@ -57,9 +57,9 @@ Employment History
 |   platform in very complex environments            | Python, AWS, boto      |
 | - Consult with many stakeholders, including        |                        |
 |   developers, systems, architects, security, and   | :good:`Good`:          |
-|   managers to find a good solution for all         | Ansible, Bamboo, Stash |
-+----------------------------------------------------+ RHEL, XCode, Puppet    |
-| **Achievements**                                   |                        |
+|   managers to find a good solution for all         | Ansible, Bamboo,       |
++----------------------------------------------------+ Stash, RHEL, XCode,    |
+| **Achievements**                                   | Puppet                 |
 |                                                    |                        |
 | - Implemented a fully automated iOS build cluster  |                        |
 |   using both Ansible, and existing Puppet          |                        |

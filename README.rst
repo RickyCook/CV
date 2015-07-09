@@ -49,7 +49,7 @@ have implemented them.
 Employment History
 ------------------
 **2015-Present** - DevOps Engineer, Odecee - Australia Post
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |
 |                                                    |                        |
@@ -73,7 +73,7 @@ Employment History
 +----------------------------------------------------+------------------------+
 
 **2014-2015** - DevOps Engineer, Odecee - Australia Post Digital Mailbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |
 |                                                    |                        |
@@ -123,36 +123,6 @@ Employment History
 |   this lead to a talk (that at time of writing     |                        |
 |   has yet to be given) at the Melbourne Search     |                        |
 |   user's group [2]_                                |                        |
-+----------------------------------------------------+------------------------+
-
-**2009-2012** - Systems Developer, myPanda Finance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+----------------------------------------------------+------------------------+
-| **Responsibilities**                               | **Technologies**       |
-|                                                    |                        |
-| - Managing my own time to develop software and     | :great:`Great`: PHP5   |
-|   algorithms for statistical analysis, data        |                        |
-|   display, connection to brokers,                  | :good:`Good`:          |
-|   automated/assisted trading, and transformation   | Java 7, Ubuntu,        |
-|   of data between formats.                         | Apache2, CSS3, HTML5   |
-| - Selecting technology (both hardware, and off the |                        |
-|   shelf software and libraries) that suited        | :competent:`Competent`:|
-|   project needs.                                   | MySQL, Bouncy Castle   |
-| - Designing databases and software to link         |                        |
-|   projects together to share data between each     |                        |
-|   other.                                           |                        |
-+----------------------------------------------------+                        |
-| **Achievements**                                   |                        |
-|                                                    |                        |
-| - Developed a data visualizer for 4-dimensional (3 |                        |
-|   dimensions and a heat map) statistical data      |                        |
-|   analysis. This was a particular success because  |                        |
-|   of the insight it gave into market trend         |                        |
-|   analysis.                                        |                        |
-| - Created an abstraction framework that allowed    |                        |
-|   creation of trade applications and tools in both |                        |
-|   real (via RPC to proprietary broker software),   |                        |
-|   or mocked environments using the same interfaces.|                        |
 +----------------------------------------------------+------------------------+
 
 Education

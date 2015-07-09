@@ -48,7 +48,31 @@ have implemented them.
 
 Employment History
 ------------------
-**2014-Present** - DevOps Engineer, Odecee - A Cognizant Company
+**2015-Present** - DevOps Engineer, Odecee - Australia Post
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    |                        |
+| - Design, and implement a set of automated         | :great:`Great`:        |
+|   processes to allow AEM (CQ5) to scale, heal, and | Python, AWS, Puppet    |
+|   deploy consistently in AWS architecture          |                        |
+| - Guide the engineering direction of Python        | :good:`Good`:          |
+|   management framework to ease implementation of   | Ansible, Bamboo,       |
+|   the goals outlined above                         | Consul, Stash, RHEL    |
++----------------------------------------------------+                        |
+| **Achievements**                                   |                        |
+|                                                    |                        |
+| - Due to the architecture and design of the        |                        |
+|   management tools I designed, adding new          |                        |
+|   functions with complex inter-node interactions,  |                        |
+|   mutexes, etc became very easy                    |                        |
+| - Our AEM design solved many issues with the       |                        |
+|   underlying product, and out AEM expert said that |                        |
+|   it was the best installation he's seen           |                        |
+| - Nominated for an internal award for simplicity   |                        |
++----------------------------------------------------+------------------------+
+
+**2014-2015** - DevOps Engineer, Odecee - Australia Post Digital Mailbox
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |

@@ -71,7 +71,7 @@ Employment History
 | - Implemented a fully automated iOS build cluster  |                        |
 |   using both Ansible, and existing Puppet          |                        |
 |   manifests to build, and test iOS apps in the     |                        |
-|   same way as existing server apps                 |                        |
+|   same way as existing RHEL server apps            |                        |
 +----------------------------------------------------+------------------------+
 
 **2012-2014** - Web Applications Developer, Infoxchange Australia

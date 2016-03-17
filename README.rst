@@ -30,9 +30,9 @@ Code Skills
 The core skillset that I have been using for the past 3 years has been centred
 around Python, Docker, Puppet, and AWS. Prior to this, my main competencies
 were a combination of Perl, PHP, and Java with a variety of frameworks in
-all. Most of my experiences lie with back-end specifics of RESTful micro
-services, though I have also been heavily involved with UI maintenance and
-development in YUI and jQuery.
+all. Most of my experiences lie with both software, and platform back-end
+specifics of componentized RESTful services, though I have also been involved
+with UI maintenance using Knockout, and React
 
 Application Skills
 ------------------

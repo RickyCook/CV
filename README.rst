@@ -37,9 +37,8 @@ with UI maintenance using Knockout, and React
 Application Skills
 ------------------
 I am a competent and passionate Linux user, with a solid knowledge of Arch
-Linux for the desktop, and Debian on servers. I also have some experience with
-RHEL, and FreeBSD and feel comfortable around most of the `*nix` OS flavours
-that are available.
+Linux for the desktop, as well as Debian, and RHEL on servers. I feel
+comfortable around all of the `*nix` OS flavours that I've been faced with.
 
 Over the past years, I have been exposed to some truly amazing technologies. Of
 particular note are Docker (and raw LXC/AuFS at a lower level), ElasticSearch,

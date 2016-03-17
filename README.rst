@@ -28,7 +28,7 @@ interesting solutions to the problems we face every day.
 Code Skills
 -----------
 The core skillset that I have been using for the past 3 years has been centred
-around Python, Django, Puppet, and AWS. Prior to this, my main competencies
+around Python, Docker, Puppet, and AWS. Prior to this, my main competencies
 were a combination of Perl, PHP, and Java with a variety of frameworks in
 all. Most of my experiences lie with back-end specifics of RESTful micro
 services, though I have also been heavily involved with UI maintenance and

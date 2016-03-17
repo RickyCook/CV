@@ -20,7 +20,7 @@ Objectives
 ----------
 I'm a self-confessed and passionate technologist and geek. I love working with
 technology to see how far it can be pushed. I try to keep up with as many new
-things that are happening in the tech sphere as I can,  both in my professional
+things that are happening in the tech sphere as I can, both in my professional
 life and for personal projects in my down time. I'm looking for a career that
 will allow me to explore opportunities to implement and design new and
 interesting solutions to the problems we face every day.

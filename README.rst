@@ -47,6 +47,33 @@ have implemented them.
 
 Employment History
 ------------------
+**September 2015 - March 2016** - DevOps Engineer (Contract), Redbubble
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------------------------------------+------------------------+
+| **Responsibilities**                               | **Technologies**       |
+|                                                    | :great:`Great`:        |
+| - As part of the delivery engineering team, it was | AWS, Docker, BuildKite,|
+|   our job to "help teams deliver value faster",    | systemd, Debian        |
+|   which involves carefully balancing new things    |                        |
+|   with current business demands                    | :good:`Good`:          |
+| - Acted as the team's AWS, Docker, and general     | Ruby, Rails, Packer    |
+|   DevOps expert                                    | Logstash, Kibana       |
+| - Built a new Docker-based platform for very fast, |                        |
+|   and safe deployment of microservices             |                        |
++----------------------------------------------------+                        +
+| **Achievements**                                   |                        |
+|                                                    |                        |
+| - Reduced deployment time from 40min on the old    |                        |
+|   platform, to less than 1min on the new           |                        |
+| - Built many tools for comparison-based            |                        |
+|   testing of refactored services, similar to       |                        |
+|   GitHub scientist [1]_                            |                        |
+| - Built an application platform that replaced      |                        |
+|   unhealthy nodes with zero downtime               |                        |
+| - Implemented a centralized logging stack to help  |                        |
+|   diagnose issues across many disparate systems    |                        |
++----------------------------------------------------+------------------------+
+
 **August 2014 - September 2015** - DevOps Engineer, Odecee - Australia Post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
@@ -96,13 +123,13 @@ Employment History
 |   managed by Puppet in the background. This set    |                        |
 |   Infoxchange on a path to very quickly adopt      |                        |
 |   Docker when it was released. I then did a talk   |                        |
-|   on my solution at Infracoders Melbourne [1]_.    |                        |
+|   on my solution at Infracoders Melbourne [2]_.    |                        |
 | - Played a vital role redeveloping Infoxchange's   |                        |
 |   legacy search application from the ground up     |                        |
 |   using Docker, ElasticSearch and Django. Again,   |                        |
 |   this lead to a talk (that at time of writing     |                        |
 |   has yet to be given) at the Melbourne Search     |                        |
-|   user's group [2]_                                |                        |
+|   user's group [3]_                                |                        |
 +----------------------------------------------------+------------------------+
 
 Education
@@ -149,5 +176,6 @@ References
 
 -------------------------------------------------------------------------------
 
-.. [1] http://www.meetup.com/Infrastructure-Coders/events/127899532/
-.. [2] http://www.meetup.com/melbourne-search/events/187267272/
+.. [1] https://github.com/github/scientist
+.. [2] http://www.meetup.com/Infrastructure-Coders/events/127899532/
+.. [3] http://www.meetup.com/melbourne-search/events/187267272/

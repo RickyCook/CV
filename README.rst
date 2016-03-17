@@ -47,50 +47,31 @@ have implemented them.
 
 Employment History
 ------------------
-**2015-Present** - DevOps Engineer, Odecee - Australia Post
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**August 2014 - September 2015** - DevOps Engineer, Odecee - Australia Post
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |
 |                                                    |                        |
-| - Design, and implement a set of automated         | :great:`Great`:        |
-|   processes to allow AEM (CQ5) to scale, heal, and | Python, AWS, Puppet    |
-|   deploy consistently in AWS architecture          |                        |
+| - Design, and implement CI, complex third party    | :great:`Great`:        |
+|   applications, and a PCI/DSS platform able to     | Python, AWS, Puppet,   |
+|   scale, heal, anddeploy consistently in AWS       | boto                   |
+|   architecture                                     |                        |
 | - Guide the engineering direction of Python        | :good:`Good`:          |
 |   management framework to ease implementation of   | Ansible, Bamboo,       |
-|   the goals outlined above                         | Consul, Stash, RHEL    |
-+----------------------------------------------------+                        |
+|   complex automation tooling                       | Consul, Stash, RHEL,   |
++----------------------------------------------------+ XCode, Puppet          |
 | **Achievements**                                   |                        |
 |                                                    |                        |
 | - Due to the architecture and design of the        |                        |
 |   management tools I designed, adding new          |                        |
 |   functions with complex inter-node interactions,  |                        |
 |   mutexes, etc became very easy                    |                        |
-| - Our AEM design solved many issues with the       |                        |
-|   underlying product, and out AEM expert said that |                        |
-|   it was the best installation he's seen           |                        |
 | - Nominated for an internal award for simplicity   |                        |
-+----------------------------------------------------+------------------------+
-
-**2014-2015** - DevOps Engineer, Odecee - Australia Post Digital Mailbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+----------------------------------------------------+------------------------+
-| **Responsibilities**                               | **Technologies**       |
-|                                                    |                        |
-| - Oversee the implementation of a highly scalable  | :great:`Great`:        |
-|   CI platform in a very complex environment        | Python, AWS, boto      |
-| - Consult with many stakeholders, including        |                        |
-|   developers, systems, architects, security, and   | :good:`Good`:          |
-|   managers to find a good solution for all         | Ansible, Bamboo,       |
-+----------------------------------------------------+ Stash, RHEL, XCode,    |
-| **Achievements**                                   | Puppet                 |
-|                                                    |                        |
+|   on a very complex project                        |                        |
 | - Implemented a fully automated iOS build cluster  |                        |
 |   using both Ansible, and existing Puppet          |                        |
 |   manifests to build, and test iOS apps in the     |                        |
 |   same way as existing server apps                 |                        |
-| - Provided workarounds for the many drawbacks in   |                        |
-|   Bamboo using custom scripts to help the          |                        |
-|   transition between CI platforms                  |                        |
 +----------------------------------------------------+------------------------+
 
 **2012-2014** - Web Applications Developer, Infoxchange Australia

@@ -54,8 +54,8 @@ Employment History
 |                                                    | :great:`Great`:        |
 | - As part of the delivery engineering team, it was | AWS, Docker, BuildKite,|
 |   our job to "help teams deliver value faster",    | systemd, Debian        |
-|   which involves carefully balancing new things    |                        |
-|   with current business demands                    | :good:`Good`:          |
+|   carefully balancing new technology and process   |                        |
+|   with business demands to deliver features        | :good:`Good`:          |
 | - Acted as the team's AWS, Docker, and general     | Ruby, Rails, Packer    |
 |   DevOps expert                                    | Logstash, Kibana       |
 | - Built a new Docker-based platform for very fast, |                        |
@@ -69,9 +69,11 @@ Employment History
 |   testing of refactored services, similar to       |                        |
 |   GitHub scientist [1]_                            |                        |
 | - Built an application platform that replaced      |                        |
-|   unhealthy nodes with zero downtime               |                        |
+|   unhealthy nodes with zero downtime for           |                        |
+|   deployed services                                |                        |
 | - Implemented a centralized logging stack to help  |                        |
-|   diagnose issues across many disparate systems    |                        |
+|   diagnose issues across many disparate (including |                        |
+|   legacy) systems                                  |                        |
 +----------------------------------------------------+------------------------+
 
 **August 2014 - September 2015** - DevOps Engineer, Odecee - Australia Post

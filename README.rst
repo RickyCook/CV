@@ -153,20 +153,12 @@ Successfully completed VCE with high results in all computer-related subjects.
 References
 ----------
 
-**Cameron Bedford** - Technical Services Manager, Infoxchange
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-+-----------------------------------------------------------------------------+
-| **Phone:** ${cam_phone}                                                     |
-+-----------------------------------------------------------------------------+
-| **Email:** ${cam_email}                                                     |
-+-----------------------------------------------------------------------------+
-
-**Danielle Madeley** - Senior Web Applications Developer, Infoxchange
+**Pat Leamon** - Delivery Engineering Team Lead, Redbubble
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +-----------------------------------------------------------------------------+
-| **Phone:** ${danni_phone}                                                   |
+| **Phone:** ${pat_phone}                                                     |
 +-----------------------------------------------------------------------------+
-| **Email:** ${danni_email}                                                   |
+| **Email:** ${pat_email}                                                     |
 +-----------------------------------------------------------------------------+
 
 **Sam McLeod** - Operations Team Leader, Infoxchange

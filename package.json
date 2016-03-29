@@ -12,7 +12,8 @@
     "publicpdf": "phantomjs --debug=true ./pdf.js public",
     "privatepdf": "phantomjs --debug=true ./pdf.js private",
     "public": "npm run publichtml && npm run publicpdf",
-    "private": "npm run privatehtml && npm run privatepdf"
+    "private": "npm run privatehtml && npm run privatepdf",
+    "publish": "npm run public && ./publish.sh"
   },
   "homepage": "https://github.com/RickyCook/CV",
   "dependencies": {

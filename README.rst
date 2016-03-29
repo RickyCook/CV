@@ -146,10 +146,6 @@ This course gave me a stable footing in systems design, usability design, Java
 programming, C and C++ programming, 3D modeling and various other facets of the
 game development profession.
 
-**2002-2007** - Yarra Valley Grammar, Ringwood, Victoria
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Successfully completed VCE with high results in all computer-related subjects.
-
 References
 ----------
 

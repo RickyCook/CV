@@ -13,18 +13,39 @@ const child_process = require('child_process')
 const fs = require('fs')
 const process = require('process')
 
-function readRST() {
-    return new Promise((resolve, reject) => {
-        child_process.exec(
-            'pandoc --to html README.rst',
-            (err, stdout, stderr) => {
-                if (err) {
-                    reject([err, stderr])
-                } else {
-                    resolve(stdout)
-                }
+function readFile(filename) {
+    return new Promise((resolve, reject) =>
+        fs.readFile(filename, (err, data) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(data)
             }
-        )
+        })
+    )
+}
+function _writeTemp(resolve, reject, data) {
+    Tmp.file((cErr, path, fd, cleanup) => {
+        if (cErr) {
+            reject(cErr)
+            return
+        }
+        fs.writeFile(fd, data, wErr => {
+            if (wErr) {
+                reject(wErr)
+                return
+            }
+            resolve([path, fd, cleanup])
+        })
+    })
+}
+function writeTemp(data) {
+    return new Promise((resolve, reject) => {
+        if (_.has(data, 'then')) {
+            data.then(data => _writeTemp(resolve, reject, data))
+            return
+        }
+        _writeTemp(resolve, reject, data)
     })
 }
 function readParams() {
@@ -53,6 +74,33 @@ function renderSASS() {
             }
         })
     })
+}
+function renderRSTParams() {
+    return new Promise((resolve, reject) => {
+        Promise.all([
+            readFile('README.rst'),
+            readParams()
+        ])
+            .then(res => {
+                const rstData = res[0]
+                const params = res[1]
+                try {
+                    resolve(Mustache.render(
+                        rstData.toString(), params
+                    ))
+                } catch(err) { reject(err) }
+            })
+    })
+}
+function renderedRSTParamsFile() {
+    return new Promise((resolve, reject) =>
+        renderRSTParams()
+            .then(data =>
+                writeTemp(data)
+                    .then(resolve)
+                    .catch(reject)
+            )
+    )
 }
 function renderFullCSS() {
     return new Promise((resolve, reject) => {
@@ -152,7 +200,6 @@ function renderFullCSS() {
                                             'data:' + fileObj.mime + ';base64,' + data
                                         )
                                     )
-                                    // replace path, in value
                                     decl.value = _.concat(
                                         otherValues, urlValues
                                     ).join(', ')
@@ -165,19 +212,9 @@ function renderFullCSS() {
 
                 Promise.all(declPromises)
                     .then(res => {
-                        Tmp.file((cErr, path, fd, cleanup) => {
-                            if (cErr) {
-                                reject(cErr)
-                                return
-                            }
-                            fs.writeFile(fd, CSS.stringify(ast), wErr => {
-                                if (wErr) {
-                                    reject(wErr)
-                                    return
-                                }
-                                resolve([fd, cleanup])
-                            })
-                        })
+                        writeTemp(CSS.stringify(ast))
+                            .then(resolve)
+                            .catch(reject)
                         return res
                     })
                     .catch(reject)
@@ -188,33 +225,26 @@ function renderFullCSS() {
 function render() {
     return new Promise(
         (resolve, reject) => Promise.all([
-            readRST(),
-            readFile('header.html'),
-            readFile('footer.html'),
-            readParams(),
-            renderFullCSS(),
+            renderedRSTParamsFile(),
+            renderFullCSS()
         ]).then(res => {
-            const rstData = res[0]
-            const headerData = res[1]
-            const footerData = res[2]
-            const params = res[3]
-            const cssFd = res[4][0]
-            const cssDone = res[4][1]
+            const rstPath = res[0][0]
+            const rstDone = res[0][2]
+            const cssPath = res[1][0]
+            const cssDone = res[1][2]
 
-            fs.readFile(cssFd, (rErr, cssData) => {
-                cssDone()
-
-                if (rErr) {
-                    reject(rErr)
-                    return
+            child_process.exec(
+                "rst2html.py --stylesheet '" + cssPath + "' '" + rstPath + "'",
+                (err, stdout, stderr) => {
+                    if (err) {
+                        reject(err)
+                        return
+                    }
+                    rstDone()
+                    cssDone()
+                    resolve(stdout)
                 }
-                try {
-                    resolve(Mustache.render(
-                        headerData + rstData + footerData,
-                        _.merge(params, {css: cssData})
-                    ))
-                } catch(mErr) { reject(mErr) }
-            })
+            )
         }).catch(reject)
     )
 }

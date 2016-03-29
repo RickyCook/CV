@@ -13,6 +13,18 @@ const child_process = require('child_process')
 const fs = require('fs')
 const process = require('process')
 
+function rpad(str, padStr, length) {
+    while (str.length < length) {
+        str = str + padStr
+    }
+
+    return str
+}
+
+function tpl_pad60(text, render) {
+    return rpad(render(text), ' ', 60)
+}
+
 function readFile(filename) {
     return new Promise((resolve, reject) =>
         fs.readFile(filename, (err, data) => {
@@ -88,7 +100,10 @@ function renderRSTParams() {
                 const params = res[1]
                 try {
                     resolve(Mustache.render(
-                        rstData.toString(), params
+                        rstData.toString(),
+                        _.merge(params, {
+                            pad60: () => tpl_pad60
+                        })
                     ))
                 } catch(err) { reject(err) }
             })
@@ -221,6 +236,7 @@ function renderFullCSS() {
             .catch(reject)
     })
 }
+
 function render() {
     return new Promise(
         (resolve, reject) => Promise.all([

@@ -7,7 +7,8 @@
     "url": "git://github.com/RickyCook/CV.git"
   },
   "scripts": {
-    "html": "./index.js > index.html"
+    "publichtml": "./index.js public.json > public.html",
+    "privatehtml": "./index.js private.json > private.html"
   },
   "homepage": "https://github.com/RickyCook/CV",
   "dependencies": {

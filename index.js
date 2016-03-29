@@ -65,9 +65,9 @@ function writeTemp(data) {
         _writeTemp(resolve, reject, data)
     })
 }
-function readParams() {
+function readParams(paramsPath) {
     return new Promise((resolve, reject) => {
-        readFile('params.json')
+        readFile(paramsPath)
             .then(data => {
                 try {
                     resolve(JSON.parse(data))
@@ -90,11 +90,11 @@ function renderSASS() {
         })
     })
 }
-function renderRSTParams() {
+function renderRSTParams(paramsPath) {
     return new Promise((resolve, reject) => {
         Promise.all([
             readFile('README.rst'),
-            readParams()
+            readParams(paramsPath)
         ])
             .then(res => {
                 const rstData = res[0]
@@ -110,9 +110,9 @@ function renderRSTParams() {
             })
     })
 }
-function renderedRSTParamsFile() {
+function renderedRSTParamsFile(paramsPath) {
     return new Promise((resolve, reject) =>
-        renderRSTParams()
+        renderRSTParams(paramsPath)
             .then(data =>
                 writeTemp(data)
                     .then(resolve)
@@ -238,10 +238,10 @@ function renderFullCSS() {
     })
 }
 
-function render() {
+function render(paramsPath) {
     return new Promise(
         (resolve, reject) => Promise.all([
-            renderedRSTParamsFile(),
+            renderedRSTParamsFile(paramsPath),
             renderFullCSS()
         ]).then(res => {
             const rst = res[0]
@@ -263,7 +263,7 @@ function render() {
     )
 }
 
-render()
+render(process.argv[2])
     .then(console.log)
     .catch(res => {
         console.error(res)

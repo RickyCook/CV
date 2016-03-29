@@ -1,8 +1,10 @@
 *.swp
 *~
-index.html
-index.pdf
-params.json
+private.html
+private.json
+private.pdf
+public.html
+public.pdf
 .python-version
 .DS_Store
 build/

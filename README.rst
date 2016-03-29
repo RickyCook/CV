@@ -61,7 +61,7 @@ Employment History
 |   DevOps expert                                    | Logstash, Kibana       |
 | - Built a new Docker-based platform for very fast, |                        |
 |   and safe deployment of microservices             |                        |
-+----------------------------------------------------+                        +
++----------------------------------------------------+                        |
 | **Achievements**                                   |                        |
 |                                                    |                        |
 | - Reduced deployment time from 40min on the old    |                        |

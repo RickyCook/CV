@@ -50,15 +50,13 @@ function writeTemp(data) {
 }
 function readParams() {
     return new Promise((resolve, reject) => {
-        fs.readFile('params.json', (err, data) => {
-            if (err) {
-                reject(err)
-                return
-            }
-            try {
-                resolve(JSON.parse(data))
-            } catch(ex) { reject(ex) }
-        })
+        readFile('params.json')
+            .then(data => {
+                try {
+                    resolve(JSON.parse(data))
+                } catch(ex) { reject(ex) }
+            })
+            .catch(reject)
     })
 }
 function renderSASS() {
@@ -170,16 +168,13 @@ function renderFullCSS() {
                             return
                         } else {
                             fontData[fileObj.path] = new Promise(
-                                (fResolve, fReject) => fs.readFile(
-                                    cssPath + fileObj.path,
-                                    (err, data) => {
-                                        if (err) {
-                                            fReject(err)
-                                            return
-                                        }
-                                        fResolve(data.toString('base64'))
-                                    }
-                                )
+                                (fResolve, fReject) => {
+                                    readFile(cssPath + fileObj.path)
+                                        .then(data => fResolve(
+                                            data.toString('base64')
+                                        ))
+                                        .catch(fReject)
+                                }
                             )
                         }
                     })

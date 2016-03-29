@@ -52,14 +52,14 @@ Employment History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 +----------------------------------------------------+------------------------+
 | **Responsibilities**                               | **Technologies**       |
-|                                                    | :great:`Great`:        |
-| - As part of the delivery engineering team, it was | AWS, Docker, BuildKite,|
-|   our job to "help teams deliver value faster",    | systemd, Debian        |
-|   carefully balancing new technology and process   |                        |
-|   with business demands to deliver features        | :good:`Good`:          |
-| - Acted as the team's AWS, Docker, and general     | Ruby, Rails, Packer    |
-|   DevOps expert                                    | Logstash, Kibana       |
-| - Built a new Docker-based platform for very fast, |                        |
+|                                                    |                        |
+| - As part of the delivery engineering team, it was | :great:`Great`:        |
+|   our job to "help teams deliver value faster",    | AWS, Docker, BuildKite,|
+|   carefully balancing new technology and process   | systemd, Debian        |
+|   with business demands to deliver features        |                        |
+| - Acted as the team's AWS, Docker, and general     | :good:`Good`:          |
+|   DevOps expert                                    | Ruby, Rails, Packer    |
+| - Built a new Docker-based platform for very fast, | Logstash, Kibana       |
 |   and safe deployment of microservices             |                        |
 +----------------------------------------------------+                        |
 | **Achievements**                                   |                        |

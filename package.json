@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git://github.com/RickyCook/CV.git"
   },
+  "scripts": {
+    "html": "./index.js > index.html"
+  },
   "homepage": "https://github.com/RickyCook/CV",
   "dependencies": {
     "mime": "^1.3.4",

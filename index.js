@@ -35,7 +35,11 @@ function _writeTemp(resolve, reject, data) {
                 reject(wErr)
                 return
             }
-            resolve([path, fd, cleanup])
+            resolve({
+                path: path,
+                fd: fd,
+                cleanup: cleanup
+            })
         })
     })
 }
@@ -223,20 +227,18 @@ function render() {
             renderedRSTParamsFile(),
             renderFullCSS()
         ]).then(res => {
-            const rstPath = res[0][0]
-            const rstDone = res[0][2]
-            const cssPath = res[1][0]
-            const cssDone = res[1][2]
+            const rst = res[0]
+            const css = res[1]
 
             child_process.exec(
-                "rst2html.py --stylesheet '" + cssPath + "' '" + rstPath + "'",
+                "rst2html.py --stylesheet '" + css.path + "' '" + rst.path + "'",
                 (err, stdout, stderr) => {
                     if (err) {
                         reject(err)
                         return
                     }
-                    rstDone()
-                    cssDone()
+                    rst.cleanup()
+                    css.cleanup()
                     resolve(stdout)
                 }
             )

@@ -1,4 +1,7 @@
-@import url(build/static-font-roboto.css);
+@import 'node_modules/roboto-slab-fontface-kit/sass/variables';
+@import 'node_modules/roboto-slab-fontface-kit/sass/mixins';
+@import 'node_modules/roboto-slab-fontface-kit/sass/_Regular.scss';
+
 html {
     display: table;
     margin: auto;

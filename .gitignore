@@ -1,6 +1,8 @@
 *.swp
 *~
-private_env_vars
+params.json
+.python-version
+.DS_Store
 build/
 dist/
 node_modules/

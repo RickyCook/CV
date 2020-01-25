@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@2
     - name: Build site
       uses: node:lts-alpine
-      run: |
+      args: |
         yarn install && \
         yarn build && \
         yarn postbuild

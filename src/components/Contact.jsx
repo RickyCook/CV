@@ -6,7 +6,7 @@ import { PrintOnly, ScreenOnly } from './Media'
 
 
 /* global CONTACTS */
-const CONTACT_ME = CONTACTS['Ricky Cook'];
+const CONTACT_ME = CONTACTS && CONTACTS['Ricky Cook'];
 
 
 const Box = styled.div`

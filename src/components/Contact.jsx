@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components/macro';
 
+import { contacts } from '../contacts'
 import * as Header from './Header';
 import { PrintOnly, ScreenOnly } from './Media'
 
 
-/* global CONTACTS */
-const CONTACT_ME = CONTACTS && CONTACTS['Ricky Cook'];
+const CONTACT_ME = contacts && contacts['Ricky Cook'];
 
 
 const Box = styled.div`

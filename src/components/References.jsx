@@ -1,13 +1,11 @@
 import React, { Fragment, PureComponent } from 'react';
 import styled from 'styled-components/macro';
 
+import { contacts } from '../contacts';
 import * as Header from './Header';
 import { List, ListItem } from './List';
 
 const { Header3, SubHeader } = Header;
-
-
-/* global CONTACTS */
 
 
 const Highlight = styled.span`
@@ -22,7 +20,7 @@ const ReferenceLabel = styled.span`
 
 class Reference extends PureComponent {
   renderContact = field => {
-    const contact = CONTACTS[this.props.name]
+    const contact = contacts && contacts[this.props.name]
     if (contact && !contact[field]) {
       return null;
     }

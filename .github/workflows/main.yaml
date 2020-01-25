@@ -17,5 +17,8 @@ jobs:
       run: yarn install
     - name: Build site
       run: yarn build
-    - name: Snap site
-      run: yarn postbuild
+    - name: Deploy
+      uses: maxheld83/ghpages@v0.2.1
+      env:
+        BUILD_DIR: build/
+      secrets: [GH_PAT]

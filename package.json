@@ -9,13 +9,13 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
     "styled-components": "^5.0.0",
-    "typeface-major-mono-display": "^0.0.71"
+    "typeface-major-mono-display": "^0.0.71",
+    "typeface-overpass-mono": "^0.0.71"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "react-snap",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "postbuild": "react-snap"
   },
   "browserslist": {
     "production": [
@@ -30,6 +30,8 @@
     ]
   },
   "devDependencies": {
+    "customize-cra": "^0.9.1",
+    "react-app-rewired": "^2.1.5",
     "react-snap": "^1.23.0"
   }
 }

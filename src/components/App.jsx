@@ -20,32 +20,41 @@ export const App = props => (
     <Contact />
     <Header2>objectives</Header2>
     <ObjectivesWrapper>
-      I'm a self-confessed and passionate technologist and geek. I love working
-      with technology to see how far it can be pushed. I try to keep up with as
-      many new things that are happening in the tech sphere as I can, both in my
-      professional life and for personal projects in my down time. I'm looking for
-      a career that will allow me to explore opportunities to implement and design
-      new and interesting solutions to issues that developers face every day;
-      particularly around deployment, and automation.
+      I love using technology to be a multiplier of human effort, especially when
+      helping people pursue a cause for social good. I've spent the large
+      majority of my career enabling all kinds of organizations achieve their
+      social purpose, by ensuring that doctors are efficiently communicating,
+      community services can provide accurate and timely help, ensuring developers
+      can iterate and deliver quickly, and helping organizations safeguard the
+      vulnerable people in their care. All of these objectives have been achieved
+      through a interesting mixes of both new, and "boring" technology. I'd like
+      to continue working to multiply the effectiveness of causes that I believe in
+      through my love of software.
     </ObjectivesWrapper>
     <Header2>code skills</Header2>
     <p>
-      The core skillset that I've been using for the past 3 years has been centred
-      around Python, Docker, Puppet, and AWS. Prior to this, my main competencies
-      were a combination of Perl, PHP, and Java with a variety of frameworks in
-      all. Most of my experiences lie with both software, and platform back-end
-      specifics of componentized RESTful services, though I have also been involved
-      with UI maintenance using Knockout, and React.
+      The core skillset that I've been using has been centred around Python,
+      node.js, and React. I've also had prior experience with many
+      other languages, and can pick up new Frameworks, infrastructure, and
+      languages with ease. Most of my experience lie with both software, and
+      infrastructure back-end specifics of either monolithic, or microservice-based
+      RESTful services. I am also a competent front-end developer, and have
+      created UIs that are in every day use by end-users.
     </p>
-    <Header2>application skills</Header2>
+    <Header2>infrastructure skills</Header2>
     <p>
-      I am a competent and passionate Linux user, with a solid knowledge of Arch
-      Linux for the desktop, as well as Debian, and RHEL on servers. I feel
-      comfortable around all of the *nix OS flavours that I've been faced with.
-      Over the past years, I have been exposed to some truly amazing technologies. Of
-      particular note are Docker (and raw LXC/AuFS at a lower level), ElasticSearch,
-      Gunicorn and PostGIS. These have proven an enormous boon to the projects that
-      have implemented them.
+      I am a passionate Linux user, and though I currently use MacOS for my
+      development environment, I am well versed in using Linux for every day
+      desktop tasks as well as using both Docker, and Virtualized Linux almost
+      every day. I always focus on getting security right, and building on top of
+      a solid foundation of infrastructure on any variant of *nix that is required.
+    </p>
+    <p>
+      Other technologies I've had every-day use of include AWS (EC2, EKS, RDS,
+      CloudFormation, Lambda, etc), ElasticSearch, PostgreSQL/PostGIS, and
+      Kubernetes. I've also had experience with many more infrastructure
+      automation and management tools not listed here; some of these are listed
+      in my employment history below.
     </p>
     <Header2>employment history</Header2>
     <EmploymentHistory />

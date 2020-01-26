@@ -5,6 +5,7 @@ import styled from 'styled-components/macro';
 import { Button } from './Button';
 import { Header3, Header4, SubHeader } from './Header';
 import { List, ListItem } from './List';
+import { ScreenOnly } from './Media';
 
 
 const JobShowButtonWrapper = styled.div`
@@ -56,8 +57,10 @@ class JobsList extends PureComponent {
             return child
           }) }
         </List>
-        { jobsRendered > MAX_JOBS_LIST && !showMore && this.renderShowMore() }
-        { showMore && this.renderShowLess() }
+        <ScreenOnly>
+          { jobsRendered > MAX_JOBS_LIST && !showMore && this.renderShowMore() }
+          { showMore && this.renderShowLess() }
+        </ScreenOnly>
       </Fragment>
     )
   }

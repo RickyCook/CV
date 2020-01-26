@@ -78,6 +78,12 @@ export class Details extends PureComponent {
             <BoxLabel>twttr</BoxLabel>
             <ExternalLink href="https://twitter.com/thatpandadev"><Highlight>@</Highlight>thatpandadev</ExternalLink>
           </div>
+          <PrintOnly>
+            <div>
+              <BoxLabel>&nbsp;&nbsp;web</BoxLabel>
+              <ExternalLink href="https://thatpanda.com">thatpanda.com</ExternalLink>
+            </div>
+          </PrintOnly>
           <BoxRow>
             <ExternalLink href="https://github.com/rickycook/CV">
               <PrintOnly>github.com/rickycook/CV</PrintOnly>

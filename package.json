@@ -2,7 +2,7 @@
   "name": "cv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rickycook.github.io/CV/",
+  "homepage": "https://thatpanda.com",
   "dependencies": {
     "@openfonts/major-mono-display_latin": "^1.44.1",
     "lodash": "^4.17.15",

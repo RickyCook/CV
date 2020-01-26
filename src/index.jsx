@@ -29,6 +29,13 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     color: ${props => props.theme.link};
+
+    transition: color 0.1s linear;
+
+    &:hover {
+      transition: color 0.1s linear;
+      color: ${props => props.theme.linkAlt}
+    }
   }
 `
 const AppWrapper = props => (

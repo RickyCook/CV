@@ -14,7 +14,8 @@ const ButtonComponent = styled.a`
 
   &:hover {
     transition: background-color 0.1s linear;
-    background-color: ${props => props.theme[(props.type || 'primary') + 'BrightBg']}
+    background-color: ${props => props.theme[(props.type || 'primary') + 'BrightBg']};
+    color: ${props => props.theme.text};
   }
 `
 

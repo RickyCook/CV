@@ -66,10 +66,11 @@ export const Header4 = withWrapper(styled.h4`
 `)
 
 export const SubHeader = styled.div`
-  margin-top: -${props => props.theme.spacer * 1.5}px;
+  margin-top: -${props => props.theme.spacer * 3.5}px;
   margin-bottom: ${props => props.theme.spacer * 1.5}px;
   padding-left: ${props => (props.theme.spacer * 2) + props.theme.chevronWidth}px;
   padding-right: ${props => props.theme.spacer * 2.5}px;
+  padding-top: ${props => props.theme.spacer}px;
   padding-bottom: ${props => props.theme.spacer}px;
   color: ${props => props.theme[(props.type || 'primary') + 'Text']};
   background-color: ${props => props.theme[(props.type || 'primary') + 'Bg']};

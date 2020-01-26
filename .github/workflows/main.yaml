@@ -17,8 +17,6 @@ jobs:
       run: yarn install
     - name: Build site
       run: yarn build
-      env:
-        PUBLIC_URL: https://rickycook.github.io/CV/
     - name: Deploy
       if: success()
       uses: crazy-max/ghaction-github-pages@v1

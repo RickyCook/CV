@@ -29,3 +29,6 @@ theme.secondaryBg = theme.secondary
 theme.secondaryBrightBg = theme.secondaryBright
 theme.plainText = theme.text
 theme.plainBg = 'rgba(0,0,0,0)'
+theme.boxClickableText = theme.secondaryText
+theme.boxClickableBg = theme.secondaryBg
+theme.boxClickableBrightBg = theme.secondaryBrightBg

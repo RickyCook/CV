@@ -9,7 +9,7 @@ import { PrintOnly, ScreenOnly } from './Media'
 const CONTACT_ME = contacts && contacts['Ricky Cook'];
 
 
-const Box = styled.div`
+const BaseBox = styled.div`
   background-color: rgba(20,20,25,0.8);
   position: fixed;
   right: 0px;
@@ -19,16 +19,63 @@ const Box = styled.div`
     position: absolute;
   }
 `
-const TopBox = styled(Box)`
+const TopBox = styled(BaseBox)`
   top: 0px;
 `
-const BottomBox = styled(Box)`
+const TopBoxClickable = styled(TopBox)`
+  background-color: ${props => props.theme.boxClickableBg};
+  cursor: pointer;
+
+  &:hover {
+    transition: background-color 0.1s linear;
+    background-color: ${props => props.theme.boxClickableBrightBg};
+  }
+`
+const BottomBox = styled(BaseBox)`
   position: fixed;
   bottom: 0px;
+`
+const BottomBoxClickable = styled(BottomBox)`
+  background-color: ${props => props.theme.boxClickableBg};
+  cursor: pointer;
+
+  &:hover {
+    transition: background-color 0.1s linear;
+    background-color: ${props => props.theme.boxClickableBrightBg};
+  }
 `
 const BoxHeader = styled.div`
   ${Header.fontStyle}
   margin-bottom: ${props => props.theme.spacer}px;
+
+  ${TopBoxClickable} &, ${BottomBoxClickable} & {
+    color: ${props => props.theme.boxClickableText};
+  }
+`
+const BoxHeaderButton = styled(BoxHeader)`
+  background-color: ${props => props.theme.primaryBg};
+  color: ${props => props.theme.primaryText};
+  cursor: pointer;
+  float: right;
+  padding: ${props => props.theme.spacer}px;
+  margin-top: -${props => props.theme.spacer * 1.5}px;
+  margin-right: -${props => props.theme.spacer * 1.5}px;
+
+  &:hover {
+    transition: background-color 0.1s linear;
+    background-color: ${props => props.theme.primaryDark};
+  }
+`
+const BoxVerticalHeader = styled(BoxHeader)`
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  padding-right: ${props => props.theme.spacer * 3}px;
+  background-color: ${props => props.theme.boxClickableBg};
+
+  ${TopBoxClickable}:hover &, ${BottomBoxClickable}:hover & {
+    transition: background-color 0.1s linear;
+    background-color: ${props => props.theme.boxClickableBrightBg};
+  }
 `
 const BoxContent = styled.div`
   font-size: 0.75em;
@@ -57,41 +104,109 @@ class ExternalLink extends PureComponent {
 }
 
 
+class Box extends PureComponent {
+  state = {
+    show: false,
+    hideable: false,
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+  handleResize = () => {
+    if (window.innerWidth < 1500) {
+      this.setState({ hideable: true })
+    } else {
+      this.setState({ hideable: false })
+    }
+  }
+  handleClick = () => {
+    this.setState({ show: !this.state.show });
+  }
+  render() {
+    const { header, position, children } = this.props;
+    const { hideable, show } = this.state;
+
+    let BoxComponent;
+    let ClickableBoxComponent;
+    switch(position) {
+    case 'top':
+      BoxComponent = TopBox;
+      ClickableBoxComponent = TopBoxClickable;
+      break;
+    case 'bottom':
+      BoxComponent = BottomBox;
+      ClickableBoxComponent = BottomBoxClickable;
+      break;
+    default:
+      throw new Error('Invalid position option');
+    }
+
+    if (hideable && !show) {
+      return (
+        <ClickableBoxComponent
+          onClick={ this.handleClick }
+        >
+          <BoxVerticalHeader>
+            { header } <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
+          </BoxVerticalHeader>
+        </ClickableBoxComponent>
+      )
+    }
+    return (
+      <BoxComponent>
+        { hideable && <BoxHeaderButton onClick={ this.handleClick }>x</BoxHeaderButton> }
+        <BoxHeader>{ header }</BoxHeader>
+        <BoxContent>
+          { children }
+        </BoxContent>
+      </BoxComponent>
+    )
+  }
+}
+
+
 export class Details extends PureComponent {
+  state = {
+    show: false,
+  }
+  handleClick = () => {
+    this.setState({ show: !this.state.show })
+  }
   render() {
     return (
-      <TopBox>
-        <BoxHeader>details</BoxHeader>
-        <BoxContent>
+      <Box header="details" position="top">
+        <div>
+          <BoxLabel>phone</BoxLabel>
+          { (CONTACT_ME && CONTACT_ME.phone) || 'Contact for info' }
+        </div>
+        <div>
+          <BoxLabel>email</BoxLabel>
+          { CONTACT_ME && CONTACT_ME.email
+            ? <ExternalLink href={ `mailto:${CONTACT_ME.email}` }>{ CONTACT_ME.email }</ExternalLink>
+            : 'Contact for info'
+          }
+        </div>
+        <div>
+          <BoxLabel>twttr</BoxLabel>
+          <ExternalLink href="https://twitter.com/thatpandadev"><Highlight>@</Highlight>thatpandadev</ExternalLink>
+        </div>
+        <PrintOnly>
           <div>
-            <BoxLabel>phone</BoxLabel>
-            { (CONTACT_ME && CONTACT_ME.phone) || 'Contact for info' }
+            <BoxLabel>&nbsp;&nbsp;web</BoxLabel>
+            <ExternalLink href="https://thatpanda.com">thatpanda.com</ExternalLink>
           </div>
-          <div>
-            <BoxLabel>email</BoxLabel>
-            { CONTACT_ME && CONTACT_ME.email
-              ? <ExternalLink href={ `mailto:${CONTACT_ME.email}` }>{ CONTACT_ME.email }</ExternalLink>
-              : 'Contact for info'
-            }
-          </div>
-          <div>
-            <BoxLabel>twttr</BoxLabel>
-            <ExternalLink href="https://twitter.com/thatpandadev"><Highlight>@</Highlight>thatpandadev</ExternalLink>
-          </div>
-          <PrintOnly>
-            <div>
-              <BoxLabel>&nbsp;&nbsp;web</BoxLabel>
-              <ExternalLink href="https://thatpanda.com">thatpanda.com</ExternalLink>
-            </div>
-          </PrintOnly>
-          <BoxRow>
-            <ExternalLink href="https://github.com/rickycook/CV">
-              <PrintOnly>github.com/rickycook/CV</PrintOnly>
-              <ScreenOnly>rickycook/CV</ScreenOnly>
-            </ExternalLink>
-          </BoxRow>
-        </BoxContent>
-      </TopBox>
+        </PrintOnly>
+        <BoxRow>
+          <ExternalLink href="https://github.com/rickycook/CV">
+            <PrintOnly>github.com/rickycook/CV</PrintOnly>
+            <ScreenOnly>rickycook/CV</ScreenOnly>
+          </ExternalLink>
+        </BoxRow>
+      </Box>
     )
   }
 }
@@ -100,20 +215,17 @@ export class BuildInfo extends PureComponent {
   render() {
     return (
       <ScreenOnly>
-        <BottomBox>
-          <BoxHeader>built using</BoxHeader>
-          <BoxContent>
-            <div>
-              [
-                <ExternalLink href="https://reactjs.org/">React</ExternalLink>,
-                <ExternalLink href="https://github.com/stereobooster/react-snap">react-snap</ExternalLink>,
-                <ExternalLink href="https://styled-components.com">styled-components</ExternalLink>,<br/>
-                <ExternalLink href="https://github.com/rickycook/CV/actions">GitHub Actions</ExternalLink>,
-                <ExternalLink href="https://pages.github.com">GitHub Pages</ExternalLink>
-              ]
-            </div>
-          </BoxContent>
-        </BottomBox>
+        <Box header="built using" position="bottom">
+          <div>
+            [
+              <ExternalLink href="https://reactjs.org/">React</ExternalLink>,
+              <ExternalLink href="https://github.com/stereobooster/react-snap">react-snap</ExternalLink>,
+              <ExternalLink href="https://styled-components.com">styled-components</ExternalLink>,<br/>
+              <ExternalLink href="https://github.com/rickycook/CV/actions">GitHub Actions</ExternalLink>,
+              <ExternalLink href="https://pages.github.com">GitHub Pages</ExternalLink>
+            ]
+          </div>
+        </Box>
       </ScreenOnly>
     )
   }

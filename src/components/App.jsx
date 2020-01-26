@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { Contact } from './Contact';
+import { BuildInfo, Details } from './Boxes';
 import { Education } from './Education';
 import { EmploymentHistory } from './EmploymentHistory';
 import { BodyHeader, Header2 } from './Header';
 import { References } from './References';
+
 
 const ObjectivesWrapper = styled.p`
   @media print {
@@ -17,7 +18,7 @@ const ObjectivesWrapper = styled.p`
 export const App = props => (
   <React.Fragment>
     <BodyHeader trail={ true }>ricky cook</BodyHeader>
-    <Contact />
+    <Details />
     <Header2>objectives</Header2>
     <ObjectivesWrapper>
       I love using technology to be a multiplier of human effort, especially when
@@ -62,5 +63,6 @@ export const App = props => (
     <Education />
     <Header2>references</Header2>
     <References />
+    <BuildInfo />
   </React.Fragment>
 )

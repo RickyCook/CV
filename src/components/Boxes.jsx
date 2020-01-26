@@ -12,13 +12,19 @@ const CONTACT_ME = contacts && contacts['Ricky Cook'];
 const Box = styled.div`
   background-color: rgba(20,20,25,0.8);
   position: fixed;
-  top: 0px;
   right: 0px;
   padding: ${props => props.theme.bodyMargin}px;
 
   @media print {
     position: absolute;
   }
+`
+const TopBox = styled(Box)`
+  top: 0px;
+`
+const BottomBox = styled(Box)`
+  position: fixed;
+  bottom: 0px;
 `
 const BoxHeader = styled.div`
   ${Header.fontStyle}
@@ -51,10 +57,10 @@ class ExternalLink extends PureComponent {
 }
 
 
-export class Contact extends PureComponent {
+export class Details extends PureComponent {
   render() {
     return (
-      <Box>
+      <TopBox>
         <BoxHeader>details</BoxHeader>
         <BoxContent>
           <div>
@@ -79,7 +85,30 @@ export class Contact extends PureComponent {
             </ExternalLink>
           </BoxRow>
         </BoxContent>
-      </Box>
+      </TopBox>
+    )
+  }
+}
+
+export class BuildInfo extends PureComponent {
+  render() {
+    return (
+      <ScreenOnly>
+        <BottomBox>
+          <BoxHeader>built using</BoxHeader>
+          <BoxContent>
+            <div>
+              [
+                <ExternalLink href="https://reactjs.org/">React</ExternalLink>,
+                <ExternalLink href="https://github.com/stereobooster/react-snap">react-snap</ExternalLink>,
+                <ExternalLink href="https://styled-components.com">styled-components</ExternalLink>,<br/>
+                <ExternalLink href="https://github.com/rickycook/CV/actions">GitHub Actions</ExternalLink>,
+                <ExternalLink href="https://pages.github.com">GitHub Pages</ExternalLink>
+              ]
+            </div>
+          </BoxContent>
+        </BottomBox>
+      </ScreenOnly>
     )
   }
 }

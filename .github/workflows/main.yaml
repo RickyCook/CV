@@ -18,7 +18,9 @@ jobs:
     - name: Build site
       run: yarn build
     - name: Deploy
-      uses: maxheld83/ghpages@v0.2.1
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+        build_dir: build
       env:
-        BUILD_DIR: build/
-        GH_PAT: ${{ secrets.GH_PAT }}
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}

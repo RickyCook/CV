@@ -13,7 +13,7 @@ const JobShowButtonWrapper = styled.div`
 `
 
 
-const MAX_JOBS_LIST = 2;
+const MAX_JOBS_LIST = 3;
 
 
 class JobsList extends PureComponent {

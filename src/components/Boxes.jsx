@@ -219,7 +219,7 @@ export class Details extends PureComponent {
   }
   render() {
     return (
-      <Box header="details" position="top">
+      <Box header="Details" position="top">
         <div>
           <BoxLabel>phone</BoxLabel>
           { (CONTACT_ME && CONTACT_ME.phone) || 'Contact for info' }
@@ -256,7 +256,7 @@ export class BuildInfo extends PureComponent {
   render() {
     return (
       <ScreenOnly>
-        <Box header="built using" position="bottom">
+        <Box header="Built Using" position="bottom">
           <div>
             [
               <ExternalLink href="https://reactjs.org/">React</ExternalLink>,

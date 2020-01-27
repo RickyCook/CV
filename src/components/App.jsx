@@ -19,9 +19,9 @@ const ObjectivesWrapper = styled.p`
 
 export const App = props => (
   <React.Fragment>
-    <BodyHeader trail={ true }>ricky cook</BodyHeader>
+    <BodyHeader trail={ true }>Ricky Cook</BodyHeader>
     <Details />
-    <Header2>objectives</Header2>
+    <Header2>Objectives</Header2>
     <ObjectivesWrapper>
       I love using technology to be a multiplier of human effort, especially when
       helping people pursue a cause for social good. I've spent the large
@@ -34,7 +34,7 @@ export const App = props => (
       to continue working to multiply the effectiveness of causes that I believe in
       through my love of software.
     </ObjectivesWrapper>
-    <Header2>code skills</Header2>
+    <Header2>Code Skills</Header2>
     <p>
       The core skillset that I've been using has been centred around Python,
       node.js, and React. I've also had prior experience with many
@@ -44,7 +44,7 @@ export const App = props => (
       RESTful services. I am also a competent front-end developer, and have
       created UIs that are in every day use by end-users.
     </p>
-    <Header2>infrastructure skills</Header2>
+    <Header2>Infrastructure Skills</Header2>
     <p>
       I am a passionate Linux user, and though I currently use MacOS for my
       development environment, I am well versed in using Linux for every day
@@ -59,11 +59,11 @@ export const App = props => (
       automation and management tools not listed here; some of these are listed
       in my employment history below.
     </p>
-    <Header2>employment history</Header2>
+    <Header2>Employment History</Header2>
     <EmploymentHistory />
-    <Header2>education</Header2>
+    <Header2>Education</Header2>
     <Education />
-    <Header2>references</Header2>
+    <Header2>References</Header2>
     <References />
     <PrintOnly>
       <hr />

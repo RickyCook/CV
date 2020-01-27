@@ -1,6 +1,6 @@
 import React, { createContext, Fragment, PureComponent } from 'react';
 
-import { PrintOnly, ScreenOnly } from './Media';
+import { PrintOnly } from './Media';
 
 
 class ReferenceTracker {
@@ -128,7 +128,6 @@ export class ReferenceLink extends PureComponent {
     this.context.remove(this.props.href);
   }
   render() {
-    const { children } = this.props;
     const { id } = this.state;
 
     return (

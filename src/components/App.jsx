@@ -6,7 +6,7 @@ import { Education } from './Education';
 import { EmploymentHistory } from './EmploymentHistory';
 import { BodyHeader, Header2 } from './Header';
 import { PrintOnly } from './Media';
-import { PrintReferences, ReferenceLink } from './Link'
+import { PrintReferences } from './Link'
 import { References } from './References';
 
 

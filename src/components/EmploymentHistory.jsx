@@ -308,10 +308,12 @@ export class EmploymentHistory extends PureComponent {
               `Nominated for an internal award for simplicity
               on a very complex project`,
 
-              `Due to the architecture and design of the
-              management tools I designed, adding new
-              functions with complex inter-node interactions,
-              mutexes, etc became very easy`,
+              `Selected to work on the "Trusted Services Cloud"
+              project; A sophisticated build of a PCI compliant,
+              highly automated AWS environment. My main
+              achievement was the deployment automation of the
+              IDP suite that protected every server in the
+              whole environment`,
 
               `Implemented a fully automated iOS build cluster
               using both Ansible, and existing Puppet

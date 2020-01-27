@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components/macro';
 
@@ -106,7 +107,7 @@ class ExternalLink extends PureComponent {
 
 class Box extends PureComponent {
   state = {
-    show: false,
+    show: null,
     hideable: false,
   }
   componentDidMount() {
@@ -117,10 +118,11 @@ class Box extends PureComponent {
     window.removeEventListener('resize', this.handleResize)
   }
   handleResize = () => {
+    const { show } = this.state
     if (window.innerWidth < 1500) {
-      this.setState({ hideable: true })
+      this.setState({ hideable: true, show: _.isNil(show) ? false : show })
     } else {
-      this.setState({ hideable: false })
+      this.setState({ hideable: false, show: _.isNil(show) ? true : show })
     }
   }
   handleClick = () => {
@@ -145,7 +147,7 @@ class Box extends PureComponent {
       throw new Error('Invalid position option');
     }
 
-    if (hideable && !show) {
+    if (hideable && !_.isNil(show) && !show) {
       return (
         <ClickableBoxComponent
           onClick={ this.handleClick }

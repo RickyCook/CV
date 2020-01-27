@@ -24,7 +24,7 @@ class JobsList extends PureComponent {
     return (
       <JobShowButtonWrapper>
         <Button
-          span={ true }
+          block={ true }
           type="secondary"
           onClick={ () => {
             this.setState({ showMore })

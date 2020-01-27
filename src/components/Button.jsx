@@ -7,7 +7,7 @@ const ButtonComponent = styled.a`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme[(props.type || 'primary') + 'Bg']};
   text-align: center;
-  display: ${props => props.span ? 'block' : 'inline'};
+  display: ${props => props.block ? 'block' : 'inline'};
   cursor: pointer;
 
   transition: background-color 0.1s linear;
@@ -30,7 +30,7 @@ export class Button extends PureComponent {
   static defaultProps = {
     size: 'medium',
     type: 'primary',
-    span: false,
+    block: false,
   }
   onClick = ev => {
     ev.preventDefault()

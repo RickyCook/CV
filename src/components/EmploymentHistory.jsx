@@ -188,7 +188,7 @@ export class EmploymentHistory extends PureComponent {
             technologies={[
               {
                 competence: 'great',
-                items: ['Python', 'Docker', 'AWS', 'PostgreSQL', 'React', 'Kubernetes (EKS)', 'nodejs'],
+                items: ['Python', 'Docker', 'AWS', 'PostgreSQL', 'React', 'Kubernetes(EKS)', 'nodejs'],
               },
               {
                 competence: 'good',
@@ -196,7 +196,7 @@ export class EmploymentHistory extends PureComponent {
               },
               {
                 competence: 'competent',
-                items: ['AWS Lambda', 'Prometheus', 'RabbitMQ'],
+                items: ['Lambda(AWS)', 'Prometheus', 'RabbitMQ'],
               },
             ]}
           />

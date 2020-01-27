@@ -97,25 +97,27 @@ class TechnologyRow extends PureComponent {
   }
 }
 
-const JobContent = styled.div`
-  display: flex;
-  align-content: stretch;
-`
-const JobMainColumn = styled.div`
-  flex-shrink: 1;
-`
-const JobRightColumn = styled.div`
-  flex-shrink: 0;
-  flex-basis: 200px;
-
-  @media print {
-    padding-left: ${prop => prop.theme.spacer}px;
+const JobGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto 250px;
+  grid-template-areas:
+    "responsibilities technologies"
+    "achievements technologies"
+  ;
+  @media (max-width: 720px) {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "responsibilities"
+      "achievements"
+      "technologies"
+    ;
   }
 `
-const JobRightContent = styled.div`
-  padding-left: ${props => props.theme.spacer}px;
-
-  @media print {
+const JobRow = styled.div`
+`
+const TechnologiesJobRow = styled(JobRow)`
+  padding-left: ${props => props.theme.spacer * 2}px;
+  @media (max-width: 720px) {
     padding: 0px;
   }
 `
@@ -127,24 +129,24 @@ class Job extends Component {
       <Fragment>
         <Header3 type="secondary">{ title } <Highlight>@</Highlight> { company }</Header3>
         <SubHeader type="secondary">{ fromdate } - { todate }</SubHeader>
-        <JobContent>
-          <JobMainColumn>
+        <JobGrid>
+          <JobRow style={{ gridArea: 'responsibilities' }}>
             <Header4 type="plain">Responsibilities</Header4>
             <ul>
               { responsibilities.map(text => <li key={ text }>{ text }</li>) }
             </ul>
+          </JobRow>
+          <JobRow style={{ gridArea: 'achievements' }}>
             <Header4 type="plain">Achievements</Header4>
             <ul>
               { achievements.map(text => <li key={ text }>{ text }</li>) }
             </ul>
-          </JobMainColumn>
-          <JobRightColumn>
+          </JobRow>
+          <TechnologiesJobRow style={{ gridArea: 'technologies' }}>
             <Header4 type="plain">Technologies</Header4>
-            <JobRightContent>
-              { technologies.map(row => <TechnologyRow key={ row.competence } { ...row } />) }
-            </JobRightContent>
-          </JobRightColumn>
-        </JobContent>
+            { technologies.map(row => <TechnologyRow key={ row.competence } { ...row } />) }
+          </TechnologiesJobRow>
+        </JobGrid>
       </Fragment>
     )
   }

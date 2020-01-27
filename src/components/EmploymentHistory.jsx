@@ -58,10 +58,14 @@ class JobsList extends PureComponent {
             return child
           }) }
         </List>
-        <ScreenOnly>
-          { jobsRendered > MAX_JOBS_LIST && !showMore && this.renderShowMore() }
-          { showMore && this.renderShowLess() }
-        </ScreenOnly>
+        { jobsRendered > MAX_JOBS_LIST && (
+          <Fragment>
+            <ScreenOnly>
+              { showMore ? this.renderShowLess() : this.renderShowMore() }
+            </ScreenOnly>
+            { !showMore && <PrintOnly><p><em>More employment history available on request, or at thatpanda.com</em></p></PrintOnly> }
+          </Fragment>
+        ) }
       </Fragment>
     )
   }

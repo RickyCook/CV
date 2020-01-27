@@ -5,6 +5,8 @@ import { BuildInfo, Details } from './Boxes';
 import { Education } from './Education';
 import { EmploymentHistory } from './EmploymentHistory';
 import { BodyHeader, Header2 } from './Header';
+import { PrintOnly } from './Media';
+import { PrintReferences, ReferenceLink } from './Link'
 import { References } from './References';
 
 
@@ -63,6 +65,10 @@ export const App = props => (
     <Education />
     <Header2>references</Header2>
     <References />
+    <PrintOnly>
+      <hr />
+      <PrintReferences />
+    </PrintOnly>
     <BuildInfo />
   </React.Fragment>
 )

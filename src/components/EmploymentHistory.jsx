@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 
 import { Button } from './Button';
 import { Header3, Header4, SubHeader } from './Header';
+import { ReferenceLink } from './Link';
 import { List, ListItem } from './List';
 import { ScreenOnly } from './Media';
 
@@ -264,9 +265,9 @@ export class EmploymentHistory extends PureComponent {
               `Reduced deployment time from 40min on the old
               platform, to less than 1min on the new`,
 
-              `Built many tools for comparison-based
-              testing of refactored services, similar to
-              GitHub scientist [1]`,
+              <Fragment>
+                Built many tools for comparison-based testing of refactored services, similar to <ReferenceLink href="https://github.com/github/scientist">GitHub scientist</ReferenceLink>
+              </Fragment>,
 
               `Built an application platform that replaced
               unhealthy nodes with zero downtime for
@@ -349,21 +350,13 @@ export class EmploymentHistory extends PureComponent {
               team.`,
             ]}
             achievements={[
-              `Months before Docker was released, I was tasked
-              with building a new CI server for the team. My
-              solution was an LXC-based container system that
-              used AuFS for the root file system and was
-              managed by Puppet in the background. This set
-              Infoxchange on a path to very quickly adopt
-              Docker when it was released. I then did a talk
-              on my solution at Infracoders Melbourne [2].`,
+              <Fragment>
+                Months before Docker was released, I was tasked with building a new CI server for the team. My solution was an LXC-based container system that used AuFS for the root file system and was managed by Puppet in the background. This set Infoxchange on a path to very quickly adopt Docker when it was released. I then did a talk on my solution at <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">Infracoders Melbourne</ReferenceLink>
+              </Fragment>,
 
-              `Played a vital role redeveloping Infoxchange's
-              legacy search application from the ground up
-              using Docker, ElasticSearch and Django. Again,
-              this lead to a talk (that at time of writing
-              has yet to be given) at the Melbourne Search
-              user's group [3]`,
+              <Fragment>
+                Played a vital role redeveloping Infoxchange's legacy search application from the ground up using Docker, ElasticSearch and Django. Again, this lead to a talk (that at time of writing has yet to be given) at the <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">Melbourne Search user's group</ReferenceLink>
+              </Fragment>,
             ]}
             technologies={[
               {

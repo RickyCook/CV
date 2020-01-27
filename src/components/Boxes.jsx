@@ -4,7 +4,8 @@ import styled from 'styled-components/macro';
 
 import { contacts } from '../contacts'
 import * as Header from './Header';
-import { PrintOnly, ScreenOnly } from './Media'
+import { ExternalLink } from './Link';
+import { PrintOnly, ScreenOnly } from './Media';
 
 
 const CONTACT_ME = contacts && contacts['Ricky Cook'];
@@ -95,14 +96,6 @@ const BoxLabel = styled.span`
 const Highlight = styled.span`
   color: ${props => props.theme.text};
 `
-
-
-class ExternalLink extends PureComponent {
-  render() {
-    const { children, ...props } = this.props
-    return <a rel="noopener noreferrer" target="_blank" { ...props }>{ children }</a>
-  }
-}
 
 
 const BoxBodyWrapper = styled.div`

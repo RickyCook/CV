@@ -4,10 +4,11 @@ import styled from 'styled-components/macro';
 export const PrintOnly = styled.span`
   display: none;
   @media print {
-    display: inherit;
+    display: inline;
   }
 `
 export const ScreenOnly = styled.span`
+  display: inline;
   @media print {
     display: none;
   }

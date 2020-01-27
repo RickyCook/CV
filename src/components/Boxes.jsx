@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import styled from 'styled-components/macro';
 
 import { contacts } from '../contacts'
@@ -105,6 +105,76 @@ class ExternalLink extends PureComponent {
 }
 
 
+const BoxBodyWrapper = styled.div`
+  display: ${props => props.show ? 'block' : 'none'};
+
+  @media print {
+    display: block;
+  }
+`
+
+
+class BoxBody extends PureComponent {
+  render() {
+    const { boxShown, children, header, hideable, onClose, position } = this.props
+
+    let Component
+    switch(position) {
+    case 'top':
+      Component = TopBox;
+      break;
+    case 'bottom':
+      Component = BottomBox;
+      break;
+    default:
+      throw new Error('Invalid position option');
+    }
+    return (
+      <BoxBodyWrapper show={ boxShown }>
+        <Component>
+          { hideable && (
+            <ScreenOnly>
+              <BoxHeaderButton onClick={ onClose }>x</BoxHeaderButton>
+            </ScreenOnly>
+          ) }
+          <BoxHeader>{ header }</BoxHeader>
+          <BoxContent>
+            { children }
+          </BoxContent>
+        </Component>
+      </BoxBodyWrapper>
+    );
+  }
+}
+class BoxExpander extends PureComponent {
+  render() {
+    const { boxShown, header, onClick, position } = this.props
+
+    let Component
+    switch(position) {
+    case 'top':
+      Component = TopBoxClickable;
+      break;
+    case 'bottom':
+      Component = BottomBoxClickable;
+      break;
+    default:
+      throw new Error('Invalid position option');
+    }
+    return (
+      <ScreenOnly style={{ display: boxShown ? 'none' : undefined }}>
+        {/* maxWidth is a hack for FF rendering/hydration issue */}
+        <Component onClick={ onClick } style={{ maxWidth: '25px' }}>
+          <BoxVerticalHeader>
+            { header } <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
+          </BoxVerticalHeader>
+        </Component>
+      </ScreenOnly>
+    );
+  }
+}
+
+
 class Box extends PureComponent {
   state = {
     show: null,
@@ -125,48 +195,35 @@ class Box extends PureComponent {
       this.setState({ hideable: false, show: _.isNil(show) ? true : show })
     }
   }
-  handleClick = () => {
-    this.setState({ show: !this.state.show });
+  handleExpandClick = () => {
+    this.setState({ show: true });
+  }
+  handleBodyClose = () => {
+    this.setState({ show: false });
   }
   render() {
     const { header, position, children } = this.props;
     const { hideable, show } = this.state;
 
-    let BoxComponent;
-    let ClickableBoxComponent;
-    switch(position) {
-    case 'top':
-      BoxComponent = TopBox;
-      ClickableBoxComponent = TopBoxClickable;
-      break;
-    case 'bottom':
-      BoxComponent = BottomBox;
-      ClickableBoxComponent = BottomBoxClickable;
-      break;
-    default:
-      throw new Error('Invalid position option');
-    }
-
-    if (hideable && !_.isNil(show) && !show) {
-      return (
-        <ClickableBoxComponent
-          onClick={ this.handleClick }
-        >
-          <BoxVerticalHeader>
-            { header } <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
-          </BoxVerticalHeader>
-        </ClickableBoxComponent>
-      )
-    }
     return (
-      <BoxComponent>
-        { hideable && <BoxHeaderButton onClick={ this.handleClick }>x</BoxHeaderButton> }
-        <BoxHeader>{ header }</BoxHeader>
-        <BoxContent>
+      <Fragment>
+        <BoxExpander
+          boxShown={ show }
+          header={ header }
+          position={ position }
+          onClick={ this.handleExpandClick }
+        />
+        <BoxBody
+          hideable={ hideable }
+          boxShown={ show }
+          header={ header }
+          position={ position }
+          onClose={ this.handleBodyClose }
+        >
           { children }
-        </BoxContent>
-      </BoxComponent>
-    )
+        </BoxBody>
+      </Fragment>
+    );
   }
 }
 

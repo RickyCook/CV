@@ -119,17 +119,11 @@ class BoxBody extends PureComponent {
   render() {
     const { boxShown, children, header, hideable, onClose, position } = this.props
 
-    let Component
-    switch(position) {
-    case 'top':
-      Component = TopBox;
-      break;
-    case 'bottom':
-      Component = BottomBox;
-      break;
-    default:
-      throw new Error('Invalid position option');
-    }
+    const Component = {
+      top: TopBox,
+      bottom: BottomBox,
+    }[position];
+
     return (
       <BoxBodyWrapper show={ boxShown }>
         <Component>
@@ -151,17 +145,11 @@ class BoxExpander extends PureComponent {
   render() {
     const { boxShown, header, onClick, position } = this.props
 
-    let Component
-    switch(position) {
-    case 'top':
-      Component = TopBoxClickable;
-      break;
-    case 'bottom':
-      Component = BottomBoxClickable;
-      break;
-    default:
-      throw new Error('Invalid position option');
-    }
+    const Component = {
+      top: TopBoxClickable,
+      bottom: BottomBoxClickable,
+    }[position];
+
     return (
       <ScreenOnly style={{ display: boxShown ? 'none' : undefined }}>
         {/* maxWidth is a hack for FF rendering/hydration issue */}

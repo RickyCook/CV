@@ -6,7 +6,7 @@ import { Button } from './Button';
 import { Header3, Header4, SubHeader } from './Header';
 import { ReferenceLink } from './Link';
 import { List, ListItem } from './List';
-import { ScreenOnly } from './Media';
+import { PrintOnly, ScreenOnly } from './Media';
 
 
 const JobShowButtonWrapper = styled.div`
@@ -53,7 +53,7 @@ class JobsList extends PureComponent {
               jobsRendered++;
             }
             if (!showMore && jobsRendered > MAX_JOBS_LIST) {
-              return null
+              return <div style={{ display: 'none' }}>{ child }</div>
             }
             return child
           }) }

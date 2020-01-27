@@ -77,6 +77,7 @@ export const SubHeader = styled.div`
   display: table;
 
   @media print {
-    padding-left: 0px;
+    padding: 0px;
+    margin-top: -${props => props.theme.spacer * 1.5}px;
   }
 `

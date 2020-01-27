@@ -106,7 +106,7 @@ class ExternalLink extends PureComponent {
 
 
 const BoxBodyWrapper = styled.div`
-  whitespace: nowrap;
+  white-space: nowrap;
   display: ${props => props.show ? 'block' : 'none'};
 
   @media print {

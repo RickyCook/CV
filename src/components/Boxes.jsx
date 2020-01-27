@@ -135,7 +135,7 @@ class BoxBody extends PureComponent {
         <Component>
           { hideable && (
             <ScreenOnly>
-              <BoxHeaderButton onClick={ onClose }>x</BoxHeaderButton>
+              <BoxHeaderButton onClick={ onClose }>&#x2573;</BoxHeaderButton>
             </ScreenOnly>
           ) }
           <BoxHeader>{ header }</BoxHeader>

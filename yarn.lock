@@ -1490,11 +1490,6 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@openfonts/major-mono-display_latin@^1.44.1":
-  version "1.44.1"
-  resolved "https://registry.yarnpkg.com/@openfonts/major-mono-display_latin/-/major-mono-display_latin-1.44.1.tgz#263d09b4ce9f3e7af88c5d593e1934202f78de70"
-  integrity sha512-2i0LCY2hU8ImhVIgqK+RferG5+QJKJd9PZQRKkxneB88BAAbymeGJPLmfzFFJWpxCTWsweDGl/R4/lzHY4PQJw==
-
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -10876,15 +10871,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-major-mono-display@^0.0.71:
-  version "0.0.71"
-  resolved "https://registry.yarnpkg.com/typeface-major-mono-display/-/typeface-major-mono-display-0.0.71.tgz#49eeed4fb5a924bb55959a697c93dbc6dfe71712"
-  integrity sha512-Ey4Zu402v7ajr5YtmZRffedE4GiHaVhcjukGhI6vw62uu9WM9HIG1rW+OjdvnVugDyZ0w9UftBlhMGvFCSsAKg==
-
 typeface-overpass-mono@^0.0.71:
   version "0.0.71"
   resolved "https://registry.yarnpkg.com/typeface-overpass-mono/-/typeface-overpass-mono-0.0.71.tgz#9bfeb52ab8a2f509b7c414699daeeec0fb246bee"
   integrity sha512-o6y2riRoa2U5MdzEJy83YcML+LySS6JPfcWuycxXroGND7WfN8Iwa+T83Fk0S96tdtDsuxQT5a6ETxg4CVh7nw==
+
+typeface-share-tech-mono@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-share-tech-mono/-/typeface-share-tech-mono-0.0.72.tgz#b3996dd774b1866f2bc94c82f098885d84842ef1"
+  integrity sha512-O1cMFKOLoR3M4q+urjkNGrxiYiPsUAYuKjLpt7OxxLNnEZnpR0xk7c0MB//19zhWv9nRCWVtzHo1sHPY2xEIdQ==
 
 uglify-js@3.4.x:
   version "3.4.10"

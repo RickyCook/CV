@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components/macro';
 
-import 'typeface-major-mono-display';
+import 'typeface-share-tech-mono';
 
 export const fontStyle = css`
-  font-family: 'Major Mono Display';
+  font-family: 'Share Tech Mono';
 `
 
 const sharedStyle = css`
@@ -14,7 +14,6 @@ const sharedStyle = css`
   padding: ${props => props.theme.spacer}px;
   margin: ${props => props.theme.spacer * 1.5}px 0px;
   display: inline-block;
-  text-transform: lowercase;
 
   @media print {
     padding: 0px;

@@ -359,7 +359,7 @@ export class EmploymentHistory extends PureComponent {
               </Fragment>,
 
               <Fragment>
-                Played a vital role redeveloping Infoxchange's legacy search application from the ground up using Docker, ElasticSearch and Django. Again, this lead to a talk (that at time of writing has yet to be given) at the <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">Melbourne Search user's group</ReferenceLink>
+                Played a vital role redeveloping Infoxchange's legacy search application from the ground up using Docker, ElasticSearch and Django. Again, this lead to a talk at the <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">Melbourne Search user's group</ReferenceLink>
               </Fragment>,
             ]}
             technologies={[

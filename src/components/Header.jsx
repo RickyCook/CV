@@ -30,7 +30,7 @@ export const HeaderChevronWrapper = styled(PrimaryHighlight)`
   width: ${props => props.theme.chevronWidth}px;
 
   @media print {
-    display: none;
+    color: ${props => props.theme.primary};
   }
 `
 const withWrapper = WrappedComponent => ({ children, ...props }) => (

@@ -17,6 +17,8 @@ jobs:
       run: yarn install
     - name: Build site
       run: yarn build
+    - name: Build PDF
+      run: node ./pdf.js
     - name: Deploy
       if: success()
       uses: crazy-max/ghaction-github-pages@v1

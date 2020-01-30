@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap && node ./pdf.js"
   },
   "browserslist": {
     "production": [

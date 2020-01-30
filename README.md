@@ -4,10 +4,10 @@ Over-engineered? Maybe, but I got to play with some tools, and explore some idea
 
 ## The build
 - React is the core that everything is built around
-- styled-components allows for easy print styling (things like links having different text in print to ensure that URLs can be followed without a click), and [theming](../blob/master/src/theme.js)
+- styled-components allows for easy print styling (things like links having different text in print to ensure that URLs can be followed without a click), and [theming](./src/theme.js)
 - Webpack, Babel, and other react-scripts tools are used to generate the final product
 - react-snap takes the output from webpack (the JS, CSS, and HTML) and generates a "pre-rendered" HTML page so that a non-interactive version works without JS needing to be enabled
-- puppeteer (Chromium via nodejs) [renders the static HTML into a PDF](../blob/master/pdf.js)
+- puppeteer (Chromium via nodejs) [renders the static HTML into a PDF](./pdf.js)
 - GitHub actions is used to build all the parts on push to master
 - GitHub pages is used to host the finished product
 

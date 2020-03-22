@@ -171,7 +171,7 @@ export class EmploymentHistory extends PureComponent {
               company="dutyof.care"
               title="Tech Lead"
               fromdate="September 2017"
-              todate="Current"
+              todate="March 2020"
               responsibilities={[
                 `Create the dutyof.care platform, associated infrastructure,
                 user experience, design many and build many product features`,

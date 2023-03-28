@@ -22,6 +22,6 @@ jobs:
       uses: crazy-max/ghaction-github-pages@v1
       with:
         build_dir: build
-        fqdn: thatpanda.com
+        fqdn: www.thatpanda.com
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}

@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteer = require('@cloudflare/puppeteer');
 
 
 const port = 3333;

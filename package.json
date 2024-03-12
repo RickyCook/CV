@@ -34,9 +34,9 @@
     "inlineCss": true
   },
   "devDependencies": {
+    "@cloudflare/puppeteer": "^0.0.5",
     "customize-cra": "^0.9.1",
     "express": "^4.17.1",
-    "puppeteer": "^2.0.0",
     "react-app-rewired": "^2.1.5",
     "react-snap": "^1.23.0"
   }

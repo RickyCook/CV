@@ -203,7 +203,7 @@ export class EmploymentHistory extends PureComponent {
               technologies={[
                 {
                   competence: 'great',
-                  items: ['AWS - General', 'Lambda(AWS)', 'AppSync(AWS)', 'API Gateway(AWS)', 'CDK(AWS)', 'Kubernetes/EKS(AWS)', 'CDK(AWS)', 'React', 'TypeScript', 'Python'],
+                  items: ['AWS - General', 'Lambda(AWS)', 'AppSync(AWS)', 'API Gateway(AWS)', 'CDK(AWS)', 'Kubernetes/EKS(AWS)', 'CDK(AWS)', 'GitHub Actions', 'React', 'TypeScript', 'Python'],
                 },
                 {
                   competence: 'good',

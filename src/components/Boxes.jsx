@@ -260,10 +260,9 @@ export class BuildInfo extends PureComponent {
           <div>
             [
               <ExternalLink href="https://reactjs.org/">React</ExternalLink>,
-              <ExternalLink href="https://github.com/stereobooster/react-snap">react-snap</ExternalLink>,
               <ExternalLink href="https://styled-components.com">styled-components</ExternalLink>,<br/>
-              <ExternalLink href="https://github.com/rickycook/CV/actions">GitHub Actions</ExternalLink>,
-              <ExternalLink href="https://pages.github.com">GitHub Pages</ExternalLink>
+              <ExternalLink href="https://workers.cloudflare.com/">CloudFlare Workers</ExternalLink>,
+              <ExternalLink href="https://pages.cloudflare.com/">CloudFlare Pages</ExternalLink>
             ]
           </div>
         </Box>

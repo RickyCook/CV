@@ -1,3 +1,6 @@
+console.error('PDF GENERATION DISABLED FOR NOW');
+process.exit(0);
+
 const fs = require('fs').promises;
 const path = require('path');
 

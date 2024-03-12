@@ -175,7 +175,7 @@ export class EmploymentHistory extends PureComponent {
               todate="Current"
               responsibilities={[
                 `Plan complex projects when clients are mostly aware of only
-                timelines, and high-level requirements`
+                timelines, and high-level requirements`,
 
                 `Lead project teams consisting of internal and client staff to
                 define Agile processes that help build a high functioning team`,

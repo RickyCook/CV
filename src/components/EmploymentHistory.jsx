@@ -159,6 +159,7 @@ export class EmploymentHistory extends PureComponent {
       <Fragment>
         <Header3 type="secondary">Highlights</Header3>
         <ul>
+          <li><em>Mantel Group</em>: Led many complex projects from migrating applications onto AWS infrastructure, to developing server and Blockchain applications from scratch</li>
           <li><em>dutyof.care</em>: Developed the dutyof.care platform, from scratch into a highly scalable, resilient, fast product</li>
           <li><em>Redbubble</em>: AWS and Docker SME on the team tasked with moving to containers, and AWS</li>
           <li><em>Odecee</em>: Helped implement a PCI-compliant, continuous-deployment environment on AWS</li>
@@ -166,6 +167,55 @@ export class EmploymentHistory extends PureComponent {
           <li><em>Infoxchange</em>: Before Docker, implemented a containerised build system using LXC, auFS, and Puppet. I then presented the solution in a talk at <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">Infracoders Melbourne</ReferenceLink></li>
         </ul>
         <JobsList>
+         <ListItem>
+            <Job
+              company="Mantel Group"
+              title="Lead Engineer"
+              fromdate="March 2020"
+              todate="Current"
+              responsibilities={[
+                `Plan complex projects when clients are mostly aware of only
+                timelines, and high-level requirements`
+
+                `Lead project teams consisting of internal and client staff to
+                define Agile processes that help build a high functioning team`,
+
+                `Solve complex technical problems as the come up - most projects
+                assigned to me were in new and emerging technologies without
+                many pre-existing solutions to problems`,
+              ]}
+              achievements={[
+                `Migrated a high-profile DNS registry (not registrar) from
+                on-premises infrastructure to AWS. The scope of the change made
+                this the largest of its kind in the world, which introduced many
+                unique AWS challenges`,
+
+                `Infrastructure engineer for a high profile government initiative
+                implemented using majority serverless technologies and supporting
+                a high volume of traffic. This project introduced some novel new
+                deployment and application patterns combining CDK, TypeScript,
+                and Rush`,
+
+                `Sole developer of a blockchain-based POC for a new startup that
+                used serverless technologies to ensure the business wasn't spending
+                money when it wasn't yet funded`,
+              ]}
+              technologies={[
+                {
+                  competence: 'great',
+                  items: ['AWS - General', 'Lambda(AWS)', 'AppSync(AWS)', 'API Gateway(AWS)', 'CDK(AWS)', 'Kubernetes/EKS(AWS)', 'CDK(AWS)', 'React', 'TypeScript', 'Python'],
+                },
+                {
+                  competence: 'good',
+                  items: ['Rush', 'DynamoDB(AWS)', 'EC2 Image Builder(AWS)', 'Cognito(AWS)', 'Ethereum'],
+                },
+                {
+                  competence: 'competent',
+                  items: ['Terraform', 'Marketplace(AWS)'],
+                },
+              ]}
+            />
+          </ListItem>
           <ListItem>
             <Job
               company="dutyof.care"

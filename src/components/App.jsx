@@ -37,7 +37,7 @@ export const App = props => (
     <Header2>Code Skills</Header2>
     <p>
       The core skillset that I've been using has been centred around Python,
-      node.js, and React. I've also had prior experience with many
+      TypeScript, and React. I've also had prior experience with many
       other languages, and can pick up new Frameworks, infrastructure, and
       languages with ease. Most of my experience lie with both software, and
       infrastructure back-end specifics of either monolithic, or microservice-based
@@ -54,8 +54,8 @@ export const App = props => (
     </p>
     <p>
       Other technologies I've had every-day use of include AWS (EC2, EKS, RDS,
-      CloudFormation, Lambda, etc), ElasticSearch, PostgreSQL/PostGIS, and
-      Kubernetes. I've also had experience with many more infrastructure
+      CloudFormation, CDK, Lambda and most serverless tools, etc), GitHub Actions,
+      and Kubernetes. I've also had experience with many more infrastructure
       automation and management tools not listed here; some of these are listed
       in my employment history below.
     </p>

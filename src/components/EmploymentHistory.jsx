@@ -172,7 +172,7 @@ export class EmploymentHistory extends PureComponent {
               company="Mantel Group"
               title="Lead Engineer"
               fromdate="March 2020"
-              todate="Current"
+              todate="April 2024"
               responsibilities={[
                 `Plan complex projects when clients are mostly aware of only
                 timelines, and high-level requirements`,

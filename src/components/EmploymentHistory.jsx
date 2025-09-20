@@ -159,6 +159,7 @@ export class EmploymentHistory extends PureComponent {
       <Fragment>
         <Header3 type="secondary">Highlights</Header3>
         <ul>
+          <li><em>Interchange</em>: Implemented an extremely secure and flexible AWS platform as the sole infrastructure engineer</li>
           <li><em>Mantel Group</em>: Led many complex projects from migrating applications onto AWS infrastructure, to developing server and Blockchain applications from scratch</li>
           <li><em>dutyof.care</em>: Developed the dutyof.care platform, from scratch into a highly scalable, resilient, fast product</li>
           <li><em>Redbubble</em>: AWS and Docker SME on the team tasked with moving to containers, and AWS</li>
@@ -167,6 +168,56 @@ export class EmploymentHistory extends PureComponent {
           <li><em>Infoxchange</em>: Before Docker, implemented a containerised build system using LXC, auFS, and Puppet. I then presented the solution in a talk at <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">Infracoders Melbourne</ReferenceLink></li>
         </ul>
         <JobsList>
+         <ListItem>
+            <Job
+              company="Interchange"
+              title="Platform Engineer"
+              fromdate="April 2024"
+              todate="April 2025"
+              responsibilities={[
+                `Plan and build infrastructure for an ever-evolving startup in
+                a complex fintech environment, ensuring security at every
+                step without impacting developer experience`,
+
+                `Implement many organizational services such as VPN, and
+                configure shared security infrastructure`,
+
+                `Help plan and implement policies and controls for PCI-DSS and
+                SOC2 compliance`,
+              ]}
+              achievements={[
+                `The headline achievement of this project is that in a single
+                year, by myself I was able to implement an AWS platform that
+                both the developers barely noticed, and was able to function
+                as a financial services business in the US`,
+
+                `All infrastructure was built in a manner that had clear
+                pathways for how to transition from financial services to
+                full-blown banking infrastructure with all the regulatory
+                and security issues that go along with that`,
+
+                `Using Tailscale, implemented a company-wide VPN with SSO
+                linked to GSuite, and security policies for access control to
+                protected services - both internal and the ability to
+                transparently route traffic to external services with IP
+                whitelisting, via a protected internet gateway`,
+              ]}
+              technologies={[
+                {
+                  competence: 'great',
+                  items: ['AWS - General', 'Kubernetes/EKS(AWS)', 'Terraform', 'Terragrunt', 'Argo CD', 'Argo Workflows', 'CDK(AWS)'],
+                },
+                {
+                  competence: 'good',
+                  items: ['Tailscale', 'Organizations(AWS)', 'Transit Gateway(AWS)', 'RAM(AWS)'],
+                },
+                {
+                  competence: 'competent',
+                  items: ['ChatBot(AWS)'],
+                },
+              ]}
+            />
+          </ListItem>
          <ListItem>
             <Job
               company="Mantel Group"

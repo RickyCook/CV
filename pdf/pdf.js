@@ -1,15 +1,12 @@
-console.error('PDF GENERATION DISABLED FOR NOW');
-process.exit(0);
-
 const fs = require('fs').promises;
 const path = require('path');
 
 const express = require('express');
-const puppeteer = require('@cloudflare/puppeteer');
+const puppeteer = require('puppeteer');
 
 
 const port = 3333;
-const buildPath = path.join(__dirname, 'build');
+const buildPath = path.join(__dirname, '..', 'build');
 const pdfPath = path.join(buildPath, 'RickyCookCV.pdf');
 
 
@@ -28,7 +25,7 @@ async function serve() {
 
 
 async function generate() {
-  const browser = await puppeteer.launch(env.MYBROWSER)
+  const browser = await puppeteer.launch()
   try {
     const page = await browser.newPage();
     await page.goto(

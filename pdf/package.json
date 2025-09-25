@@ -1,0 +1,11 @@
+{
+  "name": "cv-pdf",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node ./pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^2.0.0",
+    "react-snap": "^1.23.0"
+  }
+}

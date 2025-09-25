@@ -32,10 +32,8 @@
     "inlineCss": true
   },
   "devDependencies": {
-    "@cloudflare/puppeteer": "^0.0.5",
     "customize-cra": "^0.9.1",
     "express": "^4.17.1",
-    "react-app-rewired": "^2.1.5",
-    "react-snap": "github:RickyCook/react-snap"
+    "react-app-rewired": "^2.1.5"
   }
 }

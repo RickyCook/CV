@@ -1,7 +1,0 @@
-# Top-level configuration
-name = "browser-rendering"
-main = "pdf.js"
-node_compat = true
-workers_dev = true
-
-browser = { binding = "MYBROWSER" }

@@ -48,9 +48,9 @@ export class References extends PureComponent {
         <ListItem>
           <Reference
             name="Damien Whitten"
-            title="Senior DevOps Engineer"
-            company="dutyof.care"
-            description="Damien and I worked together to build dutyof.care"
+            title="CTO"
+            company="Interchange"
+            description="Damien and I worked together to build dutyof.care, and Interchange"
           />
         </ListItem>
         <ListItem>

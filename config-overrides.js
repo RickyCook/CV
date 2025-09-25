@@ -8,7 +8,7 @@ let contacts = null;
 try {
   contacts = require('./contacts');
 } catch(err) {
-  console.error('No contacts')
+  console.error(`No contacts due to ${err}`);
 }
 
 module.exports = {

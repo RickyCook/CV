@@ -17,11 +17,34 @@ jobs:
       run: yarn install
     - name: Build site
       run: yarn build
-    - name: Deploy
-      if: success()
-      uses: crazy-max/ghaction-github-pages@v1
+    - name: Create site artifact
+      uses: actions/upload-artifact@v4
       with:
-        build_dir: build
-        fqdn: www.thatpanda.com
-      env:
-        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+        name: github-pages
+        path: build/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+    # steps:
+    # - name: Deploy
+
+    #   uses: crazy-max/ghaction-github-pages@v1
+    #   with:
+    #     build_dir: build
+    #     fqdn: www.thatpanda.com
+    #   env:
+    #     GITHUB_PAT: ${{ secrets.GITHUB_PAT }}

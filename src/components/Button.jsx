@@ -1,8 +1,18 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
+export const shadowStyle = (props) => css`
+  box-shadow:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgb(0, 0, 0) ${props => props.theme.shadowDistance}px ${props => props.theme.shadowDistance}px 0px 0px;
+  border: ${props.theme.thickBorderWidth}px solid black;
+`
 
 const ButtonComponent = styled.a`
+  ${props => shadowStyle(props)}
   padding: ${props => props.theme.spacer * props.spaceMultiplier}px;
   color: ${props => props.theme.text};
   background-color: ${props => props.theme[(props.type || 'primary') + 'Bg']};

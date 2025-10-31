@@ -11,6 +11,7 @@ const sharedStyle = css`
   ${fontStyle}
   color: ${props => props.theme[(props.type || 'primary') + 'Text']};
   background-color: ${props => props.theme[(props.type || 'primary') + 'Bg']};
+  border-left: 10px solid ${props => props.theme[(props.type || 'primary') + 'LeftStripeBg']};
   padding: ${props => props.theme.spacer}px;
   margin: ${props => props.theme.spacer * 1.5}px 0px;
   display: inline-block;
@@ -63,6 +64,7 @@ export const Header3 = withWrapper(styled.h3`
 `)
 export const Header4 = withWrapper(styled.h4`
   ${sharedStyle}
+  border-left-color: rgba(255,255,255,0.1);
 `)
 
 export const SubHeader = styled.div`
@@ -74,6 +76,7 @@ export const SubHeader = styled.div`
   padding-bottom: ${props => props.theme.spacer}px;
   color: ${props => props.theme[(props.type || 'primary') + 'Text']};
   background-color: ${props => props.theme[(props.type || 'primary') + 'Bg']};
+  border-left: 10px solid ${props => props.theme[(props.type || 'primary') + 'LeftStripeBg']};
   display: table;
 
   @media print {

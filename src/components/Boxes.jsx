@@ -6,16 +6,18 @@ import { contacts } from '../contacts'
 import * as Header from './Header';
 import { ExternalLink } from './Link';
 import { PrintOnly, ScreenOnly } from './Media';
+import { shadowStyle } from './Button';
 
 
 const CONTACT_ME = contacts && contacts['Ricky Cook'];
 
 
 const BaseBox = styled.div`
+  ${props => shadowStyle(props)}
+
   background-color: rgba(20,20,25,0.8);
   position: fixed;
   right: 0px;
-  padding: ${props => props.theme.bodyMargin}px;
 
   @media print {
     position: absolute;
@@ -46,41 +48,55 @@ const BottomBoxClickable = styled(BottomBox)`
     background-color: ${props => props.theme.boxClickableBrightBg};
   }
 `
-const BoxHeader = styled.div`
+const BoxHeaderShared = styled.div`
   ${Header.fontStyle}
-  margin-bottom: ${props => props.theme.spacer}px;
 
   ${TopBoxClickable} &, ${BottomBoxClickable} & {
     color: ${props => props.theme.boxClickableText};
   }
 `
-const BoxHeaderButton = styled(BoxHeader)`
+const BoxHeaderWrapper = styled.div`
+  display: flex;
+  align-items: stretch;
+  height: ${props => props.theme.boxHeaderHeight}px;
   background-color: ${props => props.theme.primaryBg};
+  border-bottom: 3px solid black;
+`;
+const BoxHeader = styled(BoxHeaderShared)`
+  ${Header.fontStyle}
+  font-weight: bold;
+  background-color: ${props => props.theme.primaryBg};
+  color: ${props => props.theme[(props.type || 'primary') + 'Text']};
+  padding: ${props => props.theme.spacer + 1}px;
+  padding-left: ${props => props.theme.spacer}px;
+  flex-grow: 1;
+
+  ${TopBoxClickable} &, ${BottomBoxClickable} & {
+    color: ${props => props.theme.boxClickableText};
+  }
+`
+const BoxHeaderButton = styled(BoxHeaderShared)`
   color: ${props => props.theme.primaryText};
-  cursor: pointer;
-  float: right;
-  padding: ${props => props.theme.spacer}px;
-  margin-top: -${props => props.theme.spacer * 1.5}px;
-  margin-right: -${props => props.theme.spacer * 1.5}px;
+  text-shadow:
+    0 0 0 ${props => props.theme.primaryDark},
+    0 0 0 ${props => props.theme.primaryDark},
+    1px 1px 0 ${props => props.theme.primaryDark},
+    1px 1px 0 ${props => props.theme.primaryDark};
+  padding: ${props => props.theme.spacer + 1}px;
 
   &:hover {
     transition: background-color 0.1s linear;
     background-color: ${props => props.theme.primaryDark};
   }
 `
-const BoxVerticalHeader = styled(BoxHeader)`
+const BoxVerticalHeader = styled(BoxHeaderShared)`
   writing-mode: vertical-rl;
   text-orientation: sideways;
   padding-right: ${props => props.theme.spacer * 3}px;
-  background-color: ${props => props.theme.boxClickableBg};
-
-  ${TopBoxClickable}:hover &, ${BottomBoxClickable}:hover & {
-    transition: background-color 0.1s linear;
-    background-color: ${props => props.theme.boxClickableBrightBg};
-  }
 `
 const BoxContent = styled.div`
   font-size: 0.75em;
+  padding: ${props => props.theme.bodyMargin}px;
 `
 const BoxRow = styled.div`
   padding-top: ${props => props.theme.spacer * 0.75}px;
@@ -120,12 +136,14 @@ class BoxBody extends PureComponent {
     return (
       <BoxBodyWrapper show={ boxShown }>
         <Component>
-          { hideable && (
-            <ScreenOnly>
-              <BoxHeaderButton onClick={ onClose }>&#x2573;</BoxHeaderButton>
-            </ScreenOnly>
-          ) }
-          <BoxHeader>{ header }</BoxHeader>
+          <BoxHeaderWrapper>
+            <BoxHeader>{ header }</BoxHeader>
+            { hideable && (
+              <ScreenOnly>
+                <BoxHeaderButton onClick={ onClose }>x</BoxHeaderButton>
+              </ScreenOnly>
+            ) }
+          </BoxHeaderWrapper>
           <BoxContent>
             { children }
           </BoxContent>
@@ -146,10 +164,12 @@ class BoxExpander extends PureComponent {
     return (
       <ScreenOnly style={{ display: boxShown ? 'none' : undefined }}>
         {/* maxWidth is a hack for FF rendering/hydration issue */}
-        <Component onClick={ onClick } style={{ maxWidth: '25px' }}>
-          <BoxVerticalHeader>
-            { header } <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
-          </BoxVerticalHeader>
+        <Component onClick={ onClick } style={{ maxWidth: '53px' }}>
+          <BoxContent>
+            <BoxVerticalHeader>
+              { header } <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
+            </BoxVerticalHeader>
+          </BoxContent>
         </Component>
       </ScreenOnly>
     );

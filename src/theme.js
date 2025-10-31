@@ -7,9 +7,13 @@ export const theme = {
   primaryHighlight: 'white',
   secondary: '#003049',
   secondaryBright: '#104059',
+  secondaryDark: '#002039',
   background: '#212128',
   spacer: 10,
   chevronWidth: 15,
+  boxHeaderHeight: 50,
+  shadowDistance: 4,
+  thickBorderWidth: 3,
 
   competence: {
     great: '#00FF00',
@@ -24,9 +28,11 @@ theme.linkAlt = theme.primaryDark
 theme.primaryText = theme.background
 theme.primaryBg = theme.primary
 theme.primaryBrightBg = theme.primaryBright
+theme.primaryLeftStripeBg = theme.primaryDark
 theme.secondaryText = theme.text
 theme.secondaryBg = theme.secondary
 theme.secondaryBrightBg = theme.secondaryBright
+theme.secondaryLeftStripeBg = theme.secondaryDark
 theme.plainText = theme.text
 theme.plainBg = 'rgba(0,0,0,0)'
 theme.boxClickableText = theme.secondaryText

@@ -19,6 +19,7 @@ const sharedStyle = css`
   @media print {
     padding: 0px;
     margin: 0px;
+    border: none;
   }
 `
 export const PrimaryHighlight = styled.span`
@@ -82,5 +83,6 @@ export const SubHeader = styled.div`
   @media print {
     padding: 0px;
     margin-top: -${props => props.theme.spacer * 0.5}px;
+    border: none;
   }
 `

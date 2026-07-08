@@ -418,32 +418,29 @@ export class EmploymentHistory extends PureComponent {
               fromdate="September 2015"
               todate="March 2016"
               responsibilities={[
-                `As part of the delivery engineering team, it was
-                our job to "help teams deliver value faster",
-                carefully balancing new technology and process
-                with business demands to deliver features`,
+                `As part of the delivery engineering team, it was our job to
+                "help teams deliver value faster", carefully balancing new
+                technology and processwith business demands to deliver
+                features`,
 
-                `Acted as the team's AWS, Docker, and general
-                DevOps expert`,
+                `Acted as the team's AWS, Docker, and general DevOps expert`,
 
-                `Built a new Docker-based platform for very fast,
-                and safe deployment of microservices`,
+                `Built a new Docker-based platform for very fast, and safe
+                deployment of microservices`,
               ]}
               achievements={[
-                `Reduced deployment time from 40min on the old
-                platform, to less than 1min on the new`,
+                `Reduced deployment time from 40min on the old platform, to
+                less than 1min on the new`,
 
                 <Fragment>
                   Built many tools for comparison-based testing of refactored services, similar to <ReferenceLink href="https://github.com/github/scientist">GitHub scientist</ReferenceLink>
                 </Fragment>,
 
-                `Built an application platform that replaced
-                unhealthy nodes with zero downtime for
-                deployed services`,
+                `Built an application platform that replaced unhealthy nodes
+                with zero downtime for deployed services`,
 
-                `Implemented a centralized logging stack to help
-                diagnose issues across many disparate (including
-                legacy) systems`,
+                `Implemented a centralized logging stack to help diagnose
+                issues across many disparate (including legacy) systems`,
               ]}
               technologies={[
                 {

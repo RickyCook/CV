@@ -30,7 +30,7 @@ export const App = props => (
       community services can provide accurate and timely help, ensuring developers
       can iterate and deliver quickly, and helping organizations safeguard the
       vulnerable people in their care. All of these objectives have been achieved
-      through a interesting mixes of both new, and "boring" technology. I'd like
+      through interesting mixes of both new and "boring" technology. I'd like
       to continue working to multiply the effectiveness of causes that I believe in
       through my love of software.
     </ObjectivesWrapper>
@@ -38,7 +38,7 @@ export const App = props => (
     <p>
       The core skillset that I've been using has been centred around Python,
       TypeScript, and React. I've also had prior experience with many
-      other languages, and can pick up new Frameworks, infrastructure, and
+      other languages, and can pick up new frameworks, infrastructure, and
       languages with ease. Most of my experience lie with both software, and
       infrastructure back-end specifics of either monolithic, or microservice-based
       RESTful services. I am also a competent front-end developer, and have

@@ -231,7 +231,7 @@ export class EmploymentHistory extends PureComponent {
                 `Lead project teams consisting of internal and client staff to
                 define Agile processes that help build a high functioning team`,
 
-                `Solve complex technical problems as the come up - most projects
+                `Solve complex technical problems as they come up - most projects
                 assigned to me were in new and emerging technologies without
                 many pre-existing solutions to problems`,
               ]}
@@ -290,14 +290,14 @@ export class EmploymentHistory extends PureComponent {
               ]}
               achievements={[
                 `The dutyof.care platform produces results to the 99th percentile
-                of its validation requests, discluding latency of source
+                of its validation requests, excluding latency of source
                 databases, in less than 50ms`,
 
                 `Stability of the platform is excellent. Very few single points
                 of failure, and those that are singletons are not time-critical
                 services, allowing recovery without users seeing downtime`,
 
-                `Platforms security is excellent; Hashicorp Vault is used accross
+                `Platform security is excellent; Hashicorp Vault is used across
                 all services to ensure that secrets are time-limited where
                 possible, and are at the very least highly controlled, and
                 access is audited`
@@ -326,7 +326,7 @@ export class EmploymentHistory extends PureComponent {
               todate="September 2017"
               responsibilities={[
                 `Create, and manage both software, and infrastructure
-                soluctions for a variety of not-for-profit clients,
+                solutions for a variety of not-for-profit clients,
                 mostly with limited budgets`,
 
                 `Act as a technical resource to allow other consultants
@@ -334,7 +334,7 @@ export class EmploymentHistory extends PureComponent {
               ]}
               achievements={[
                 `Developed a prototype app for the Australian Red Cross
-                to aid in disaster relief  in developing countries. The
+                to aid in disaster relief in developing countries. The
                 end product showed how a light-weight app could sync an
                 inventory database when offline, and allow search and
                 update when out of connectivity`,
@@ -414,7 +414,7 @@ export class EmploymentHistory extends PureComponent {
               responsibilities={[
                 `Design, and implement CI, complex third party
                 applications, and a PCI/DSS platform able to
-                scale, heal, anddeploy consistently in AWS
+                scale, heal, and deploy consistently in AWS
                 architecture`,
 
                 `Guide the engineering direction of Python

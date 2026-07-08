@@ -33,7 +33,7 @@ export class Education extends PureComponent {
               `This course gave me a stable footing in systems design,
               usability design, Java programming, C and C++ programming,
               3D modeling and various other facets of the game
-              development profession. I left to pursue take a job offer
+              development profession. I left to pursue a job offer
               to work in professional software development.`
             }
           />

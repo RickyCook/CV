@@ -55,10 +55,10 @@ export class References extends PureComponent {
         </ListItem>
         <ListItem>
           <Reference
-            name="Liam Mann"
-            title="Senior Project Manager"
-            company="Blue Bike Solutions"
-            description="Liam managed some of my projects at Blue Bike Solutions"
+            name="Ross Williamson"
+            title="Lead Engineer"
+            company="Mantel Group"
+            description="Ross was my people guide at Mantel Group. He was privy to all feedback and performance reviews"
           />
         </ListItem>
       </List>

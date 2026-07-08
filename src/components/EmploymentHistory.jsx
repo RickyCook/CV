@@ -127,15 +127,15 @@ class Job extends Component {
     const { achievements, company, fromdate, responsibilities, technologies, title, todate } = this.props;
     return (
       <Fragment>
-        <Header3 type="secondary">{ title } <Highlight>@</Highlight> { company }</Header3>
+        <Header3 type="secondary">{title && <>{ title } <Highlight>@</Highlight> </>}{ company }</Header3>
         <SubHeader type="secondary">{ fromdate } - { todate }</SubHeader>
         <JobGrid>
-          <JobRow style={{ gridArea: 'responsibilities' }}>
+          {responsibilities && <JobRow style={{ gridArea: 'responsibilities' }}>
             <Header4 type="plain">Responsibilities</Header4>
             <ul>
               { responsibilities.map(text => <li key={ text }>{ text }</li>) }
             </ul>
-          </JobRow>
+          </JobRow>}
           <JobRow style={{ gridArea: 'achievements' }}>
             <Header4 type="plain">Achievements</Header4>
             <ul>
@@ -168,6 +168,58 @@ export class EmploymentHistory extends PureComponent {
           <li><em>Infoxchange</em>: Before Docker, implemented a containerised build system using LXC, auFS, and Puppet. I then presented the solution in a talk at <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">Infracoders Melbourne</ReferenceLink></li>
         </ul>
         <JobsList>
+         <ListItem>
+            <Job
+              company="Own Project"
+              fromdate="April 2025"
+              todate="Present"
+              achievements={[
+                `Built an extremely robust, self-healing data transformation
+                system that used minimal AI tokens to process large amounts
+                of often-changing data. For example, hourly ingest of event
+                data from various ticketing, venue, and other sources`,
+
+                `Significant savings in LLM token usage by implementing a
+                system whereby the LLM is used to construct deterministic
+                transformation pipelines, including heuristic understanding
+                of deduplication, understanding when robustness may be
+                improved, and health checking`,
+
+                `The system is able to self-heal when data sources change,
+                and adapt to new data sources automatically without invoking
+                the LLM for every new piece of data, and without requiring
+                human intervention`,
+
+                `The system is able to find not only information on sites
+                that humans had given it, but also by searching the web for
+                sources that it may have missed - including on sites that it
+                had never seen before and had no idea how to parse/process`,
+
+                `Utilized a "blackboard" pattern, which I hadn't seen in use
+                before but fits extremely well with the domain of arbitrary
+                data transformation and enrichment. I consider this an
+                achievement because it seems to be a very novel solution to
+                problems that many people face in such a well-understood
+                field. Due to this, implementation in a way that kept the
+                system simple and maintainable without the help of frameworks
+                was entirely due to my own efforts`
+              ]}
+              technologies={[
+                {
+                  competence: 'great',
+                  items: ['Typescript', 'Postgres', 'graphile-worker', 'Zod', 'OpenAI API', 'React', 'TailwindCSS', 'Kubernetes', 'Argo CD', 'Kargo'],
+                },
+                {
+                  competence: 'good',
+                  items: ['vitest', 'vite', 'llama-swap', 'llama.cpp', 'pgVector'],
+                },
+                {
+                  competence: 'competent',
+                  items: ['Bun'],
+                },
+              ]}
+            />
+          </ListItem>
          <ListItem>
             <Job
               company="Interchange"

@@ -413,6 +413,50 @@ export class EmploymentHistory extends PureComponent {
           </ListItem>
           <ListItem>
             <Job
+              company="spruce.sh"
+              title="Founder / DevOps Engineer"
+              fromdate="September 2015"
+              todate="April 2017"
+              responsibilities={[
+                `spruce.sh was a startup that I tried to build right as Docker
+                was becoming popular. It was a different kind of Docker-focused
+                CI platform, based on my work at Infoxchange`,
+
+                `Product development and strategy for "a new kind of CI"`,
+
+                `Software and infrastructure development and management`,
+              ]}
+              achievements={[
+                `Log latency was significantly faster than many other CI
+                platforms - not seconds, but near-realtime just like a regular
+                terminal`,
+
+                `First platform to integrate Docker-based support services for
+                CI such as Redis, PostgreSQL, etc - at the time most people
+                were testing with SQLite`,
+
+                `Focus on low-touch integration into existing pipelines: If
+                you had a Dockerfile, it was almost no effort to login to
+                GitHub, build, test, and push`,
+              ]}
+              technologies={[
+                {
+                  competence: 'great',
+                  items: ['Docker', 'Python', 'Flask', 'PostgreSQL', 'React'],
+                },
+                {
+                  competence: 'good',
+                  items: ['RabbitMQ', 'SQLAlchemy', 'Alembic', 'Immutable.js'],
+                },
+                {
+                  competence: 'competent',
+                  items: ['Puppet', 'Ansible', 'Rollbar'],
+                },
+              ]}
+            />
+          </ListItem>
+          <ListItem>
+            <Job
               company="Redbubble"
               title="DevOps Engineer - Contract"
               fromdate="September 2015"

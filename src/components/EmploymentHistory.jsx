@@ -414,7 +414,7 @@ export class EmploymentHistory extends PureComponent {
           <ListItem>
             <Job
               company="Redbubble"
-              title="DevOps Engineer"
+              title="DevOps Engineer - Contract"
               fromdate="September 2015"
               todate="March 2016"
               responsibilities={[

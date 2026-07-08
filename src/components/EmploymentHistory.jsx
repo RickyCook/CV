@@ -159,7 +159,7 @@ export class EmploymentHistory extends PureComponent {
       <Fragment>
         <Header3 type="secondary">Highlights</Header3>
         <ul>
-          <li><em>Interchange</em>: Implemented an extremely secure and flexible AWS platform as the sole infrastructure engineer</li>
+          <li><em>Interchange</em>: Implemented an extremely secure and flexible AWS platform for financial services as the sole infrastructure engineer</li>
           <li><em>Mantel Group</em>: Led many complex projects from migrating applications onto AWS infrastructure, to developing server and Blockchain applications from scratch</li>
           <li><em>dutyof.care</em>: Developed the dutyof.care platform, from scratch into a highly scalable, resilient, fast product</li>
           <li><em>Redbubble</em>: AWS and Docker SME on the team tasked with moving to containers, and AWS</li>

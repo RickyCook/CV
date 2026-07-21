@@ -16,9 +16,10 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "fmt": "biome format --write .",
+    "typecheck": "tsc --noEmit && npm --prefix pdf run typecheck",
     "build": "npm run build-html && npm run build-pdf",
     "build-html": "NODE_OPTIONS=--openssl-legacy-provider vite build",
-    "build-pdf": "cd pdf && node pdf.js"
+    "build-pdf": "cd pdf && npm run build"
   },
   "browserslist": {
     "production": [
@@ -38,8 +39,12 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.3",
     "@swc/plugin-styled-components": "^12.15.0",
+    "@types/lodash": "^4.17.24",
     "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.1",
+    "typescript": "^5.9.3",
     "vite": "^8.1.4"
   }
 }

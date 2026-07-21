@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM, { hydrateRoot } from 'react-dom/client';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { App } from './components/App';
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: lighter;
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text};
-    margin: ${(props) => props.theme.bodyMarginPx};
+    margin: ${(props) => props.theme.bodyMargin}px;
     line-height: 1.75em;
 
     @media (min-width: ${(props) => props.theme.bodyWidth + props.theme.bodyMargin}px) {
@@ -45,11 +45,13 @@ const AppWrapper = () => (
 
 const render = () => {
   const rootElement = document.getElementById('root');
-  const root = ReactDOM.createRoot(rootElement);
+  if (!rootElement) {
+    throw new Error('No root element found');
+  }
   if (rootElement.hasChildNodes()) {
-    root.hydrate(<AppWrapper />);
+    hydrateRoot(rootElement, <AppWrapper />);
   } else {
-    root.render(<AppWrapper />);
+    ReactDOM.createRoot(rootElement).render(<AppWrapper />);
   }
 };
 

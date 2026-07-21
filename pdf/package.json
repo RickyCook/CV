@@ -2,10 +2,17 @@
   "name": "cv-pdf",
   "version": "0.1.0",
   "scripts": {
-    "build": "node ./pdf.js"
+    "build": "tsx ./pdf.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "puppeteer": "^2.0.0",
+    "express": "^4.22.2",
+    "puppeteer": "^25.3.0",
     "react-snap": "^1.23.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.25",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3"
   }
 }

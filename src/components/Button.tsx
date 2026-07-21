@@ -1,17 +1,26 @@
 import styled, { css } from 'styled-components';
 
-export const shadowStyle = (props) => css`
+export const shadowStyle = css`
   box-shadow:
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0) 0px 0px 0px 0px,
     rgb(0, 0, 0) ${(props) => props.theme.shadowDistance}px ${(props) => props.theme.shadowDistance}px 0px 0px;
-  border: ${props.theme.thickBorderWidth}px solid black;
+  border: ${(props) => props.theme.thickBorderWidth}px solid black;
 `;
 
-const ButtonComponent = styled.a`
-  ${(props) => shadowStyle(props)}
+const BUTTON_SIZES = {
+  small: 0.5,
+  medium: 1,
+  large: 2,
+} as const;
+
+type ButtonSize = keyof typeof BUTTON_SIZES;
+type ButtonType = 'primary' | 'secondary';
+
+const ButtonComponent = styled.a<{ spaceMultiplier: number; type: ButtonType; block: boolean }>`
+  ${shadowStyle}
   padding: ${(props) => props.theme.spacer * props.spaceMultiplier}px;
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
@@ -28,14 +37,17 @@ const ButtonComponent = styled.a`
   }
 `;
 
-const BUTTON_SIZES = {
-  small: 0.5,
-  medium: 1,
-  large: 2,
-};
-
-export const Button = ({ onClick, size = 'medium', type = 'primary', block = false, ...props }) => {
-  const handleClick = (ev) => {
+export const Button = ({
+  onClick,
+  size = 'medium',
+  type = 'primary',
+  block = false,
+  ...props
+}: { onClick?: () => void; size?: ButtonSize; type?: ButtonType; block?: boolean } & Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  'type' | 'onClick'
+>) => {
+  const handleClick = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     ev.preventDefault();
     if (onClick) {
       onClick();
@@ -43,7 +55,7 @@ export const Button = ({ onClick, size = 'medium', type = 'primary', block = fal
   };
   return (
     <ButtonComponent
-      href
+      href=""
       onClick={handleClick}
       spaceMultiplier={BUTTON_SIZES[size]}
       type={type}

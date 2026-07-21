@@ -1,7 +1,23 @@
 import { Header3, SubHeader } from './Header';
 import { List, ListItem } from './List';
 
-const EducationItem = ({ description, institution, title, complete, fromdate, todate }) => (
+interface EducationItemProps {
+  description: string;
+  institution: string;
+  title: string;
+  complete: boolean;
+  fromdate: string;
+  todate: string;
+}
+
+const EducationItem = ({
+  description,
+  institution,
+  title,
+  complete,
+  fromdate,
+  todate,
+}: EducationItemProps) => (
   <>
     <Header3 type="secondary">
       {institution}, {fromdate} - {todate}

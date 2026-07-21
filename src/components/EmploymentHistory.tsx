@@ -14,9 +14,15 @@ const JobShowButtonWrapper = styled.div`
 
 const MAX_JOBS_LIST = 3;
 
-const JobsList = ({ children }) => {
+const JobsList = ({ children }: { children?: React.ReactNode }) => {
   const [showMore, setShowMore] = useState(false);
-  const renderShowButton = ({ showMore: showMoreProp, text }) => (
+  const renderShowButton = ({
+    showMore: showMoreProp,
+    text,
+  }: {
+    showMore: boolean;
+    text: string;
+  }) => (
     <JobShowButtonWrapper>
       <Button block={true} type="secondary" onClick={() => setShowMore(showMoreProp)}>
         {text}
@@ -59,15 +65,25 @@ const JobsList = ({ children }) => {
 const Highlight = styled.span`
   color: ${(props) => props.theme.primary};
 `;
-const CompetenceWrapper = styled.span`
+const CompetenceWrapper = styled.span<{ name: 'great' | 'good' | 'competent' }>`
   color: ${(props) => props.theme.competence[props.name]}
 `;
 
-const Competence = ({ children, name }) => (
-  <CompetenceWrapper name={name}>{children ? children : _.startCase(name)}</CompetenceWrapper>
-);
+const Competence = ({
+  children,
+  name,
+}: {
+  children?: React.ReactNode;
+  name: 'great' | 'good' | 'competent';
+}) => <CompetenceWrapper name={name}>{children ? children : _.startCase(name)}</CompetenceWrapper>;
 
-const TechnologyRow = ({ competence, items }) => (
+const TechnologyRow = ({
+  competence,
+  items,
+}: {
+  competence: 'great' | 'good' | 'competent';
+  items: string[];
+}) => (
   <div>
     <Competence name={competence} />
     :&nbsp;
@@ -100,6 +116,16 @@ const TechnologiesJobRow = styled(JobRow)`
   }
 `;
 
+interface JobProps {
+  achievements: React.ReactNode[];
+  company: string;
+  fromdate: string;
+  responsibilities?: string[];
+  technologies: { competence: 'great' | 'good' | 'competent'; items: string[] }[];
+  title?: string;
+  todate: string;
+}
+
 const Job = ({
   achievements,
   company,
@@ -108,7 +134,7 @@ const Job = ({
   technologies,
   title,
   todate,
-}) => (
+}: JobProps) => (
   <>
     <Header3 type="secondary">
       {title && (
@@ -135,8 +161,9 @@ const Job = ({
       <JobRow style={{ gridArea: 'achievements' }}>
         <Header4 type="plain">Achievements</Header4>
         <ul>
-          {achievements.map((text) => (
-            <li key={text}>{text}</li>
+          {achievements.map((text, index) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: achievements are static content and never reordered
+            <li key={index}>{text}</li>
           ))}
         </ul>
       </JobRow>

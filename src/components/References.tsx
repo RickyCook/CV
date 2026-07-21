@@ -15,8 +15,18 @@ const ReferenceLabel = styled.span`
   display: inline-block;
 `;
 
-const Reference = ({ name, title, company, description }) => {
-  const renderContact = (field) => {
+const Reference = ({
+  name,
+  title,
+  company,
+  description,
+}: {
+  name: string;
+  title: string;
+  company: string;
+  description: string;
+}) => {
+  const renderContact = (field: 'phone' | 'email') => {
     const contact = contacts?.[name];
     if (contact && !contact[field]) {
       return null;

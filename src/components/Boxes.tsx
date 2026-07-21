@@ -10,7 +10,7 @@ import { PrintOnly, ScreenOnly } from './Media';
 const CONTACT_ME = contacts?.['Ricky Cook'];
 
 const BaseBox = styled.div`
-  ${(props) => shadowStyle(props)}
+  ${shadowStyle}
 
   background-color: rgba(20,20,25,0.8);
   position: fixed;
@@ -59,7 +59,8 @@ const BoxHeaderWrapper = styled.div`
   background-color: ${(props) => props.theme.primaryBg};
   border-bottom: 3px solid black;
 `;
-const BoxHeader = styled(BoxHeaderShared)`
+type BoxHeaderType = 'primary' | 'secondary' | 'plain';
+const BoxHeader = styled(BoxHeaderShared)<{ type?: BoxHeaderType }>`
   ${Header.fontStyle}
   font-weight: bold;
   background-color: ${(props) => props.theme.primaryBg};
@@ -110,7 +111,7 @@ const Highlight = styled.span`
   color: ${(props) => props.theme.text};
 `;
 
-const BoxBodyWrapper = styled.div`
+const BoxBodyWrapper = styled.div<{ show: boolean | null }>`
   white-space: nowrap;
   display: ${(props) => (props.show ? 'block' : 'none')};
 
@@ -119,11 +120,32 @@ const BoxBodyWrapper = styled.div`
   }
 `;
 
-const BoxBody = ({ boxShown, children, header, hideable, onClose, position }) => {
-  const Component = {
-    top: TopBox,
-    bottom: BottomBox,
-  }[position];
+type BoxPosition = 'top' | 'bottom';
+const components = {
+  top: TopBox,
+  bottom: BottomBox,
+} as const;
+const clickableComponents = {
+  top: TopBoxClickable,
+  bottom: BottomBoxClickable,
+} as const;
+
+const BoxBody = ({
+  boxShown,
+  children,
+  header,
+  hideable,
+  onClose,
+  position,
+}: {
+  boxShown: boolean | null;
+  children: React.ReactNode;
+  header: React.ReactNode;
+  hideable: boolean;
+  onClose: () => void;
+  position: BoxPosition;
+}) => {
+  const Component = components[position];
 
   return (
     <BoxBodyWrapper show={boxShown}>
@@ -141,11 +163,18 @@ const BoxBody = ({ boxShown, children, header, hideable, onClose, position }) =>
     </BoxBodyWrapper>
   );
 };
-const BoxExpander = ({ boxShown, header, onClick, position }) => {
-  const Component = {
-    top: TopBoxClickable,
-    bottom: BottomBoxClickable,
-  }[position];
+const BoxExpander = ({
+  boxShown,
+  header,
+  onClick,
+  position,
+}: {
+  boxShown: boolean | null;
+  header: React.ReactNode;
+  onClick: () => void;
+  position: BoxPosition;
+}) => {
+  const Component = clickableComponents[position];
 
   return (
     <ScreenOnly style={{ display: boxShown ? 'none' : undefined }}>
@@ -161,8 +190,16 @@ const BoxExpander = ({ boxShown, header, onClick, position }) => {
   );
 };
 
-const Box = ({ header, position, children }) => {
-  const [show, setShow] = useState(null);
+const Box = ({
+  header,
+  position,
+  children,
+}: {
+  header: React.ReactNode;
+  position: BoxPosition;
+  children: React.ReactNode;
+}) => {
+  const [show, setShow] = useState<boolean | null>(null);
   const [hideable, setHideable] = useState(false);
 
   const handleResize = useCallback(() => {

@@ -8,9 +8,9 @@ export const fontStyle = css`
 
 const sharedStyle = css`
   ${fontStyle}
-  color: ${(props) => props.theme[`${props.type || 'primary'}Text`]};
-  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
-  border-left: 10px solid ${(props) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
+  color: ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}Text`]};
+  background-color: ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}Bg`]};
+  border-left: 10px solid ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
   padding: ${(props) => props.theme.spacer}px;
   margin: ${(props) => props.theme.spacer * 1.5}px 0px;
   display: inline-block;
@@ -33,24 +33,28 @@ export const HeaderChevronWrapper = styled(PrimaryHighlight)`
     color: ${(props) => props.theme.primary};
   }
 `;
+interface HeaderProps {
+  children?: React.ReactNode;
+  type?: 'primary' | 'secondary' | 'plain';
+  trail?: boolean;
+}
 const withWrapper =
-  (WrappedComponent) =>
-  ({ children, ...props }) => (
+  (WrappedComponent: React.ComponentType<HeaderProps>) => (props: HeaderProps) => (
     <div>
       <WrappedComponent {...props}>
         <HeaderChevronWrapper>&gt;</HeaderChevronWrapper>
-        {children}
+        {props.children}
         {props.trail && <HeaderChevronWrapper>_</HeaderChevronWrapper>}
       </WrappedComponent>
     </div>
   );
 
-export const Header1 = withWrapper(styled.h1`
+export const Header1 = withWrapper(styled.h1<HeaderProps>`
   ${sharedStyle}
 `);
 export const BodyHeader = styled(Header1)`
-  margin-top: ${(props) => `-${props.theme.bodyMargin}`}px;
-  margin-left: ${(props) => `-${props.theme.bodyMargin}`}px;
+  margin-top: ${(props) => `-${props.theme.bodyMargin}px`};
+  margin-left: ${(props) => `-${props.theme.bodyMargin}px`};
   padding: ${(props) => props.theme.spacer + props.theme.bodyMargin}px;
 
   @media print {
@@ -58,18 +62,18 @@ export const BodyHeader = styled(Header1)`
     margin: 0px;
   }
 `;
-export const Header2 = withWrapper(styled.h2`
+export const Header2 = withWrapper(styled.h2<HeaderProps>`
   ${sharedStyle}
 `);
-export const Header3 = withWrapper(styled.h3`
+export const Header3 = withWrapper(styled.h3<HeaderProps>`
   ${sharedStyle}
 `);
-export const Header4 = withWrapper(styled.h4`
+export const Header4 = withWrapper(styled.h4<HeaderProps>`
   ${sharedStyle}
   border-left-color: rgba(255,255,255,0.1);
 `);
 
-export const SubHeader = styled.div`
+export const SubHeader = styled.div<HeaderProps>`
   margin-top: -${(props) => props.theme.spacer * 3.5}px;
   margin-bottom: ${(props) => props.theme.spacer * 1.5}px;
   padding-left: ${(props) => (props.theme.spacer * 2) + props.theme.chevronWidth}px;

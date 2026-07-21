@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
@@ -37,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `;
-const AppWrapper = (props) => (
+const AppWrapper = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <App />

@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import { PureComponent } from 'react';
 import styled from 'styled-components';
 
 import { contacts } from '../contacts';
@@ -18,7 +18,7 @@ const ReferenceLabel = styled.span`
 
 class Reference extends PureComponent {
   renderContact = (field) => {
-    const contact = contacts && contacts[this.props.name];
+    const contact = contacts?.[this.props.name];
     if (contact && !contact[field]) {
       return null;
     }
@@ -31,7 +31,7 @@ class Reference extends PureComponent {
   render() {
     const { name, title, company, description } = this.props;
     return (
-      <Fragment>
+      <>
         <Header3 type="secondary">{name}</Header3>
         <SubHeader type="secondary">
           {title} <Highlight>@</Highlight> {company}
@@ -39,7 +39,7 @@ class Reference extends PureComponent {
         <p>{description}</p>
         {this.renderContact('phone')}
         {this.renderContact('email')}
-      </Fragment>
+      </>
     );
   }
 }

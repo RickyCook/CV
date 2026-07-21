@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 import 'typeface-share-tech-mono';
@@ -9,9 +8,9 @@ export const fontStyle = css`
 
 const sharedStyle = css`
   ${fontStyle}
-  color: ${(props) => props.theme[(props.type || 'primary') + 'Text']};
-  background-color: ${(props) => props.theme[(props.type || 'primary') + 'Bg']};
-  border-left: 10px solid ${(props) => props.theme[(props.type || 'primary') + 'LeftStripeBg']};
+  color: ${(props) => props.theme[`${props.type || 'primary'}Text`]};
+  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
+  border-left: 10px solid ${(props) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
   padding: ${(props) => props.theme.spacer}px;
   margin: ${(props) => props.theme.spacer * 1.5}px 0px;
   display: inline-block;
@@ -50,8 +49,8 @@ export const Header1 = withWrapper(styled.h1`
   ${sharedStyle}
 `);
 export const BodyHeader = styled(Header1)`
-  margin-top: ${(props) => '-' + props.theme.bodyMargin}px;
-  margin-left: ${(props) => '-' + props.theme.bodyMargin}px;
+  margin-top: ${(props) => `-${props.theme.bodyMargin}`}px;
+  margin-left: ${(props) => `-${props.theme.bodyMargin}`}px;
   padding: ${(props) => props.theme.spacer + props.theme.bodyMargin}px;
 
   @media print {
@@ -77,9 +76,9 @@ export const SubHeader = styled.div`
   padding-right: ${(props) => props.theme.spacer * 2.5}px;
   padding-top: ${(props) => props.theme.spacer}px;
   padding-bottom: ${(props) => props.theme.spacer}px;
-  color: ${(props) => props.theme[(props.type || 'primary') + 'Text']};
-  background-color: ${(props) => props.theme[(props.type || 'primary') + 'Bg']};
-  border-left: 10px solid ${(props) => props.theme[(props.type || 'primary') + 'LeftStripeBg']};
+  color: ${(props) => props.theme[`${props.type || 'primary'}Text`]};
+  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
+  border-left: 10px solid ${(props) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
   display: table;
 
   @media print {

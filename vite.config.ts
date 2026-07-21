@@ -5,6 +5,7 @@ const getContacts = () => {
   try {
     return require('./contacts');
   } catch (err) {
+    // biome-ignore lint/suspicious/noConsole: true error message
     console.error(`No contacts due to ${err}`);
   }
   return null;

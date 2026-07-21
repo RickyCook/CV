@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 export const shadowStyle = (props) => css`
@@ -15,7 +15,7 @@ const ButtonComponent = styled.a`
   ${(props) => shadowStyle(props)}
   padding: ${(props) => props.theme.spacer * props.spaceMultiplier}px;
   color: ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme[(props.type || 'primary') + 'Bg']};
+  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
   text-align: center;
   display: ${(props) => (props.block ? 'block' : 'inline')};
   cursor: pointer;
@@ -24,7 +24,7 @@ const ButtonComponent = styled.a`
 
   &:hover {
     transition: background-color 0.1s linear;
-    background-color: ${(props) => props.theme[(props.type || 'primary') + 'BrightBg']};
+    background-color: ${(props) => props.theme[`${props.type || 'primary'}BrightBg`]};
     color: ${(props) => props.theme.text};
   }
 `;

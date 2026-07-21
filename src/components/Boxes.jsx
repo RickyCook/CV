@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Fragment, PureComponent } from 'react';
+import { PureComponent } from 'react';
 import styled from 'styled-components';
 
 import { contacts } from '../contacts';
@@ -8,7 +8,7 @@ import * as Header from './Header';
 import { ExternalLink } from './Link';
 import { PrintOnly, ScreenOnly } from './Media';
 
-const CONTACT_ME = contacts && contacts['Ricky Cook'];
+const CONTACT_ME = contacts?.['Ricky Cook'];
 
 const BaseBox = styled.div`
   ${(props) => shadowStyle(props)}
@@ -64,7 +64,7 @@ const BoxHeader = styled(BoxHeaderShared)`
   ${Header.fontStyle}
   font-weight: bold;
   background-color: ${(props) => props.theme.primaryBg};
-  color: ${(props) => props.theme[(props.type || 'primary') + 'Text']};
+  color: ${(props) => props.theme[`${props.type || 'primary'}Text`]};
   padding: ${(props) => props.theme.spacer + 1}px;
   padding-left: ${(props) => props.theme.spacer}px;
   flex-grow: 1;
@@ -201,7 +201,7 @@ class Box extends PureComponent {
     const { hideable, show } = this.state;
 
     return (
-      <Fragment>
+      <>
         <BoxExpander
           boxShown={show}
           header={header}
@@ -217,7 +217,7 @@ class Box extends PureComponent {
         >
           {children}
         </BoxBody>
-      </Fragment>
+      </>
     );
   }
 }
@@ -234,11 +234,11 @@ export class Details extends PureComponent {
       <Box header="Details" position="top">
         <div>
           <BoxLabel>phone</BoxLabel>
-          {(CONTACT_ME && CONTACT_ME.phone) || 'Contact for info'}
+          {CONTACT_ME?.phone || 'Contact for info'}
         </div>
         <div>
           <BoxLabel>email</BoxLabel>
-          {CONTACT_ME && CONTACT_ME.email ? (
+          {CONTACT_ME?.email ? (
             <ExternalLink href={`mailto:${CONTACT_ME.email}`}>{CONTACT_ME.email}</ExternalLink>
           ) : (
             'Contact for info'

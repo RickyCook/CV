@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component, Fragment, PureComponent } from 'react';
+import React, { Component, PureComponent, useState } from 'react';
 import styled from 'styled-components';
 
 import { Button } from './Button';
@@ -14,63 +14,47 @@ const JobShowButtonWrapper = styled.div`
 
 const MAX_JOBS_LIST = 3;
 
-class JobsList extends PureComponent {
-  state = {
-    showMore: false,
-  };
-  renderShowButton = ({ showMore, text }) => {
-    return (
-      <JobShowButtonWrapper>
-        <Button
-          block={true}
-          type="secondary"
-          onClick={() => {
-            this.setState({ showMore });
-          }}
-        >
-          {text}
-        </Button>
-      </JobShowButtonWrapper>
-    );
-  };
-  renderShowMore = () => {
-    return this.renderShowButton({ showMore: true, text: 'Show more' });
-  };
-  renderShowLess = () => {
-    return this.renderShowButton({ showMore: false, text: 'Show less' });
-  };
-  render() {
-    const { showMore } = this.state;
-    let jobsRendered = 0;
-    return (
-      <Fragment>
-        <List>
-          {React.Children.map(this.props.children, (child) => {
-            if (React.isValidElement(child)) {
-              jobsRendered++;
-            }
-            if (!showMore && jobsRendered > MAX_JOBS_LIST) {
-              return <div style={{ display: 'none' }}>{child}</div>;
-            }
-            return child;
-          })}
-        </List>
-        {jobsRendered > MAX_JOBS_LIST && (
-          <Fragment>
-            <ScreenOnly>{showMore ? this.renderShowLess() : this.renderShowMore()}</ScreenOnly>
-            {!showMore && (
-              <PrintOnly>
-                <p>
-                  <em>More employment history available on request, or at thatpanda.com</em>
-                </p>
-              </PrintOnly>
-            )}
-          </Fragment>
-        )}
-      </Fragment>
-    );
-  }
-}
+const JobsList = ({ children }) => {
+  const [showMore, setShowMore] = useState(false);
+  const renderShowButton = ({ showMore: showMoreProp, text }) => (
+    <JobShowButtonWrapper>
+      <Button block={true} type="secondary" onClick={() => setShowMore(showMoreProp)}>
+        {text}
+      </Button>
+    </JobShowButtonWrapper>
+  );
+  const renderShowMore = () => renderShowButton({ showMore: true, text: 'Show more' });
+  const renderShowLess = () => renderShowButton({ showMore: false, text: 'Show less' });
+
+  let jobsRendered = 0;
+  return (
+    <>
+      <List>
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child)) {
+            jobsRendered++;
+          }
+          if (!showMore && jobsRendered > MAX_JOBS_LIST) {
+            return <div style={{ display: 'none' }}>{child}</div>;
+          }
+          return child;
+        })}
+      </List>
+      {jobsRendered > MAX_JOBS_LIST && (
+        <>
+          <ScreenOnly>{showMore ? renderShowLess() : renderShowMore()}</ScreenOnly>
+          {!showMore && (
+            <PrintOnly>
+              <p>
+                <em>More employment history available on request, or at thatpanda.com</em>
+              </p>
+            </PrintOnly>
+          )}
+        </>
+      )}
+    </>
+  );
+};
 
 const Highlight = styled.span`
   color: ${(props) => props.theme.primary};
@@ -79,27 +63,17 @@ const CompetenceWrapper = styled.span`
   color: ${(props) => props.theme.competence[props.name]}
 `;
 
-class Competence extends PureComponent {
-  render() {
-    const { children, name } = this.props;
-    return (
-      <CompetenceWrapper name={name}>{children ? children : _.startCase(name)}</CompetenceWrapper>
-    );
-  }
-}
+const Competence = ({ children, name }) => (
+  <CompetenceWrapper name={name}>{children ? children : _.startCase(name)}</CompetenceWrapper>
+);
 
-class TechnologyRow extends PureComponent {
-  render() {
-    const { competence, items } = this.props;
-    return (
-      <div>
-        <Competence name={competence} />
-        :&nbsp;
-        {items.join(', ')}
-      </div>
-    );
-  }
-}
+const TechnologyRow = ({ competence, items }) => (
+  <div>
+    <Competence name={competence} />
+    :&nbsp;
+    {items.join(', ')}
+  </div>
+);
 
 const JobGrid = styled.div`
   display: grid;
@@ -126,58 +100,52 @@ const TechnologiesJobRow = styled(JobRow)`
   }
 `;
 
-class Job extends Component {
-  render() {
-    const { achievements, company, fromdate, responsibilities, technologies, title, todate } =
-      this.props;
-    return (
-      <Fragment>
-        <Header3 type="secondary">
-          {title && (
-            <>
-              {title} <Highlight>@</Highlight>{' '}
-            </>
-          )}
-          {company}
-        </Header3>
-        <SubHeader type="secondary">
-          {fromdate} - {todate}
-        </SubHeader>
-        <JobGrid>
-          {responsibilities && (
-            <JobRow style={{ gridArea: 'responsibilities' }}>
-              <Header4 type="plain">Responsibilities</Header4>
-              <ul>
-                {responsibilities.map((text) => (
-                  <li key={text}>{text}</li>
-                ))}
-              </ul>
-            </JobRow>
-          )}
-          <JobRow style={{ gridArea: 'achievements' }}>
-            <Header4 type="plain">Achievements</Header4>
-            <ul>
-              {achievements.map((text) => (
-                <li key={text}>{text}</li>
-              ))}
-            </ul>
-          </JobRow>
-          <TechnologiesJobRow style={{ gridArea: 'technologies' }}>
-            <Header4 type="plain">Technologies</Header4>
-            {technologies.map((row) => (
-              <TechnologyRow key={row.competence} {...row} />
+const Job = ({ achievements, company, fromdate, responsibilities, technologies, title, todate }) => (
+  <>
+    <Header3 type="secondary">
+      {title && (
+        <>
+          {title} <Highlight>@</Highlight>{' '}
+        </>
+      )}
+      {company}
+    </Header3>
+    <SubHeader type="secondary">
+      {fromdate} - {todate}
+    </SubHeader>
+    <JobGrid>
+      {responsibilities && (
+        <JobRow style={{ gridArea: 'responsibilities' }}>
+          <Header4 type="plain">Responsibilities</Header4>
+          <ul>
+            {responsibilities.map((text) => (
+              <li key={text}>{text}</li>
             ))}
-          </TechnologiesJobRow>
-        </JobGrid>
-      </Fragment>
-    );
-  }
-}
+          </ul>
+        </JobRow>
+      )}
+      <JobRow style={{ gridArea: 'achievements' }}>
+        <Header4 type="plain">Achievements</Header4>
+        <ul>
+          {achievements.map((text) => (
+            <li key={text}>{text}</li>
+          ))}
+        </ul>
+      </JobRow>
+      <TechnologiesJobRow style={{ gridArea: 'technologies' }}>
+        <Header4 type="plain">Technologies</Header4>
+        {technologies.map((row) => (
+          <TechnologyRow key={row.competence} {...row} />
+        ))}
+      </TechnologiesJobRow>
+    </JobGrid>
+  </>
+);
 
 export class EmploymentHistory extends PureComponent {
   render() {
     return (
-      <Fragment>
+      <>
         <Header3 type="secondary">Highlights</Header3>
         <ul>
           <li>
@@ -564,12 +532,12 @@ export class EmploymentHistory extends PureComponent {
                 `Reduced deployment time from 40min on the old platform, to
                 less than 1min on the new`,
 
-                <Fragment>
+                <>
                   Built many tools for comparison-based testing of refactored services, similar to{' '}
                   <ReferenceLink href="https://github.com/github/scientist">
                     GitHub scientist
                   </ReferenceLink>
-                </Fragment>,
+                </>,
 
                 `Built an application platform that replaced unhealthy nodes
                 with zero downtime for deployed services`,
@@ -650,7 +618,7 @@ export class EmploymentHistory extends PureComponent {
                 team.`,
               ]}
               achievements={[
-                <Fragment>
+                <>
                   Months before Docker was released, I was tasked with building a new CI server for
                   the team. My solution was an LXC-based container system that used AuFS for the
                   root file system and was managed by Puppet in the background. This set Infoxchange
@@ -659,16 +627,16 @@ export class EmploymentHistory extends PureComponent {
                   <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">
                     Infracoders Melbourne
                   </ReferenceLink>
-                </Fragment>,
+                </>,
 
-                <Fragment>
+                <>
                   Played a vital role redeveloping Infoxchange's legacy search application from the
                   ground up using Docker, ElasticSearch and Django. Again, this lead to a talk at
                   the{' '}
                   <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">
                     Melbourne Search user's group
                   </ReferenceLink>
-                </Fragment>,
+                </>,
               ]}
               technologies={[
                 {
@@ -687,7 +655,7 @@ export class EmploymentHistory extends PureComponent {
             />
           </ListItem>
         </JobsList>
-      </Fragment>
+      </>
     );
   }
 }

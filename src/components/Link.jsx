@@ -1,4 +1,4 @@
-import React, { createContext, Fragment, PureComponent } from 'react';
+import { createContext, PureComponent } from 'react';
 
 import { PrintOnly } from './Media';
 
@@ -37,7 +37,6 @@ class ReferenceTracker {
   remove = (url, notifyChanges = true) => {
     const idx = this.getIdx(url);
     if (idx === -1) {
-      console.error('Attempt to remove untracked URL:', url);
       return;
     }
     const found = this.tracked[idx];
@@ -89,15 +88,14 @@ export class PrintReferences extends PureComponent {
     this.setState({ links: this.context.tracked });
   };
   render() {
-    console.log('render', this.state.links);
     return (
-      <Fragment>
+      <>
         {this.state.links.map((link) => (
-          <div>
+          <div key={link.id}>
             [{link.id}]: {link.url}
           </div>
         ))}
-      </Fragment>
+      </>
     );
   }
 }
@@ -107,18 +105,12 @@ export class ReferenceLink extends PureComponent {
   state = {
     id: null,
   };
-  constructor(props) {
-    super(props);
-    console.log('construct');
-  }
   componentDidMount() {
-    console.log('href', this.props.href);
     this.setState({
       id: this.context.add(this.props.href),
     });
   }
   componentDidUpdate(prevProps) {
-    console.log('href', prevProps.href, '->', this.props.href);
     if (prevProps.href !== this.props.href) {
       this.setState({
         id: this.context.replace(prevProps.href, this.props.href),
@@ -132,10 +124,10 @@ export class ReferenceLink extends PureComponent {
     const { id } = this.state;
 
     return (
-      <Fragment>
+      <>
         <ExternalLink {...this.props} />
         <PrintOnly>[{id}]</PrintOnly>
-      </Fragment>
+      </>
     );
   }
 }

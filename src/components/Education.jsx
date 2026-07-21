@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import { PureComponent } from 'react';
 
 import { Header3, SubHeader } from './Header';
 import { List, ListItem } from './List';
@@ -7,7 +7,7 @@ class EducationItem extends PureComponent {
   render() {
     const { description, institution, title, complete, fromdate, todate } = this.props;
     return (
-      <Fragment>
+      <>
         <Header3 type="secondary">
           {institution}, {fromdate} - {todate}
         </Header3>
@@ -15,7 +15,7 @@ class EducationItem extends PureComponent {
           {title} {!complete && '[Incomplete]'}
         </SubHeader>
         <p>{description}</p>
-      </Fragment>
+      </>
     );
   }
 }

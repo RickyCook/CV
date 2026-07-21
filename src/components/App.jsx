@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { BuildInfo, Details } from './Boxes';
@@ -15,8 +14,8 @@ const ObjectivesWrapper = styled.p`
   }
 `;
 
-export const App = (props) => (
-  <React.Fragment>
+export const App = () => (
+  <>
     <BodyHeader trail={true}>Ricky Cook</BodyHeader>
     <Details />
     <Header2>Objectives</Header2>
@@ -63,5 +62,5 @@ export const App = (props) => (
       <PrintReferences />
     </PrintOnly>
     <BuildInfo />
-  </React.Fragment>
+  </>
 );

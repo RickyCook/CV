@@ -2,6 +2,7 @@
 *.gpg
 .#*
 build/
+build-server/
 node_modules/
 /contacts.js
 /contacts.ts

@@ -63,17 +63,11 @@ export const boxBodyProps = (shown: boolean): BoxAnimProps => ({
   animate: shown
     ? { opacity: 1, x: 0, visibility: 'visible' }
     : { opacity: 0, x: 80, visibility: 'hidden' },
-  transition: shown
-    ? { duration: 0.2, ease: 'easeOut' }
-    : { duration: 0.12, ease: 'easeIn' },
+  transition: shown ? { duration: 0.2, ease: 'easeOut' } : { duration: 0.12, ease: 'easeIn' },
 });
 
 export const boxTabProps = (shown: boolean): TabAnimProps => ({
   initial: false,
-  animate: shown
-    ? { opacity: 1, visibility: 'visible' }
-    : { opacity: 0, visibility: 'hidden' },
-  transition: shown
-    ? { duration: 0.2, ease: 'easeOut' }
-    : { duration: 0.1, ease: 'easeIn' },
+  animate: shown ? { opacity: 1, visibility: 'visible' } : { opacity: 0, visibility: 'hidden' },
+  transition: shown ? { duration: 0.2, ease: 'easeOut' } : { duration: 0.1, ease: 'easeIn' },
 });

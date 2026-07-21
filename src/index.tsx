@@ -1,19 +1,12 @@
-import { LazyMotion, MotionConfig } from 'motion/react';
 import ReactDOM, { hydrateRoot } from 'react-dom/client';
 
-import { App } from './components/App';
+import { Root } from './components/Root';
 
 import './index.css';
 
 import 'typeface-overpass-mono/index.css';
 
-const AppWrapper = () => (
-  <LazyMotion features={() => import('motion/react').then((mod) => mod.domAnimation)}>
-    <MotionConfig reducedMotion="user">
-      <App />
-    </MotionConfig>
-  </LazyMotion>
-);
+const features = () => import('motion/react').then((mod) => mod.domAnimation);
 
 const render = () => {
   const rootElement = document.getElementById('root');
@@ -21,9 +14,9 @@ const render = () => {
     throw new Error('No root element found');
   }
   if (rootElement.hasChildNodes()) {
-    hydrateRoot(rootElement, <AppWrapper />);
+    hydrateRoot(rootElement, <Root features={features} />);
   } else {
-    ReactDOM.createRoot(rootElement).render(<AppWrapper />);
+    ReactDOM.createRoot(rootElement).render(<Root features={features} />);
   }
 };
 

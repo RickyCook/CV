@@ -106,7 +106,11 @@ const Box = ({
   position: BoxPosition;
   children: React.ReactNode;
 }) => {
-  const getDefaultShow = useCallback(() => !(window.innerWidth < 1500), []);
+  // Render expanded on the server (and wide screens); collapsible after hydration
+  const getDefaultShow = useCallback(
+    () => typeof window === 'undefined' || !(window.innerWidth < 1500),
+    [],
+  );
   const [defaultShow, setDefaultShow] = useState<boolean>(getDefaultShow());
   const [userShow, setUserShow] = useState<boolean | undefined>(undefined);
   const show = userShow ?? defaultShow;

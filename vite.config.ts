@@ -32,4 +32,9 @@ export default defineConfig(async () => ({
     tsconfigPaths: true,
   },
   plugins: [react(), tailwindcss()],
+  ssr: {
+    // Header.tsx imports this package's CSS directly; bundle it so Vite turns
+    // the CSS import into a no-op in the server (prerender) bundle.
+    noExternal: ['typeface-share-tech-mono'],
+  },
 }));

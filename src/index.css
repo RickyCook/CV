@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-text: #c5c8c6;
+  --color-primary: oklch(0.75 0.16 55);
+  --color-primary-light: color-mix(in oklch, var(--color-primary), white 8%);
+  --color-primary-dark: color-mix(in oklch, var(--color-primary), black 28%);
+  --color-secondary: oklch(0.28 0.09 240);
+  --color-secondary-light: color-mix(in oklch, var(--color-secondary), white 10%);
+  --color-secondary-dark: color-mix(in oklch, var(--color-secondary), black 22%);
+  --color-background: oklch(0.2 0.01 270);
+  --color-competence-great: oklch(0.85 0.2 145);
+  --color-competence-good: oklch(0.72 0.13 200);
+  --color-competence-competent: oklch(0.6 0.12 250);
+
+  --font-body: 'Overpass Mono', monospace;
+  --font-display: 'Share Tech Mono', monospace;
+
+  --spacing-spacer: 10px;
+  --body-width: 1000px;
+}
+
+@utility shadow-brutal {
+  box-shadow: var(--color-shadow, black) 4px 4px 0 0;
+  border: 3px solid black;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    position: relative;
+    max-width: var(--body-width);
+    font-family: var(--font-body);
+    font-weight: lighter;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: calc(var(--spacing-spacer) * 1.5);
+    line-height: 1.75em;
+  }
+
+  @media (min-width: 1030px) {
+    body {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media print {
+    body {
+      font-size: 0.75em;
+    }
+    a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.17em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: bold;
+    line-height: 1.1;
+  }
+
+  a {
+    color: var(--color-primary);
+    transition: color 0.1s linear;
+  }
+
+  a:hover {
+    color: var(--color-primary-dark);
+    transition: color 0.1s linear;
+  }
+
+  @media print, (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation: none !important;
+      transition: none !important;
+      clip-path: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}

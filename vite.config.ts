@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 
@@ -31,17 +31,5 @@ export default defineConfig(async () => ({
   resolve: {
     tsconfigPaths: true,
   },
-  plugins: [
-    react({
-      plugins: [
-        [
-          '@swc/plugin-styled-components',
-          {
-            displayName: true,
-            ssr: true,
-          },
-        ],
-      ],
-    }),
-  ],
+  plugins: [react(), tailwindcss()],
 }));

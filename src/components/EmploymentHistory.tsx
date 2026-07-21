@@ -1,16 +1,11 @@
 import _ from 'lodash';
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import { Button } from './Button';
 import { Header3, Header4, SubHeader } from './Header';
 import { ReferenceLink } from './Link';
 import { List, ListItem } from './List';
 import { PrintOnly, ScreenOnly } from './Media';
-
-const JobShowButtonWrapper = styled.div`
-  margin: ${(props) => props.theme.spacer * 2}px 0px;
-`;
 
 const MAX_JOBS_LIST = 3;
 
@@ -23,11 +18,11 @@ const JobsList = ({ children }: { children?: React.ReactNode }) => {
     showMore: boolean;
     text: string;
   }) => (
-    <JobShowButtonWrapper>
+    <div className="my-[20px]">
       <Button block={true} type="secondary" onClick={() => setShowMore(showMoreProp)}>
         {text}
       </Button>
-    </JobShowButtonWrapper>
+    </div>
   );
   const renderShowMore = () => renderShowButton({ showMore: true, text: 'Show more' });
   const renderShowLess = () => renderShowButton({ showMore: false, text: 'Show less' });
@@ -62,20 +57,20 @@ const JobsList = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-const Highlight = styled.span`
-  color: ${(props) => props.theme.primary};
-`;
-const CompetenceWrapper = styled.span<{ name: 'great' | 'good' | 'competent' }>`
-  color: ${(props) => props.theme.competence[props.name]}
-`;
-
 const Competence = ({
   children,
   name,
 }: {
   children?: React.ReactNode;
   name: 'great' | 'good' | 'competent';
-}) => <CompetenceWrapper name={name}>{children ? children : _.startCase(name)}</CompetenceWrapper>;
+}) => {
+  const color = {
+    great: 'text-competence-great',
+    good: 'text-competence-good',
+    competent: 'text-competence-competent',
+  }[name];
+  return <span className={color}>{children ? children : _.startCase(name)}</span>;
+};
 
 const TechnologyRow = ({
   competence,
@@ -90,31 +85,6 @@ const TechnologyRow = ({
     {items.join(', ')}
   </div>
 );
-
-const JobGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto 250px;
-  grid-template-areas:
-    "responsibilities technologies"
-    "achievements technologies"
-  ;
-  @media (max-width: 720px) {
-    grid-template-columns: auto;
-    grid-template-areas:
-      "responsibilities"
-      "achievements"
-      "technologies"
-    ;
-  }
-`;
-const JobRow = styled.div`
-`;
-const TechnologiesJobRow = styled(JobRow)`
-  padding-left: ${(props) => props.theme.spacer * 2}px;
-  @media (max-width: 720px) {
-    padding: 0px;
-  }
-`;
 
 interface JobProps {
   achievements: React.ReactNode[];
@@ -139,7 +109,7 @@ const Job = ({
     <Header3 type="secondary">
       {title && (
         <>
-          {title} <Highlight>@</Highlight>{' '}
+          {title} <span className="text-primary">@</span>{' '}
         </>
       )}
       {company}
@@ -147,40 +117,40 @@ const Job = ({
     <SubHeader type="secondary">
       {fromdate} - {todate}
     </SubHeader>
-    <JobGrid>
+    <div className="grid grid-cols-[auto_250px] [grid-template-areas:'responsibilities_technologies''achievements_technologies'] max-[720px]:grid-cols-1 max-[720px]:[grid-template-areas:'responsibilities''achievements''technologies']">
       {responsibilities && (
-        <JobRow style={{ gridArea: 'responsibilities' }}>
+        <div className="[grid-area:responsibilities]">
           <Header4 type="plain">Responsibilities</Header4>
-          <ul>
+          <ul className="list-[circle] pl-[30px]">
             {responsibilities.map((text) => (
               <li key={text}>{text}</li>
             ))}
           </ul>
-        </JobRow>
+        </div>
       )}
-      <JobRow style={{ gridArea: 'achievements' }}>
+      <div className="[grid-area:achievements]">
         <Header4 type="plain">Achievements</Header4>
-        <ul>
+        <ul className="list-[circle] pl-[30px]">
           {achievements.map((text, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: achievements are static content and never reordered
             <li key={index}>{text}</li>
           ))}
         </ul>
-      </JobRow>
-      <TechnologiesJobRow style={{ gridArea: 'technologies' }}>
+      </div>
+      <div className="[grid-area:technologies] pl-[20px] max-[720px]:pl-0">
         <Header4 type="plain">Technologies</Header4>
         {technologies.map((row) => (
           <TechnologyRow key={row.competence} {...row} />
         ))}
-      </TechnologiesJobRow>
-    </JobGrid>
+      </div>
+    </div>
   </>
 );
 
 export const EmploymentHistory = () => (
   <>
     <Header3 type="secondary">Highlights</Header3>
-    <ul>
+    <ul className="list-disc pl-[30px]">
       <li>
         <em>Interchange</em>: Implemented an extremely secure and flexible AWS platform for
         financial services as the sole infrastructure engineer

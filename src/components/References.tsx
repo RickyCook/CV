@@ -1,19 +1,6 @@
-import styled from 'styled-components';
-
 import { contacts } from '../contacts';
-import * as Header from './Header';
+import { Header3, SubHeader } from './Header';
 import { List, ListItem } from './List';
-
-const { Header3, SubHeader } = Header;
-
-const Highlight = styled.span`
-  color: ${(props) => props.theme.primary};
-`;
-const ReferenceLabel = styled.span`
-  ${Header.fontStyle}
-  margin-right: ${(props) => props.theme.spacer}px;
-  display: inline-block;
-`;
 
 const Reference = ({
   name,
@@ -33,7 +20,8 @@ const Reference = ({
     }
     return (
       <div>
-        <ReferenceLabel>{field}</ReferenceLabel> {contact ? contact[field] : 'Contact for info'}
+        <span className="font-display mr-[10px] inline-block">{field}</span>{' '}
+        {contact ? contact[field] : 'Contact for info'}
       </div>
     );
   };
@@ -41,7 +29,7 @@ const Reference = ({
     <>
       <Header3 type="secondary">{name}</Header3>
       <SubHeader type="secondary">
-        {title} <Highlight>@</Highlight> {company}
+        {title} <span className="text-primary">@</span> {company}
       </SubHeader>
       <p>{description}</p>
       {renderContact('phone')}

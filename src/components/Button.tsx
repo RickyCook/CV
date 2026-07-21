@@ -1,41 +1,39 @@
-import styled, { css } from 'styled-components';
+import type { AnchorHTMLAttributes, MouseEvent } from 'react';
 
-export const shadowStyle = css`
-  box-shadow:
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgb(0, 0, 0) ${(props) => props.theme.shadowDistance}px ${(props) => props.theme.shadowDistance}px 0px 0px;
-  border: ${(props) => props.theme.thickBorderWidth}px solid black;
-`;
+import { tv } from 'tailwind-variants';
 
-const BUTTON_SIZES = {
-  small: 0.5,
-  medium: 1,
-  large: 2,
-} as const;
+export const shadowBrutal = 'shadow-brutal';
 
-type ButtonSize = keyof typeof BUTTON_SIZES;
+const buttonTv = tv({
+  base: 'shadow-brutal text-text text-center cursor-pointer transition-colors duration-100 hover:text-text',
+  variants: {
+    type: {
+      primary: 'bg-primary hover:bg-primary-light',
+      secondary: 'bg-secondary hover:bg-secondary-light',
+    },
+    block: {
+      true: 'block',
+      false: 'inline',
+    },
+  },
+  defaultVariants: { type: 'primary', block: false },
+});
+
+type ButtonSize = 'small' | 'medium' | 'large';
 type ButtonType = 'primary' | 'secondary';
 
-const ButtonComponent = styled.a<{ spaceMultiplier: number; type: ButtonType; block: boolean }>`
-  ${shadowStyle}
-  padding: ${(props) => props.theme.spacer * props.spaceMultiplier}px;
-  color: ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
-  text-align: center;
-  display: ${(props) => (props.block ? 'block' : 'inline')};
-  cursor: pointer;
+interface ButtonProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'type' | 'onClick'> {
+  onClick?: () => void;
+  size?: ButtonSize;
+  type?: ButtonType;
+  block?: boolean;
+}
 
-  transition: background-color 0.1s linear;
-
-  &:hover {
-    transition: background-color 0.1s linear;
-    background-color: ${(props) => props.theme[`${props.type || 'primary'}BrightBg`]};
-    color: ${(props) => props.theme.text};
-  }
-`;
+const sizeClass: Record<ButtonSize, string> = {
+  small: 'px-[5px] py-[2.5px]',
+  medium: 'px-[10px] py-[5px]',
+  large: 'px-[20px] py-[10px]',
+};
 
 export const Button = ({
   onClick,
@@ -43,23 +41,16 @@ export const Button = ({
   type = 'primary',
   block = false,
   ...props
-}: { onClick?: () => void; size?: ButtonSize; type?: ButtonType; block?: boolean } & Omit<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  'type' | 'onClick'
->) => {
-  const handleClick = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+}: ButtonProps) => {
+  const handleClick = (ev: MouseEvent<HTMLAnchorElement>) => {
     ev.preventDefault();
-    if (onClick) {
-      onClick();
-    }
+    onClick?.();
   };
   return (
-    <ButtonComponent
+    <a
       href=""
       onClick={handleClick}
-      spaceMultiplier={BUTTON_SIZES[size]}
-      type={type}
-      block={block}
+      className={`${buttonTv({ type, block })} ${sizeClass[size]}`}
       {...props}
     />
   );

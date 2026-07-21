@@ -1,93 +1,114 @@
-import styled, { css } from 'styled-components';
+import { m } from 'motion/react';
+import type { ReactNode } from 'react';
+import { tv } from 'tailwind-variants';
 
-import 'typeface-share-tech-mono';
+import 'typeface-share-tech-mono/index.css';
 
-export const fontStyle = css`
-  font-family: 'Share Tech Mono';
-`;
+import { textLength, type Variant, writeOnProps } from '../lib/anim';
 
-const sharedStyle = css`
-  ${fontStyle}
-  color: ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}Text`]};
-  background-color: ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}Bg`]};
-  border-left: 10px solid ${(props: { theme: import('styled-components').DefaultTheme; type?: 'primary' | 'secondary' | 'plain' }) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
-  padding: ${(props) => props.theme.spacer}px;
-  margin: ${(props) => props.theme.spacer * 1.5}px 0px;
-  display: inline-block;
+const grid = 'font-display grid w-fit grid-cols-[25px_max-content] items-stretch';
 
-  @media print {
-    padding: 0px;
-    margin: 0px;
-    border: none;
-  }
-`;
-export const PrimaryHighlight = styled.span`
-  color: ${(props) => props.theme.primaryHighlight};
-`;
-export const HeaderChevronWrapper = styled(PrimaryHighlight)`
-  padding-right: ${(props) => props.theme.spacer}px;
-  display: inline-block;
-  width: ${(props) => props.theme.chevronWidth}px;
+const headerTv = tv({
+  base: `${grid} border-l-[10px] my-[15px] print:m-0 print:border-none`,
+  variants: {
+    type: {
+      primary: 'border-primary-dark',
+      secondary: 'border-secondary-dark',
+      plain: 'border-white/10',
+    },
+  },
+  defaultVariants: { type: 'primary' },
+});
 
-  @media print {
-    color: ${(props) => props.theme.primary};
-  }
-`;
+const bodyHeaderTv = tv({
+  extend: headerTv,
+  base: '-mt-[15px] -ml-[15px] print:m-0',
+});
+
+const fillTv = tv({
+  variants: {
+    type: {
+      primary: 'bg-primary text-background',
+      secondary: 'bg-secondary text-text',
+      plain: 'bg-transparent text-text',
+    },
+  },
+  defaultVariants: { type: 'primary' },
+});
+
+const subHeaderTv = tv({
+  base: `${grid} border-l-[10px] -mt-[30px] mb-[15px] print:m-0 print:border-none`,
+  variants: {
+    type: {
+      primary: 'border-primary-dark',
+      secondary: 'border-secondary-dark',
+      plain: 'border-transparent',
+    },
+  },
+  defaultVariants: { type: 'primary' },
+});
+
+const Chevron = () => (
+  <span aria-hidden className="text-white print:text-primary">
+    &gt;
+  </span>
+);
+const Trail = () => (
+  <span aria-hidden className="text-white print:text-primary">
+    _
+  </span>
+);
+
 interface HeaderProps {
-  children?: React.ReactNode;
-  type?: 'primary' | 'secondary' | 'plain';
+  children?: ReactNode;
+  type?: Variant;
   trail?: boolean;
+  writeDelay?: number;
 }
-const withWrapper =
-  (WrappedComponent: React.ComponentType<HeaderProps>) => (props: HeaderProps) => (
-    <div>
-      <WrappedComponent {...props}>
-        <HeaderChevronWrapper>&gt;</HeaderChevronWrapper>
-        {props.children}
-        {props.trail && <HeaderChevronWrapper>_</HeaderChevronWrapper>}
-      </WrappedComponent>
+
+type HeaderTag = 'h1' | 'h2' | 'h3' | 'h4';
+type TvFn = (opts: { type?: Variant }) => string;
+
+const asFn = (tv: unknown): TvFn => tv as unknown as TvFn;
+
+const makeHeader =
+  (Tag: HeaderTag, tvFn: TvFn = asFn(headerTv)) =>
+  ({ children, type, trail, writeDelay }: HeaderProps) => {
+    const wrapper = tvFn({ type });
+    const fill = fillTv({ type });
+    const inner: ReactNode = (
+      <>
+        <div aria-hidden className={`${fill} flex items-center justify-center`}>
+          <Chevron />
+        </div>
+        <Tag className={`${fill} font-bold py-[10px] pr-[25px] print:p-0`}>
+          {children}
+          {trail && <Trail />}
+        </Tag>
+      </>
+    );
+    if (writeDelay != null) {
+      return (
+        <m.div className={wrapper} {...writeOnProps(writeDelay, textLength(inner))}>
+          {inner}
+        </m.div>
+      );
+    }
+    return <div className={wrapper}>{inner}</div>;
+  };
+
+export const Header1 = makeHeader('h1', asFn(headerTv));
+export const BodyHeader = makeHeader('h1', asFn(bodyHeaderTv));
+export const Header2 = makeHeader('h2', asFn(headerTv));
+export const Header3 = makeHeader('h3', asFn(headerTv));
+export const Header4 = makeHeader('h4', asFn(headerTv));
+
+export const SubHeader = ({ children, type }: { children?: ReactNode; type?: Variant }) => {
+  const fill = fillTv({ type });
+  return (
+    <div className={subHeaderTv({ type })}>
+      <div aria-hidden className={`${fill} w-[25px] flex items-center justify-center`} />
+      <div className={`${fill} py-[10px] pr-[25px] max-w-[60ch] print:p-0`}>{children}</div>
     </div>
   );
-
-export const Header1 = withWrapper(styled.h1<HeaderProps>`
-  ${sharedStyle}
-`);
-export const BodyHeader = styled(Header1)`
-  margin-top: ${(props) => `-${props.theme.bodyMargin}px`};
-  margin-left: ${(props) => `-${props.theme.bodyMargin}px`};
-  padding: ${(props) => props.theme.spacer + props.theme.bodyMargin}px;
-
-  @media print {
-    padding: 0px;
-    margin: 0px;
-  }
-`;
-export const Header2 = withWrapper(styled.h2<HeaderProps>`
-  ${sharedStyle}
-`);
-export const Header3 = withWrapper(styled.h3<HeaderProps>`
-  ${sharedStyle}
-`);
-export const Header4 = withWrapper(styled.h4<HeaderProps>`
-  ${sharedStyle}
-  border-left-color: rgba(255,255,255,0.1);
-`);
-
-export const SubHeader = styled.div<HeaderProps>`
-  margin-top: -${(props) => props.theme.spacer * 3.5}px;
-  margin-bottom: ${(props) => props.theme.spacer * 1.5}px;
-  padding-left: ${(props) => (props.theme.spacer * 2) + props.theme.chevronWidth}px;
-  padding-right: ${(props) => props.theme.spacer * 2.5}px;
-  padding-top: ${(props) => props.theme.spacer}px;
-  padding-bottom: ${(props) => props.theme.spacer}px;
-  color: ${(props) => props.theme[`${props.type || 'primary'}Text`]};
-  background-color: ${(props) => props.theme[`${props.type || 'primary'}Bg`]};
-  border-left: 10px solid ${(props) => props.theme[`${props.type || 'primary'}LeftStripeBg`]};
-  display: table;
-
-  @media print {
-    padding: 0px;
-    margin-top: -${(props) => props.theme.spacer * 0.5}px;
-    border: none;
-  }
-`;
+};

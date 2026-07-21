@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import { BuildInfo, Details } from './Boxes';
 import { Education } from './Education';
 import { EmploymentHistory } from './EmploymentHistory';
@@ -8,18 +6,12 @@ import { PrintReferences } from './Link';
 import { PrintOnly } from './Media';
 import { References } from './References';
 
-const ObjectivesWrapper = styled.p`
-  @media print {
-    padding-right: 230px
-  }
-`;
-
 export const App = () => (
   <>
     <BodyHeader trail={true}>Ricky Cook</BodyHeader>
     <Details />
     <Header2>Objectives</Header2>
-    <ObjectivesWrapper>
+    <p className="print:pr-[230px]">
       I love using technology to be a multiplier of human effort, especially when helping people
       pursue a cause for social good. I've spent the large majority of my career enabling all kinds
       of organizations achieve their social purpose, by ensuring that doctors are efficiently
@@ -28,7 +20,7 @@ export const App = () => (
       their care. All of these objectives have been achieved through interesting mixes of both new
       and "boring" technology. I'd like to continue working to multiply the effectiveness of causes
       that I believe in through my love of software.
-    </ObjectivesWrapper>
+    </p>
     <Header2>Code Skills</Header2>
     <p>
       The core skillset that I've been using has been centred around Python, TypeScript, and React.

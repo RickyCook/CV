@@ -1,47 +1,12 @@
 import ReactDOM, { hydrateRoot } from 'react-dom/client';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { App } from './components/App';
-import { theme } from './theme';
 
-import 'typeface-overpass-mono';
+import './index.css';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    position: relative;
-    max-width: ${(props) => props.theme.bodyWidth}px;
-    font-family: 'Overpass Mono';
-    font-weight: lighter;
-    background-color: ${(props) => props.theme.background};
-    color: ${(props) => props.theme.text};
-    margin: ${(props) => props.theme.bodyMargin}px;
-    line-height: 1.75em;
+import 'typeface-overpass-mono/index.css';
 
-    @media (min-width: ${(props) => props.theme.bodyWidth + props.theme.bodyMargin}px) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media print {
-      font-size: 0.75em;
-    }
-  }
-  a {
-    color: ${(props) => props.theme.link};
-
-    transition: color 0.1s linear;
-
-    &:hover {
-      transition: color 0.1s linear;
-      color: ${(props) => props.theme.linkAlt}
-    }
-  }
-`;
-const AppWrapper = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <App />
-  </ThemeProvider>
-);
+const AppWrapper = () => <App />;
 
 const render = () => {
   const rootElement = document.getElementById('root');

@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createGlobalStyle, ThemeProvider } from 'styled-components/macro';
+import ReactDOM from 'react-dom/client';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { App } from './components/App'
 import { theme } from './theme'
@@ -48,10 +48,11 @@ const AppWrapper = props => (
 
 const render = () => {
   const rootElement = document.getElementById("root");
+  const root = ReactDOM.createRoot(rootElement);
   if (rootElement.hasChildNodes()) {
-    ReactDOM.hydrate(<AppWrapper />, rootElement);
+    root.hydrate(<AppWrapper />);
   } else {
-    ReactDOM.render(<AppWrapper />, rootElement);
+    root.render(<AppWrapper />);
   }
 };
 

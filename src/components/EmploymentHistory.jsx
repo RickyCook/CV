@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component, Fragment, PureComponent } from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { Button } from './Button';
 import { Header3, Header4, SubHeader } from './Header';

@@ -1,14 +1,12 @@
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const express = require('express');
 const puppeteer = require('puppeteer');
 
-
 const port = 3333;
 const buildPath = path.join(__dirname, '..', 'build');
 const pdfPath = path.join(buildPath, 'RickyCookCV.pdf');
-
 
 async function serve() {
   const app = express();
@@ -17,37 +15,32 @@ async function serve() {
   return new Promise((resolve, reject) => {
     try {
       const server = app.listen(port, () => resolve(server));
-    } catch(err) {
-      reject(err)
+    } catch (err) {
+      reject(err);
     }
-  })
+  });
 }
 
-
 async function generate() {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch();
   try {
     const page = await browser.newPage();
-    await page.goto(
-      `http://localhost:${port}`,
-      { waitUntil: 'load' },
-    );
+    await page.goto(`http://localhost:${port}`, { waitUntil: 'load' });
     const margin = '2cm';
     const pdfData = await page.pdf({
       format: 'A4',
       margin: { top: margin, bottom: margin, left: margin, right: margin },
     });
-    await fs.writeFile(pdfPath, pdfData);
+    await fs.promises.writeFile(pdfPath, pdfData);
   } finally {
     await browser.close();
   }
 }
 
-
 async function doit() {
-  const server = await serve()
+  const server = await serve();
   await generate();
-  server.close()
+  server.close();
 }
 
 doit();

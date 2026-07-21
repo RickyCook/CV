@@ -22,19 +22,19 @@ export const theme = {
   },
 };
 
-theme.bodyMargin = theme.spacer * 1.5
-theme.link = theme.primary
-theme.linkAlt = theme.primaryDark
-theme.primaryText = theme.background
-theme.primaryBg = theme.primary
-theme.primaryBrightBg = theme.primaryBright
-theme.primaryLeftStripeBg = theme.primaryDark
-theme.secondaryText = theme.text
-theme.secondaryBg = theme.secondary
-theme.secondaryBrightBg = theme.secondaryBright
-theme.secondaryLeftStripeBg = theme.secondaryDark
-theme.plainText = theme.text
-theme.plainBg = 'rgba(0,0,0,0)'
-theme.boxClickableText = theme.secondaryText
-theme.boxClickableBg = theme.secondaryBg
-theme.boxClickableBrightBg = theme.secondaryBrightBg
+theme.bodyMargin = theme.spacer * 1.5;
+theme.link = theme.primary;
+theme.linkAlt = theme.primaryDark;
+theme.primaryText = theme.background;
+theme.primaryBg = theme.primary;
+theme.primaryBrightBg = theme.primaryBright;
+theme.primaryLeftStripeBg = theme.primaryDark;
+theme.secondaryText = theme.text;
+theme.secondaryBg = theme.secondary;
+theme.secondaryBrightBg = theme.secondaryBright;
+theme.secondaryLeftStripeBg = theme.secondaryDark;
+theme.plainText = theme.text;
+theme.plainBg = 'rgba(0,0,0,0)';
+theme.boxClickableText = theme.secondaryText;
+theme.boxClickableBg = theme.secondaryBg;
+theme.boxClickableBrightBg = theme.secondaryBrightBg;

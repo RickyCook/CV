@@ -2,24 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import { App } from './components/App'
-import { theme } from './theme'
+import { App } from './components/App';
+import { theme } from './theme';
 
 import 'typeface-overpass-mono';
-
 
 const GlobalStyle = createGlobalStyle`
   body {
     position: relative;
-    max-width: ${props => props.theme.bodyWidth}px;
+    max-width: ${(props) => props.theme.bodyWidth}px;
     font-family: 'Overpass Mono';
     font-weight: lighter;
-    background-color: ${props => props.theme.background};
-    color: ${props => props.theme.text};
-    margin: ${props => props.theme.bodyMarginPx};
+    background-color: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.text};
+    margin: ${(props) => props.theme.bodyMarginPx};
     line-height: 1.75em;
 
-    @media (min-width: ${props => props.theme.bodyWidth + props.theme.bodyMargin}px) {
+    @media (min-width: ${(props) => props.theme.bodyWidth + props.theme.bodyMargin}px) {
       margin-left: auto;
       margin-right: auto;
     }
@@ -28,26 +27,25 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   a {
-    color: ${props => props.theme.link};
+    color: ${(props) => props.theme.link};
 
     transition: color 0.1s linear;
 
     &:hover {
       transition: color 0.1s linear;
-      color: ${props => props.theme.linkAlt}
+      color: ${(props) => props.theme.linkAlt}
     }
   }
-`
-const AppWrapper = props => (
-  <ThemeProvider theme={ theme }>
+`;
+const AppWrapper = (props) => (
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
     <App />
   </ThemeProvider>
-)
-
+);
 
 const render = () => {
-  const rootElement = document.getElementById("root");
+  const rootElement = document.getElementById('root');
   const root = ReactDOM.createRoot(rootElement);
   if (rootElement.hasChildNodes()) {
     root.hydrate(<AppWrapper />);
@@ -56,4 +54,4 @@ const render = () => {
   }
 };
 
-render()
+render();

@@ -13,6 +13,9 @@
   },
   "scripts": {
     "start": "NODE_OPTIONS=--openssl-legacy-provider vite",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "fmt": "biome format --write .",
     "build": "npm run build-html && npm run build-pdf",
     "build-html": "NODE_OPTIONS=--openssl-legacy-provider vite build",
     "build-pdf": "cd pdf && node pdf.js"
@@ -33,7 +36,9 @@
     "inlineCss": true
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.3",
     "@swc/plugin-styled-components": "^12.15.0",
+    "@types/node": "^26.1.1",
     "@vitejs/plugin-react-swc": "^4.3.1",
     "vite": "^8.1.4"
   }

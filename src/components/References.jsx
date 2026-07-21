@@ -7,39 +7,42 @@ import { List, ListItem } from './List';
 
 const { Header3, SubHeader } = Header;
 
-
 const Highlight = styled.span`
-  color: ${props => props.theme.primary};
-`
+  color: ${(props) => props.theme.primary};
+`;
 const ReferenceLabel = styled.span`
   ${Header.fontStyle}
-  margin-right: ${props => props.theme.spacer}px;
+  margin-right: ${(props) => props.theme.spacer}px;
   display: inline-block;
-`
-
+`;
 
 class Reference extends PureComponent {
-  renderContact = field => {
-    const contact = contacts && contacts[this.props.name]
+  renderContact = (field) => {
+    const contact = contacts && contacts[this.props.name];
     if (contact && !contact[field]) {
       return null;
     }
-    return <div><ReferenceLabel>{ field }</ReferenceLabel> { contact ? contact[field] : 'Contact for info' }</div>
-  }
+    return (
+      <div>
+        <ReferenceLabel>{field}</ReferenceLabel> {contact ? contact[field] : 'Contact for info'}
+      </div>
+    );
+  };
   render() {
-    const { name, title, company, description } = this.props
+    const { name, title, company, description } = this.props;
     return (
       <Fragment>
-        <Header3 type="secondary">{ name }</Header3>
-        <SubHeader type="secondary">{ title } <Highlight>@</Highlight> { company }</SubHeader>
-        <p>{ description }</p>
-        { this.renderContact('phone') }
-        { this.renderContact('email') }
+        <Header3 type="secondary">{name}</Header3>
+        <SubHeader type="secondary">
+          {title} <Highlight>@</Highlight> {company}
+        </SubHeader>
+        <p>{description}</p>
+        {this.renderContact('phone')}
+        {this.renderContact('email')}
       </Fragment>
     );
   }
 }
-
 
 export class References extends PureComponent {
   render() {
@@ -62,6 +65,6 @@ export class References extends PureComponent {
           />
         </ListItem>
       </List>
-    )
+    );
   }
 }

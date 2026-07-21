@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component, PureComponent, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Button } from './Button';
@@ -100,7 +100,15 @@ const TechnologiesJobRow = styled(JobRow)`
   }
 `;
 
-const Job = ({ achievements, company, fromdate, responsibilities, technologies, title, todate }) => (
+const Job = ({
+  achievements,
+  company,
+  fromdate,
+  responsibilities,
+  technologies,
+  title,
+  todate,
+}) => (
   <>
     <Header3 type="secondary">
       {title && (
@@ -142,520 +150,512 @@ const Job = ({ achievements, company, fromdate, responsibilities, technologies, 
   </>
 );
 
-export class EmploymentHistory extends PureComponent {
-  render() {
-    return (
-      <>
-        <Header3 type="secondary">Highlights</Header3>
-        <ul>
-          <li>
-            <em>Interchange</em>: Implemented an extremely secure and flexible AWS platform for
-            financial services as the sole infrastructure engineer
-          </li>
-          <li>
-            <em>Mantel Group</em>: Led many complex projects from migrating applications onto AWS
-            infrastructure, to developing server and Blockchain applications from scratch
-          </li>
-          <li>
-            <em>dutyof.care</em>: Developed the dutyof.care platform, from scratch into a highly
-            scalable, resilient, fast product
-          </li>
-          <li>
-            <em>Redbubble</em>: AWS and Docker SME on the team tasked with moving to containers, and
-            AWS
-          </li>
-          <li>
-            <em>Odecee</em>: Helped implement a PCI-compliant, continuous-deployment environment on
-            AWS
-          </li>
-          <li>
-            <em>Odecee</em>: Nominated for an internal award for simplicity on a complex project
-          </li>
-          <li>
-            <em>Infoxchange</em>: Before Docker, implemented a containerised build system using LXC,
-            auFS, and Puppet. I then presented the solution in a talk at{' '}
-            <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">
-              Infracoders Melbourne
-            </ReferenceLink>
-          </li>
-        </ul>
-        <JobsList>
-          <ListItem>
-            <Job
-              company="Own Project"
-              fromdate="April 2025"
-              todate="Present"
-              achievements={[
-                `Built an extremely robust, self-healing data transformation
-                system that used minimal AI tokens to process large amounts
-                of often-changing data. For example, hourly ingest of event
-                data from various ticketing, venue, and other sources`,
+export const EmploymentHistory = () => (
+  <>
+    <Header3 type="secondary">Highlights</Header3>
+    <ul>
+      <li>
+        <em>Interchange</em>: Implemented an extremely secure and flexible AWS platform for
+        financial services as the sole infrastructure engineer
+      </li>
+      <li>
+        <em>Mantel Group</em>: Led many complex projects from migrating applications onto AWS
+        infrastructure, to developing server and Blockchain applications from scratch
+      </li>
+      <li>
+        <em>dutyof.care</em>: Developed the dutyof.care platform, from scratch into a highly
+        scalable, resilient, fast product
+      </li>
+      <li>
+        <em>Redbubble</em>: AWS and Docker SME on the team tasked with moving to containers, and AWS
+      </li>
+      <li>
+        <em>Odecee</em>: Helped implement a PCI-compliant, continuous-deployment environment on AWS
+      </li>
+      <li>
+        <em>Odecee</em>: Nominated for an internal award for simplicity on a complex project
+      </li>
+      <li>
+        <em>Infoxchange</em>: Before Docker, implemented a containerised build system using LXC,
+        auFS, and Puppet. I then presented the solution in a talk at{' '}
+        <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">
+          Infracoders Melbourne
+        </ReferenceLink>
+      </li>
+    </ul>
+    <JobsList>
+      <ListItem>
+        <Job
+          company="Own Project"
+          fromdate="April 2025"
+          todate="Present"
+          achievements={[
+            `Built an extremely robust, self-healing data transformation
+            system that used minimal AI tokens to process large amounts
+            of often-changing data. For example, hourly ingest of event
+            data from various ticketing, venue, and other sources`,
 
-                `Significant savings in LLM token usage by implementing a
-                system whereby the LLM is used to construct deterministic
-                transformation pipelines, including heuristic understanding
-                of deduplication, understanding when robustness may be
-                improved, and health checking`,
+            `Significant savings in LLM token usage by implementing a
+            system whereby the LLM is used to construct deterministic
+            transformation pipelines, including heuristic understanding
+            of deduplication, understanding when robustness may be
+            improved, and health checking`,
 
-                `The system is able to self-heal when data sources change,
-                and adapt to new data sources automatically without invoking
-                the LLM for every new piece of data, and without requiring
-                human intervention`,
+            `The system is able to self-heal when data sources change,
+            and adapt to new data sources automatically without invoking
+            the LLM for every new piece of data, and without requiring
+            human intervention`,
 
-                `The system is able to find not only information on sites
-                that humans had given it, but also by searching the web for
-                sources that it may have missed - including on sites that it
-                had never seen before and had no idea how to parse/process`,
+            `The system is able to find not only information on sites
+            that humans had given it, but also by searching the web for
+            sources that it may have missed - including on sites that it
+            had never seen before and had no idea how to parse/process`,
 
-                `Utilized a "blackboard" pattern, which I hadn't seen in use
-                before but fits extremely well with the domain of arbitrary
-                data transformation and enrichment. I consider this an
-                achievement because it seems to be a very novel solution to
-                problems that many people face in such a well-understood
-                field. Due to this, implementation in a way that kept the
-                system simple and maintainable without the help of frameworks
-                was entirely due to my own efforts`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: [
-                    'Typescript',
-                    'Postgres',
-                    'graphile-worker',
-                    'Zod',
-                    'OpenAI API',
-                    'React',
-                    'TailwindCSS',
-                    'Kubernetes',
-                    'Argo CD',
-                    'Kargo',
-                  ],
-                },
-                {
-                  competence: 'good',
-                  items: ['vitest', 'vite', 'llama-swap', 'llama.cpp', 'pgVector'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['Bun'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Interchange"
-              title="Platform Engineer"
-              fromdate="April 2024"
-              todate="April 2025"
-              responsibilities={[
-                `Plan and build infrastructure for an ever-evolving startup in
-                a complex fintech environment, ensuring security at every
-                step without impacting developer experience`,
+            `Utilized a "blackboard" pattern, which I hadn't seen in use
+            before but fits extremely well with the domain of arbitrary
+            data transformation and enrichment. I consider this an
+            achievement because it seems to be a very novel solution to
+            problems that many people face in such a well-understood
+            field. Due to this, implementation in a way that kept the
+            system simple and maintainable without the help of frameworks
+            was entirely due to my own efforts`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: [
+                'Typescript',
+                'Postgres',
+                'graphile-worker',
+                'Zod',
+                'OpenAI API',
+                'React',
+                'TailwindCSS',
+                'Kubernetes',
+                'Argo CD',
+                'Kargo',
+              ],
+            },
+            {
+              competence: 'good',
+              items: ['vitest', 'vite', 'llama-swap', 'llama.cpp', 'pgVector'],
+            },
+            {
+              competence: 'competent',
+              items: ['Bun'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Interchange"
+          title="Platform Engineer"
+          fromdate="April 2024"
+          todate="April 2025"
+          responsibilities={[
+            `Plan and build infrastructure for an ever-evolving startup in
+            a complex fintech environment, ensuring security at every
+            step without impacting developer experience`,
 
-                `Implement many organizational services such as VPN, and
-                configure shared security infrastructure`,
+            `Implement many organizational services such as VPN, and
+            configure shared security infrastructure`,
 
-                `Help plan and implement policies and controls for PCI-DSS and
-                SOC2 compliance`,
-              ]}
-              achievements={[
-                `The headline achievement of this project is that in a single
-                year, by myself I was able to implement an AWS platform that
-                both the developers barely noticed, and was able to function
-                as a financial services business in the US`,
+            `Help plan and implement policies and controls for PCI-DSS and
+            SOC2 compliance`,
+          ]}
+          achievements={[
+            `The headline achievement of this project is that in a single
+            year, by myself I was able to implement an AWS platform that
+            both the developers barely noticed, and was able to function
+            as a financial services business in the US`,
 
-                `All infrastructure was built in a manner that had clear
-                pathways for how to transition from financial services to
-                full-blown banking infrastructure with all the regulatory
-                and security issues that go along with that`,
+            `All infrastructure was built in a manner that had clear
+            pathways for how to transition from financial services to
+            full-blown banking infrastructure with all the regulatory
+            and security issues that go along with that`,
 
-                `Using Tailscale, implemented a company-wide VPN with SSO
-                linked to GSuite, and security policies for access control to
-                protected services - both internal and the ability to
-                transparently route traffic to external services with IP
-                whitelisting, via a protected internet gateway`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: [
-                    'AWS - General',
-                    'Kubernetes/EKS(AWS)',
-                    'Terraform',
-                    'Terragrunt',
-                    'Argo CD',
-                    'Argo Workflows',
-                    'CDK(AWS)',
-                  ],
-                },
-                {
-                  competence: 'good',
-                  items: ['Tailscale', 'Organizations(AWS)', 'Transit Gateway(AWS)', 'RAM(AWS)'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['ChatBot(AWS)'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Mantel Group"
-              title="Lead Engineer"
-              fromdate="March 2020"
-              todate="April 2024"
-              responsibilities={[
-                `Plan complex projects when clients are mostly aware of only
-                timelines, and high-level requirements`,
+            `Using Tailscale, implemented a company-wide VPN with SSO
+            linked to GSuite, and security policies for access control to
+            protected services - both internal and the ability to
+            transparently route traffic to external services with IP
+            whitelisting, via a protected internet gateway`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: [
+                'AWS - General',
+                'Kubernetes/EKS(AWS)',
+                'Terraform',
+                'Terragrunt',
+                'Argo CD',
+                'Argo Workflows',
+                'CDK(AWS)',
+              ],
+            },
+            {
+              competence: 'good',
+              items: ['Tailscale', 'Organizations(AWS)', 'Transit Gateway(AWS)', 'RAM(AWS)'],
+            },
+            {
+              competence: 'competent',
+              items: ['ChatBot(AWS)'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Mantel Group"
+          title="Lead Engineer"
+          fromdate="March 2020"
+          todate="April 2024"
+          responsibilities={[
+            `Plan complex projects when clients are mostly aware of only
+            timelines, and high-level requirements`,
 
-                `Lead project teams consisting of internal and client staff to
-                define Agile processes that help build a high functioning team`,
+            `Lead project teams consisting of internal and client staff to
+            define Agile processes that help build a high functioning team`,
 
-                `Solve complex technical problems as they come up - most projects
-                assigned to me were in new and emerging technologies without
-                many pre-existing solutions to problems`,
-              ]}
-              achievements={[
-                `Migrated a high-profile DNS registry (not registrar) from
-                on-premises infrastructure to AWS. The scope of the change made
-                this the largest of its kind in the world, which introduced many
-                unique AWS challenges`,
+            `Solve complex technical problems as they come up - most projects
+            assigned to me were in new and emerging technologies without
+            many pre-existing solutions to problems`,
+          ]}
+          achievements={[
+            `Migrated a high-profile DNS registry (not registrar) from
+            on-premises infrastructure to AWS. The scope of the change made
+            this the largest of its kind in the world, which introduced many
+            unique AWS challenges`,
 
-                `Infrastructure engineer for a high profile government initiative
-                implemented using majority serverless technologies and supporting
-                a high volume of traffic. This project introduced some novel new
-                deployment and application patterns combining CDK, TypeScript,
-                and Rush`,
+            `Infrastructure engineer for a high profile government initiative
+            implemented using majority serverless technologies and supporting
+            a high volume of traffic. This project introduced some novel new
+            deployment and application patterns combining CDK, TypeScript,
+            and Rush`,
 
-                `Sole developer of a blockchain-based POC for a new startup that
-                used serverless technologies to ensure the business wasn't spending
-                money when it wasn't yet funded`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: [
-                    'AWS - General',
-                    'Lambda(AWS)',
-                    'AppSync(AWS)',
-                    'API Gateway(AWS)',
-                    'CDK(AWS)',
-                    'Kubernetes/EKS(AWS)',
-                    'GitHub Actions',
-                    'React',
-                    'TypeScript',
-                    'Python',
-                  ],
-                },
-                {
-                  competence: 'good',
-                  items: [
-                    'Rush',
-                    'DynamoDB(AWS)',
-                    'EC2 Image Builder(AWS)',
-                    'Cognito(AWS)',
-                    'Ethereum',
-                  ],
-                },
-                {
-                  competence: 'competent',
-                  items: ['Terraform', 'Marketplace(AWS)'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="dutyof.care"
-              title="Tech Lead"
-              fromdate="September 2017"
-              todate="March 2020"
-              responsibilities={[
-                `Create the dutyof.care platform, associated infrastructure,
-                user experience, design many and build many product features`,
+            `Sole developer of a blockchain-based POC for a new startup that
+            used serverless technologies to ensure the business wasn't spending
+            money when it wasn't yet funded`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: [
+                'AWS - General',
+                'Lambda(AWS)',
+                'AppSync(AWS)',
+                'API Gateway(AWS)',
+                'CDK(AWS)',
+                'Kubernetes/EKS(AWS)',
+                'GitHub Actions',
+                'React',
+                'TypeScript',
+                'Python',
+              ],
+            },
+            {
+              competence: 'good',
+              items: [
+                'Rush',
+                'DynamoDB(AWS)',
+                'EC2 Image Builder(AWS)',
+                'Cognito(AWS)',
+                'Ethereum',
+              ],
+            },
+            {
+              competence: 'competent',
+              items: ['Terraform', 'Marketplace(AWS)'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="dutyof.care"
+          title="Tech Lead"
+          fromdate="September 2017"
+          todate="March 2020"
+          responsibilities={[
+            `Create the dutyof.care platform, associated infrastructure,
+            user experience, design many and build many product features`,
 
-                `Ensure that the dutyof.care platform remains in operation,
-                at a high level of performance`,
+            `Ensure that the dutyof.care platform remains in operation,
+            at a high level of performance`,
 
-                `Collaborate with both technical, and non-technical customers
-                to help them integrate the platform into their business either
-                via software integrations, or additional features to aid in
-                human interaction`,
+            `Collaborate with both technical, and non-technical customers
+            to help them integrate the platform into their business either
+            via software integrations, or additional features to aid in
+            human interaction`,
 
-                `Conduct employment interviews, and build a quality development
-                team`,
-              ]}
-              achievements={[
-                `The dutyof.care platform produces results to the 99th percentile
-                of its validation requests, excluding latency of source
-                databases, in less than 50ms`,
+            `Conduct employment interviews, and build a quality development
+            team`,
+          ]}
+          achievements={[
+            `The dutyof.care platform produces results to the 99th percentile
+            of its validation requests, excluding latency of source
+            databases, in less than 50ms`,
 
-                `Stability of the platform is excellent. Very few single points
-                of failure, and those that are singletons are not time-critical
-                services, allowing recovery without users seeing downtime`,
+            `Stability of the platform is excellent. Very few single points
+            of failure, and those that are singletons are not time-critical
+            services, allowing recovery without users seeing downtime`,
 
-                `Platform security is excellent; Hashicorp Vault is used across
-                all services to ensure that secrets are time-limited where
-                possible, and are at the very least highly controlled, and
-                access is audited`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: [
-                    'Python',
-                    'Docker',
-                    'AWS',
-                    'PostgreSQL',
-                    'React',
-                    'Kubernetes(EKS)',
-                    'nodejs',
-                  ],
-                },
-                {
-                  competence: 'good',
-                  items: ['SQLAlchemy', 'Flask', 'Hashicorp Vault', 'Hugo'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['Lambda(AWS)', 'Prometheus', 'RabbitMQ'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Blue Bike Solutions"
-              title="Senior Software Engineer"
-              fromdate="April 2017"
-              todate="September 2017"
-              responsibilities={[
-                `Create, and manage both software, and infrastructure
-                solutions for a variety of not-for-profit clients,
-                mostly with limited budgets`,
+            `Platform security is excellent; Hashicorp Vault is used across
+            all services to ensure that secrets are time-limited where
+            possible, and are at the very least highly controlled, and
+            access is audited`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: [
+                'Python',
+                'Docker',
+                'AWS',
+                'PostgreSQL',
+                'React',
+                'Kubernetes(EKS)',
+                'nodejs',
+              ],
+            },
+            {
+              competence: 'good',
+              items: ['SQLAlchemy', 'Flask', 'Hashicorp Vault', 'Hugo'],
+            },
+            {
+              competence: 'competent',
+              items: ['Lambda(AWS)', 'Prometheus', 'RabbitMQ'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Blue Bike Solutions"
+          title="Senior Software Engineer"
+          fromdate="April 2017"
+          todate="September 2017"
+          responsibilities={[
+            `Create, and manage both software, and infrastructure
+            solutions for a variety of not-for-profit clients,
+            mostly with limited budgets`,
 
-                `Act as a technical resource to allow other consultants
-                to design appropriate, achievable solutions`,
-              ]}
-              achievements={[
-                `Developed a prototype app for the Australian Red Cross
-                to aid in disaster relief in developing countries. The
-                end product showed how a light-weight app could sync an
-                inventory database when offline, and allow search and
-                update when out of connectivity`,
+            `Act as a technical resource to allow other consultants
+            to design appropriate, achievable solutions`,
+          ]}
+          achievements={[
+            `Developed a prototype app for the Australian Red Cross
+            to aid in disaster relief in developing countries. The
+            end product showed how a light-weight app could sync an
+            inventory database when offline, and allow search and
+            update when out of connectivity`,
 
-                `Moved a legacy, but important software product from a single
-                dedicated server, to load-balanced, highly-available AWS
-                architecture that ended up as good as a cloud-native solution`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: ['Python', 'Docker', 'AWS', 'PostgreSQL', 'React', 'Flask'],
-                },
-                {
-                  competence: 'good',
-                  items: ['SQLAlchemy', 'Framework7'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['Java', 'Domo'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="spruce.sh"
-              title="Founder / DevOps Engineer"
-              fromdate="September 2015"
-              todate="April 2017"
-              responsibilities={[
-                `spruce.sh was a startup that I tried to build right as Docker
-                was becoming popular. It was a different kind of Docker-focused
-                CI platform, based on my work at Infoxchange`,
+            `Moved a legacy, but important software product from a single
+            dedicated server, to load-balanced, highly-available AWS
+            architecture that ended up as good as a cloud-native solution`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: ['Python', 'Docker', 'AWS', 'PostgreSQL', 'React', 'Flask'],
+            },
+            {
+              competence: 'good',
+              items: ['SQLAlchemy', 'Framework7'],
+            },
+            {
+              competence: 'competent',
+              items: ['Java', 'Domo'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="spruce.sh"
+          title="Founder / DevOps Engineer"
+          fromdate="September 2015"
+          todate="April 2017"
+          responsibilities={[
+            `spruce.sh was a startup that I tried to build right as Docker
+            was becoming popular. It was a different kind of Docker-focused
+            CI platform, based on my work at Infoxchange`,
 
-                `Product development and strategy for "a new kind of CI"`,
+            `Product development and strategy for "a new kind of CI"`,
 
-                `Software and infrastructure development and management`,
-              ]}
-              achievements={[
-                `Log latency was significantly faster than many other CI
-                platforms - not seconds, but near-realtime just like a regular
-                terminal`,
+            `Software and infrastructure development and management`,
+          ]}
+          achievements={[
+            `Log latency was significantly faster than many other CI
+            platforms - not seconds, but near-realtime just like a regular
+            terminal`,
 
-                `First platform to integrate Docker-based support services for
-                CI such as Redis, PostgreSQL, etc - at the time most people
-                were testing with SQLite`,
+            `First platform to integrate Docker-based support services for
+            CI such as Redis, PostgreSQL, etc - at the time most people
+            were testing with SQLite`,
 
-                `Focus on low-touch integration into existing pipelines: If
-                you had a Dockerfile, it was almost no effort to login to
-                GitHub, build, test, and push`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: ['Docker', 'Python', 'Flask', 'PostgreSQL', 'React'],
-                },
-                {
-                  competence: 'good',
-                  items: ['RabbitMQ', 'SQLAlchemy', 'Alembic', 'Immutable.js'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['Puppet', 'Ansible', 'Rollbar'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Redbubble"
-              title="DevOps Engineer - Contract"
-              fromdate="September 2015"
-              todate="March 2016"
-              responsibilities={[
-                `As part of the delivery engineering team, it was our job to
-                "help teams deliver value faster", carefully balancing new
-                technology and processwith business demands to deliver
-                features`,
+            `Focus on low-touch integration into existing pipelines: If
+            you had a Dockerfile, it was almost no effort to login to
+            GitHub, build, test, and push`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: ['Docker', 'Python', 'Flask', 'PostgreSQL', 'React'],
+            },
+            {
+              competence: 'good',
+              items: ['RabbitMQ', 'SQLAlchemy', 'Alembic', 'Immutable.js'],
+            },
+            {
+              competence: 'competent',
+              items: ['Puppet', 'Ansible', 'Rollbar'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Redbubble"
+          title="DevOps Engineer - Contract"
+          fromdate="September 2015"
+          todate="March 2016"
+          responsibilities={[
+            `As part of the delivery engineering team, it was our job to
+            "help teams deliver value faster", carefully balancing new
+            technology and processwith business demands to deliver
+            features`,
 
-                `Acted as the team's AWS, Docker, and general DevOps expert`,
+            `Acted as the team's AWS, Docker, and general DevOps expert`,
 
-                `Built a new Docker-based platform for very fast, and safe
-                deployment of microservices`,
-              ]}
-              achievements={[
-                `Reduced deployment time from 40min on the old platform, to
-                less than 1min on the new`,
+            `Built a new Docker-based platform for very fast, and safe
+            deployment of microservices`,
+          ]}
+          achievements={[
+            `Reduced deployment time from 40min on the old platform, to
+            less than 1min on the new`,
 
-                <>
-                  Built many tools for comparison-based testing of refactored services, similar to{' '}
-                  <ReferenceLink href="https://github.com/github/scientist">
-                    GitHub scientist
-                  </ReferenceLink>
-                </>,
+            <>
+              Built many tools for comparison-based testing of refactored services, similar to{' '}
+              <ReferenceLink href="https://github.com/github/scientist">
+                GitHub scientist
+              </ReferenceLink>
+            </>,
 
-                `Built an application platform that replaced unhealthy nodes
-                with zero downtime for deployed services`,
+            `Built an application platform that replaced unhealthy nodes
+            with zero downtime for deployed services`,
 
-                `Implemented a centralized logging stack to help diagnose
-                issues across many disparate (including legacy) systems`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: ['AWS', 'Docker', 'BuildKite', 'systemd', 'Debian'],
-                },
-                {
-                  competence: 'good',
-                  items: ['Ruby', 'Rails', 'Packer', 'Logstash', 'Kibana'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Odecee (Australia Post)"
-              title="DevOps Engineer"
-              fromdate="August 2014"
-              todate="September 2015"
-              responsibilities={[
-                `Design, and implement CI, complex third party
-                applications, and a PCI/DSS platform able to
-                scale, heal, and deploy consistently in AWS
-                architecture`,
+            `Implemented a centralized logging stack to help diagnose
+            issues across many disparate (including legacy) systems`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: ['AWS', 'Docker', 'BuildKite', 'systemd', 'Debian'],
+            },
+            {
+              competence: 'good',
+              items: ['Ruby', 'Rails', 'Packer', 'Logstash', 'Kibana'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Odecee (Australia Post)"
+          title="DevOps Engineer"
+          fromdate="August 2014"
+          todate="September 2015"
+          responsibilities={[
+            `Design, and implement CI, complex third party
+            applications, and a PCI/DSS platform able to
+            scale, heal, and deploy consistently in AWS
+            architecture`,
 
-                `Guide the engineering direction of Python
-                management framework to ease implementation of
-                complex automation tooling`,
-              ]}
-              achievements={[
-                `Nominated for an internal award for simplicity
-                on a very complex project`,
+            `Guide the engineering direction of Python
+            management framework to ease implementation of
+            complex automation tooling`,
+          ]}
+          achievements={[
+            `Nominated for an internal award for simplicity
+            on a very complex project`,
 
-                `Selected to work on the "Trusted Services Cloud"
-                project; A sophisticated build of a PCI compliant,
-                highly automated AWS environment. My main
-                achievement was the deployment automation of the
-                IDP suite that protected every server in the
-                whole environment`,
+            `Selected to work on the "Trusted Services Cloud"
+            project; A sophisticated build of a PCI compliant,
+            highly automated AWS environment. My main
+            achievement was the deployment automation of the
+            IDP suite that protected every server in the
+            whole environment`,
 
-                `Implemented a fully automated iOS build cluster
-                using both Ansible, and existing Puppet
-                manifests to build, and test iOS apps in the
-                same way as existing RHEL server apps`,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: ['Python', 'AWS', 'Puppet', 'boto'],
-                },
-                {
-                  competence: 'good',
-                  items: ['Ansible', 'Bamboo', 'Consul', 'Stash', 'RHEL', 'XCode', 'Puppet'],
-                },
-              ]}
-            />
-          </ListItem>
-          <ListItem>
-            <Job
-              company="Infoxchange"
-              title="Web Applications Developer"
-              fromdate="2012"
-              todate="2014"
-              responsibilities={[
-                `Develop and debug complex web applications in
-                environments with both legacy and cutting edge
-                technology, using agile methods.`,
+            `Implemented a fully automated iOS build cluster
+            using both Ansible, and existing Puppet
+            manifests to build, and test iOS apps in the
+            same way as existing RHEL server apps`,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: ['Python', 'AWS', 'Puppet', 'boto'],
+            },
+            {
+              competence: 'good',
+              items: ['Ansible', 'Bamboo', 'Consul', 'Stash', 'RHEL', 'XCode', 'Puppet'],
+            },
+          ]}
+        />
+      </ListItem>
+      <ListItem>
+        <Job
+          company="Infoxchange"
+          title="Web Applications Developer"
+          fromdate="2012"
+          todate="2014"
+          responsibilities={[
+            `Develop and debug complex web applications in
+            environments with both legacy and cutting edge
+            technology, using agile methods.`,
 
-                `Judge and create releases as part of a CI/CD
-                process, run retrospectives and generally
-                participate in a highly flexible and free agile
-                team.`,
-              ]}
-              achievements={[
-                <>
-                  Months before Docker was released, I was tasked with building a new CI server for
-                  the team. My solution was an LXC-based container system that used AuFS for the
-                  root file system and was managed by Puppet in the background. This set Infoxchange
-                  on a path to very quickly adopt Docker when it was released. I then did a talk on
-                  my solution at{' '}
-                  <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">
-                    Infracoders Melbourne
-                  </ReferenceLink>
-                </>,
+            `Judge and create releases as part of a CI/CD
+            process, run retrospectives and generally
+            participate in a highly flexible and free agile
+            team.`,
+          ]}
+          achievements={[
+            <>
+              Months before Docker was released, I was tasked with building a new CI server for the
+              team. My solution was an LXC-based container system that used AuFS for the root file
+              system and was managed by Puppet in the background. This set Infoxchange on a path to
+              very quickly adopt Docker when it was released. I then did a talk on my solution at{' '}
+              <ReferenceLink href="http://www.meetup.com/Infrastructure-Coders/events/127899532/">
+                Infracoders Melbourne
+              </ReferenceLink>
+            </>,
 
-                <>
-                  Played a vital role redeveloping Infoxchange's legacy search application from the
-                  ground up using Docker, ElasticSearch and Django. Again, this lead to a talk at
-                  the{' '}
-                  <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">
-                    Melbourne Search user's group
-                  </ReferenceLink>
-                </>,
-              ]}
-              technologies={[
-                {
-                  competence: 'great',
-                  items: ['Python', 'Django', 'ElasticSearch', 'jQuery', 'Perl'],
-                },
-                {
-                  competence: 'good',
-                  items: ['Docker', 'PostgreSQL', 'CSS3', 'HTML5', 'Debian'],
-                },
-                {
-                  competence: 'competent',
-                  items: ['LESS', 'YUI', 'Mojolicious', 'HHVM', 'Puppet'],
-                },
-              ]}
-            />
-          </ListItem>
-        </JobsList>
-      </>
-    );
-  }
-}
+            <>
+              Played a vital role redeveloping Infoxchange's legacy search application from the
+              ground up using Docker, ElasticSearch and Django. Again, this lead to a talk at the{' '}
+              <ReferenceLink href="http://www.meetup.com/melbourne-search/events/187267272/">
+                Melbourne Search user's group
+              </ReferenceLink>
+            </>,
+          ]}
+          technologies={[
+            {
+              competence: 'great',
+              items: ['Python', 'Django', 'ElasticSearch', 'jQuery', 'Perl'],
+            },
+            {
+              competence: 'good',
+              items: ['Docker', 'PostgreSQL', 'CSS3', 'HTML5', 'Debian'],
+            },
+            {
+              competence: 'competent',
+              items: ['LESS', 'YUI', 'Mojolicious', 'HHVM', 'Puppet'],
+            },
+          ]}
+        />
+      </ListItem>
+    </JobsList>
+  </>
+);

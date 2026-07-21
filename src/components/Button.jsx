@@ -1,4 +1,3 @@
-import { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 
 export const shadowStyle = (props) => css`
@@ -35,27 +34,21 @@ const BUTTON_SIZES = {
   large: 2,
 };
 
-export class Button extends PureComponent {
-  static defaultProps = {
-    size: 'medium',
-    type: 'primary',
-    block: false,
-  };
-  onClick = (ev) => {
+export const Button = ({ onClick, size = 'medium', type = 'primary', block = false, ...props }) => {
+  const handleClick = (ev) => {
     ev.preventDefault();
-    if (this.props.onClick) {
-      this.props.onClick();
+    if (onClick) {
+      onClick();
     }
   };
-  render() {
-    const { onClick, size, ...props } = this.props;
-    return (
-      <ButtonComponent
-        href
-        onClick={this.onClick}
-        spaceMultiplier={BUTTON_SIZES[size]}
-        {...props}
-      />
-    );
-  }
-}
+  return (
+    <ButtonComponent
+      href
+      onClick={handleClick}
+      spaceMultiplier={BUTTON_SIZES[size]}
+      type={type}
+      block={block}
+      {...props}
+    />
+  );
+};

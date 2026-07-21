@@ -102,7 +102,7 @@ const Box = ({
     } else {
       setDefaultShow(true);
     }
-  }, [setDefaultShow]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -111,8 +111,8 @@ const Box = ({
       window.removeEventListener('resize', handleResize);
     };
   }, [handleResize]);
-  const handleExpandClick = useCallback(() => setUserShow(true), [setUserShow]);
-  const handleBodyClose = useCallback(() => setUserShow(false), [setUserShow]);
+  const handleExpandClick = useCallback(() => setUserShow(true), []);
+  const handleBodyClose = useCallback(() => setUserShow(false), []);
 
   return (
     <>
@@ -122,12 +122,7 @@ const Box = ({
         position={position}
         onClick={handleExpandClick}
       />
-      <BoxBody
-        boxShown={show}
-        header={header}
-        position={position}
-        onClose={handleBodyClose}
-      >
+      <BoxBody boxShown={show} header={header} position={position} onClose={handleBodyClose}>
         {children}
       </BoxBody>
     </>

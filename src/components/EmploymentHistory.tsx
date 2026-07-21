@@ -121,7 +121,7 @@ const Job = ({
       {responsibilities && (
         <div className="[grid-area:responsibilities]">
           <Header4 type="plain">Responsibilities</Header4>
-          <ul className="list-[circle] pl-[30px]">
+          <ul className="list-[circle] pl-[30px] print:pl-[15px]">
             {responsibilities.map((text) => (
               <li key={text}>{text}</li>
             ))}
@@ -130,7 +130,7 @@ const Job = ({
       )}
       <div className="[grid-area:achievements]">
         <Header4 type="plain">Achievements</Header4>
-        <ul className="list-[circle] pl-[30px]">
+        <ul className="list-[circle] pl-[30px] print:pl-[15px]">
           {achievements.map((text, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: achievements are static content and never reordered
             <li key={index}>{text}</li>
@@ -150,7 +150,7 @@ const Job = ({
 export const EmploymentHistory = () => (
   <>
     <Header3 type="secondary">Highlights</Header3>
-    <ul className="list-disc pl-[30px]">
+    <ul className="list-[circle] pl-[30px] print:pl-[15px]">
       <li>
         <em>Interchange</em>: Implemented an extremely secure and flexible AWS platform for
         financial services as the sole infrastructure engineer

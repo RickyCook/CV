@@ -18,6 +18,17 @@
 
   --spacing-spacer: 10px;
   --body-width: 1000px;
+
+  --animate-blink: blink 1.2s step-end infinite;
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
 }
 
 @utility shadow-brutal {
@@ -25,9 +36,38 @@
   border: 3px solid black;
 }
 
+@utility shadow-brutal-glow {
+  box-shadow:
+    var(--color-shadow, black) 4px 4px 0 0,
+    color-mix(in oklch, var(--color-secondary-light), transparent 45%) 0 0 26px -4px;
+  border: 3px solid black;
+}
+
+@utility bg-header-primary {
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-dark) 140%);
+}
+
+@utility glow-primary {
+  filter: drop-shadow(0 0 10px color-mix(in oklch, var(--color-primary), transparent 68%));
+}
+
+@utility text-glow {
+  text-shadow: 0 0 0.55em color-mix(in oklch, currentcolor, transparent 55%);
+}
+
 @layer base {
   :root {
     color-scheme: dark;
+  }
+
+  html {
+    background:
+      radial-gradient(
+        1100px 480px at 50% -220px,
+        color-mix(in oklch, var(--color-secondary-light), transparent 80%),
+        transparent 72%
+      ),
+      var(--color-background);
   }
 
   body {
@@ -35,7 +75,6 @@
     max-width: var(--body-width);
     font-family: var(--font-body);
     font-weight: lighter;
-    background-color: var(--color-background);
     color: var(--color-text);
     margin: calc(var(--spacing-spacer) * 1.5);
     line-height: 1.75em;
@@ -55,6 +94,14 @@
     a {
       color: var(--color-primary);
       text-decoration: underline;
+    }
+    *,
+    ::before,
+    ::after {
+      text-shadow: none !important;
+      box-shadow: none !important;
+      filter: none !important;
+      background-image: none !important;
     }
   }
 
@@ -84,7 +131,7 @@
   }
 
   a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-light);
     transition: color 0.1s linear;
   }
 

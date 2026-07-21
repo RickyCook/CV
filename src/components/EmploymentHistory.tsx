@@ -69,7 +69,7 @@ const Competence = ({
     good: 'text-competence-good',
     competent: 'text-competence-competent',
   }[name];
-  return <span className={color}>{children ? children : _.startCase(name)}</span>;
+  return <span className={`${color} text-glow`}>{children ? children : _.startCase(name)}</span>;
 };
 
 const TechnologyRow = ({

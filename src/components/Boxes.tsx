@@ -9,8 +9,8 @@ import { PrintOnly, ScreenOnly } from './Media';
 const CONTACT_ME = contacts?.['Ricky Cook'];
 
 const boxClass = {
-  top: 'shadow-brutal bg-[rgba(20,20,25,0.8)] fixed top-0 right-0 print:absolute',
-  bottom: 'shadow-brutal bg-[rgba(20,20,25,0.8)] fixed bottom-0 right-0 print:absolute',
+  top: 'shadow-brutal-glow bg-[rgba(20,20,25,0.8)] fixed top-0 right-0 print:absolute',
+  bottom: 'shadow-brutal-glow bg-[rgba(20,20,25,0.8)] fixed bottom-0 right-0 print:absolute',
 } as const;
 const clickableClass = {
   top: `${boxClass.top} bg-secondary cursor-pointer transition-colors duration-100 hover:bg-secondary-light`,
@@ -56,7 +56,7 @@ const BoxBody = ({
       className={`whitespace-nowrap ${boxClass[position]}`}
       {...boxBodyProps(shown)}
     >
-      <div className="flex items-stretch h-[50px] bg-primary border-b-[3px] border-black">
+      <div className="flex items-stretch h-[50px] bg-header-primary border-b-[3px] border-black">
         <div className={headerClass(undefined)}>{header}</div>
         <ScreenOnly>
           <button type="button" onClick={onClose} className={headerButtonClass}>

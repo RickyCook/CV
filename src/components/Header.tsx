@@ -9,10 +9,10 @@ import { textLength, type Variant, writeOnProps } from '../lib/anim';
 const grid = 'font-display grid w-fit grid-cols-[25px_max-content] items-stretch';
 
 const headerTv = tv({
-  base: `${grid} border-l-[10px] my-[15px] print:m-0 print:border-none`,
+  base: `${grid} border-l-[10px] my-[15px] print:border-none print:-ml-[25px] print:mt-[15px] print:mb-0`,
   variants: {
     type: {
-      primary: 'border-primary-dark',
+      primary: 'border-primary-dark glow-primary',
       secondary: 'border-secondary-dark',
       plain: 'border-white/10',
     },
@@ -22,10 +22,21 @@ const headerTv = tv({
 
 const bodyHeaderTv = tv({
   extend: headerTv,
-  base: '-mt-[15px] -ml-[15px] print:m-0',
+  base: '-mt-[15px] -ml-[15px] print:my-0',
 });
 
 const fillTv = tv({
+  variants: {
+    type: {
+      primary: 'bg-header-primary text-background',
+      secondary: 'bg-secondary text-text text-glow',
+      plain: 'bg-transparent text-text text-glow',
+    },
+  },
+  defaultVariants: { type: 'primary' },
+});
+
+const flatFillTv = tv({
   variants: {
     type: {
       primary: 'bg-primary text-background',
@@ -37,7 +48,7 @@ const fillTv = tv({
 });
 
 const subHeaderTv = tv({
-  base: `${grid} border-l-[10px] -mt-[30px] mb-[15px] print:m-0 print:border-none`,
+  base: `${grid} border-l-[10px] -mt-[25px] mb-[15px] print:m-0 print:border-none print:-ml-[25px]`,
   variants: {
     type: {
       primary: 'border-primary-dark',
@@ -54,7 +65,7 @@ const Chevron = () => (
   </span>
 );
 const Trail = () => (
-  <span aria-hidden className="text-white print:text-primary">
+  <span aria-hidden className="text-white print:text-primary animate-blink">
     _
   </span>
 );
@@ -76,6 +87,7 @@ const makeHeader =
   ({ children, type, trail, writeDelay }: HeaderProps) => {
     const wrapper = tvFn({ type });
     const fill = fillTv({ type });
+    const flatFill = flatFillTv({ type });
     const text: ReactNode = (
       <>
         {children}
@@ -84,7 +96,7 @@ const makeHeader =
     );
     return (
       <div className={wrapper}>
-        <div aria-hidden className={`${fill} flex items-center justify-center`}>
+        <div aria-hidden className={`${flatFill} flex items-center justify-center`}>
           <Chevron />
         </div>
         <Tag className={`${fill} font-bold py-[10px] pr-[25px] print:p-0`}>
@@ -108,9 +120,10 @@ export const Header4 = makeHeader('h4', asFn(headerTv));
 
 export const SubHeader = ({ children, type }: { children?: ReactNode; type?: Variant }) => {
   const fill = fillTv({ type });
+  const flatFill = flatFillTv({ type });
   return (
     <div className={subHeaderTv({ type })}>
-      <div aria-hidden className={`${fill} w-[25px] flex items-center justify-center`} />
+      <div aria-hidden className={`${flatFill} w-[25px] flex items-center justify-center`} />
       <div className={`${fill} py-[10px] pr-[25px] max-w-[60ch] print:p-0`}>{children}</div>
     </div>
   );

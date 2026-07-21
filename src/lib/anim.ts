@@ -2,9 +2,9 @@ import type { Transition } from 'motion/react';
 import { Children, isValidElement, type ReactNode } from 'react';
 
 const ANIM = {
-  stagger: 0.05,
-  showDuration: 0.3,
-  writeDuration: 0.1,
+  stagger: 0.1,
+  showDuration: 0.4,
+  writeDuration: 0.2,
 } as const;
 
 export type Variant = 'primary' | 'secondary' | 'plain';
@@ -45,3 +45,35 @@ export const textLength = (node: ReactNode): number =>
       return n + textLength((child.props as { children?: ReactNode }).children);
     return n;
   }, 0);
+
+export type BoxAnimProps = {
+  initial: false;
+  animate: { opacity: number; x: number; visibility: 'visible' | 'hidden' };
+  transition: Transition;
+};
+
+export type TabAnimProps = {
+  initial: false;
+  animate: { opacity: number; visibility: 'visible' | 'hidden' };
+  transition: Transition;
+};
+
+export const boxBodyProps = (shown: boolean): BoxAnimProps => ({
+  initial: false,
+  animate: shown
+    ? { opacity: 1, x: 0, visibility: 'visible' }
+    : { opacity: 0, x: 80, visibility: 'hidden' },
+  transition: shown
+    ? { duration: 0.2, ease: 'easeOut' }
+    : { duration: 0.12, ease: 'easeIn' },
+});
+
+export const boxTabProps = (shown: boolean): TabAnimProps => ({
+  initial: false,
+  animate: shown
+    ? { opacity: 1, visibility: 'visible' }
+    : { opacity: 0, visibility: 'hidden' },
+  transition: shown
+    ? { duration: 0.2, ease: 'easeOut' }
+    : { duration: 0.1, ease: 'easeIn' },
+});

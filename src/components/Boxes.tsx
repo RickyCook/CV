@@ -1,6 +1,8 @@
+import { m } from 'motion/react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { contacts } from '../contacts';
+import { boxBodyProps, boxTabProps } from '../lib/anim';
 import { ExternalLink } from './Link';
 import { PrintOnly, ScreenOnly } from './Media';
 
@@ -46,9 +48,14 @@ const BoxBody = ({
   header: React.ReactNode;
   onClose: () => void;
   position: BoxPosition;
-}) => (
-  <div className={`whitespace-nowrap ${boxShown === false ? 'hidden print:block' : 'block'}`}>
-    <div className={boxClass[position]}>
+}) => {
+  const shown = boxShown !== false;
+  return (
+    <m.div
+      aria-hidden={!shown}
+      className={`whitespace-nowrap ${boxClass[position]}`}
+      {...boxBodyProps(shown)}
+    >
       <div className="flex items-stretch h-[50px] bg-primary border-b-[3px] border-black">
         <div className={headerClass(undefined)}>{header}</div>
         <ScreenOnly>
@@ -58,9 +65,9 @@ const BoxBody = ({
         </ScreenOnly>
       </div>
       <div className="text-[0.75em] p-[15px]">{children}</div>
-    </div>
-  </div>
-);
+    </m.div>
+  );
+};
 
 const BoxExpander = ({
   boxShown,
@@ -72,16 +79,23 @@ const BoxExpander = ({
   header: React.ReactNode;
   onClick: () => void;
   position: BoxPosition;
-}) => (
-  <ScreenOnly style={{ display: boxShown ? 'none' : undefined }}>
-    {/* maxWidth is a hack for FF rendering/hydration issue */}
-    <div onClick={onClick} className={clickableClass[position]}>
-      <div className={`${verticalHeaderClass} text-[0.75em] px-[15px] py-[10px]`}>
-        {header} <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
-      </div>
-    </div>
-  </ScreenOnly>
-);
+}) => {
+  const shown = !boxShown;
+  return (
+    <ScreenOnly>
+      <m.div
+        aria-hidden={!shown}
+        onClick={onClick}
+        className={clickableClass[position]}
+        {...boxTabProps(shown)}
+      >
+        <div className={`${verticalHeaderClass} text-[0.75em] px-[15px] py-[10px]`}>
+          {header} <span style={{ fontSize: '0.75rem' }}>&#x25B3;</span>
+        </div>
+      </m.div>
+    </ScreenOnly>
+  );
+};
 
 const Box = ({
   header,
@@ -92,17 +106,14 @@ const Box = ({
   position: BoxPosition;
   children: React.ReactNode;
 }) => {
+  const getDefaultShow = useCallback(() => !(window.innerWidth < 1500), []);
+  const [defaultShow, setDefaultShow] = useState<boolean>(getDefaultShow());
   const [userShow, setUserShow] = useState<boolean | undefined>(undefined);
-  const [defaultShow, setDefaultShow] = useState<boolean | undefined>(undefined);
-  const show = userShow ?? defaultShow ?? true;
+  const show = userShow ?? defaultShow;
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth < 1500) {
-      setDefaultShow(false);
-    } else {
-      setDefaultShow(true);
-    }
-  }, []);
+    setDefaultShow(getDefaultShow());
+  }, [getDefaultShow]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);

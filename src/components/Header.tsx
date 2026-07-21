@@ -76,25 +76,28 @@ const makeHeader =
   ({ children, type, trail, writeDelay }: HeaderProps) => {
     const wrapper = tvFn({ type });
     const fill = fillTv({ type });
-    const inner: ReactNode = (
+    const text: ReactNode = (
       <>
+        {children}
+        {trail && <Trail />}
+      </>
+    );
+    return (
+      <div className={wrapper}>
         <div aria-hidden className={`${fill} flex items-center justify-center`}>
           <Chevron />
         </div>
         <Tag className={`${fill} font-bold py-[10px] pr-[25px] print:p-0`}>
-          {children}
-          {trail && <Trail />}
+          {writeDelay != null ? (
+            <m.span className="inline-block" {...writeOnProps(writeDelay, textLength(text))}>
+              {text}
+            </m.span>
+          ) : (
+            text
+          )}
         </Tag>
-      </>
+      </div>
     );
-    if (writeDelay != null) {
-      return (
-        <m.div className={wrapper} {...writeOnProps(writeDelay, textLength(inner))}>
-          {inner}
-        </m.div>
-      );
-    }
-    return <div className={wrapper}>{inner}</div>;
   };
 
 export const Header1 = makeHeader('h1', asFn(headerTv));

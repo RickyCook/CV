@@ -183,7 +183,7 @@ export const EmploymentHistory = () => (
     <JobsList>
       <ListItem>
         <Job
-          company="Own Project"
+          company="Untitled Project"
           fromdate="April 2025"
           todate="Present"
           achievements={[

@@ -208,14 +208,8 @@ export const EmploymentHistory = () => (
             sources that it may have missed - including on sites that it
             had never seen before and had no idea how to parse/process`,
 
-            `Utilized a "blackboard" pattern, which I hadn't seen in use
-            before but fits extremely well with the domain of arbitrary
-            data transformation and enrichment. I consider this an
-            achievement because it seems to be a very novel solution to
-            problems that many people face in such a well-understood
-            field. Due to this, implementation in a way that kept the
-            system simple and maintainable without the help of frameworks
-            was entirely due to my own efforts`,
+            `Utilized a "blackboard" pattern as a novel solution to the
+            problems of data enrichment`,
           ]}
           technologies={[
             {

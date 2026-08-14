@@ -199,14 +199,10 @@ export const EmploymentHistory = () => (
             improved, and health checking`,
 
             `The system is able to self-heal when data sources change,
-            and adapt to new data sources automatically without invoking
-            the LLM for every new piece of data, and without requiring
-            human intervention`,
-
-            `The system is able to find not only information on sites
-            that humans had given it, but also by searching the web for
-            sources that it may have missed - including on sites that it
-            had never seen before and had no idea how to parse/process`,
+            and adapt to new data sources automatically (for example
+            finding new sources via web search) without invoking the
+            LLM for every new piece of data, and without requiring human
+            intervention`,
 
             `Utilized a "blackboard" pattern as a novel solution to the
             problems of data enrichment`,

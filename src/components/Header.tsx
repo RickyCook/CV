@@ -47,8 +47,11 @@ const flatFillTv = tv({
   defaultVariants: { type: 'primary' },
 });
 
+const subHeaderGrid =
+  'font-display grid w-fit max-w-full grid-cols-[25px_minmax(0,1fr)] items-stretch';
+
 const subHeaderTv = tv({
-  base: `${grid} border-l-[10px] -mt-[25px] mb-[15px] print:m-0 print:border-none print:-ml-[25px]`,
+  base: `${subHeaderGrid} border-l-[10px] -mt-[25px] mb-[15px] print:m-0 print:border-none print:-ml-[25px]`,
   variants: {
     type: {
       primary: 'border-primary-dark',
@@ -124,7 +127,7 @@ export const SubHeader = ({ children, type }: { children?: ReactNode; type?: Var
   return (
     <div className={subHeaderTv({ type })}>
       <div aria-hidden className={`${flatFill} w-[25px] flex items-center justify-center`} />
-      <div className={`${fill} py-[10px] pr-[25px] max-w-[60ch] print:p-0`}>{children}</div>
+      <div className={`${fill} py-[10px] pr-[25px] print:p-0`}>{children}</div>
     </div>
   );
 };

@@ -422,7 +422,7 @@ export const EmploymentHistory = () => (
           company="Blue Bike Solutions"
           title="Senior Software Engineer"
           fromdate="April 2017"
-          todate="September 2017"
+          todate="September 2016"
           responsibilities={[
             `Create, and manage both software, and infrastructure
             solutions for a variety of not-for-profit clients,
@@ -463,7 +463,7 @@ export const EmploymentHistory = () => (
           company="spruce.sh"
           title="Founder / DevOps Engineer"
           fromdate="September 2015"
-          todate="April 2017"
+          todate="September 2016"
           responsibilities={[
             `spruce.sh was a startup that I tried to build right as Docker
             was becoming popular. It was a different kind of Docker-focused

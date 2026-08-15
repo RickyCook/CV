@@ -125,6 +125,11 @@
     line-height: 1.1;
   }
 
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
   a {
     color: var(--color-primary);
     transition: color 0.1s linear;

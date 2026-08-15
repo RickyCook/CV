@@ -62,14 +62,36 @@ const subHeaderTv = tv({
   defaultVariants: { type: 'primary' },
 });
 
-const Chevron = () => (
-  <span aria-hidden className="text-white print:text-primary">
-    &gt;
-  </span>
+const decorationThickness = '2px';
+
+const Chevron = ({
+  thickness = decorationThickness,
+  width = '0.55em',
+  height = '0.55em',
+}: {
+  thickness?: string;
+  width?: string;
+  height?: string;
+}) => (
+  <span
+    aria-hidden
+    className="text-white print:text-primary inline-block border-t border-r border-current rotate-45"
+    style={{ borderTopWidth: thickness, borderRightWidth: thickness, width, height }}
+  />
 );
-const Trail = () => (
+
+const Trail = ({
+  thickness = decorationThickness,
+  width = '0.4em',
+}: {
+  thickness?: string;
+  width?: string;
+}) => (
   <span aria-hidden className="text-white print:text-primary animate-blink">
-    _
+    <span
+      className="inline-block h-[1em] border-b border-current"
+      style={{ borderBottomWidth: thickness, width }}
+    />
   </span>
 );
 

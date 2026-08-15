@@ -162,14 +162,6 @@ export const Details = () => (
         'Contact for info'
       )}
     </div>
-    <div>
-      <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">
-        twttr
-      </span>
-      <ExternalLink href="https://twitter.com/thatpandadev">
-        <span className="text-text">@</span>thatpandadev
-      </ExternalLink>
-    </div>
     <PrintOnly>
       <div>
         <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">

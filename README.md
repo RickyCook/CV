@@ -22,5 +22,5 @@ Over-engineered? Maybe, but I got to play with some tools, and explore some idea
 - Print styles ensure that the interactive parts of the CV remain accessible in some form without the ability to interact (eg some links get alternate text, some links are written as a "reference" number like on Wikipedia)
 - "Reference links" are a fixed list in [Link.tsx](./src/components/Link.tsx): on screen they're plain anchors, but in print they're followed by a reference number, with the full URLs rendered at the end of the page
 - CSS grid, and media queries are used for the employment history segment to ensure that everything has enough space (when the screen gets smaller, the "technology" column becomes a row just like the others)
-- The "Details" sidebar is expanded on wide screens and collapsed by default on narrower ones, with a tab to toggle it; in print it's simply rendered inline
+- The "Details" sidebar is expanded on wide screens and collapsed by default on narrower ones, with a tab to toggle it
 - If a `contacts.ts` file is found at the repo root, it's used to fill out phone/email at build time via a Vite `define`. It's gitignored, so it isn't pushed, and without it the CV just falls back to "Contact for info"

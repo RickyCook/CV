@@ -144,39 +144,75 @@ const Box = ({
   );
 };
 
+const DetailsItemScreen = ({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) => (
+  <div>
+    <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">
+      {label}
+    </span>
+    {children}
+  </div>
+);
+
+const DetailsItemPrint = ({
+  label,
+  children,
+}: {
+  label?: string;
+  children: React.ReactNode;
+}) => (
+  <div>
+    {label ? <div className="font-bold">{label}</div> : <div aria-hidden>&nbsp;</div>}
+    <div>{children}</div>
+  </div>
+);
+
 export const Details = () => (
-  <Box header="Details" position="top">
-    <div>
-      <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">
-        phone
-      </span>
-      {CONTACT_ME?.phone || 'Contact for info'}
-    </div>
-    <div>
-      <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">
-        email
-      </span>
-      {CONTACT_ME?.email ? (
-        <ExternalLink href={`mailto:${CONTACT_ME.email}`}>{CONTACT_ME.email}</ExternalLink>
-      ) : (
-        'Contact for info'
-      )}
-    </div>
+  <>
+    <ScreenOnly>
+      <Box header="Details" position="top">
+        <DetailsItemScreen label="phone">{CONTACT_ME?.phone || 'Contact for info'}</DetailsItemScreen>
+        <DetailsItemScreen label="email">
+          {CONTACT_ME?.email ? (
+            <ExternalLink href={`mailto:${CONTACT_ME.email}`}>{CONTACT_ME.email}</ExternalLink>
+          ) : (
+            'Contact for info'
+          )}
+        </DetailsItemScreen>
+        <div className="pt-[7.5px]">
+          <ExternalLink href="https://github.com/rickycook/CV">rickycook/CV</ExternalLink>
+        </div>
+      </Box>
+    </ScreenOnly>
     <PrintOnly>
-      <div>
-        <span className="font-display bg-secondary py-[7.5px] px-[15px] -ml-[15px] mr-[10px] inline-block">
-          &nbsp;&nbsp;web
-        </span>
-        <ExternalLink href="https://thatpanda.com">thatpanda.com</ExternalLink>
+      <div className="mt-[15px] inline-flex gap-x-[10px]">
+        <DetailsItemPrint label="phone">{CONTACT_ME?.phone || 'Contact for info'}</DetailsItemPrint>
+        <span aria-hidden className="w-0 border-l-2 border-current self-stretch" />
+        <DetailsItemPrint label="email">
+          {CONTACT_ME?.email ? (
+            <ExternalLink href={`mailto:${CONTACT_ME.email}`}>{CONTACT_ME.email}</ExternalLink>
+          ) : (
+            'Contact for info'
+          )}
+        </DetailsItemPrint>
+        <span aria-hidden className="w-0 border-l-2 border-current self-stretch" />
+        <DetailsItemPrint label="web">
+          <ExternalLink href="https://thatpanda.com">thatpanda.com</ExternalLink>
+        </DetailsItemPrint>
+        <span aria-hidden className="w-0 border-l-2 border-current self-stretch" />
+        <DetailsItemPrint>
+          <ExternalLink href="https://github.com/rickycook/CV">
+            github.com/rickycook/CV
+          </ExternalLink>
+        </DetailsItemPrint>
       </div>
     </PrintOnly>
-    <div className="pt-[7.5px]">
-      <ExternalLink href="https://github.com/rickycook/CV">
-        <PrintOnly>github.com/rickycook/CV</PrintOnly>
-        <ScreenOnly>rickycook/CV</ScreenOnly>
-      </ExternalLink>
-    </div>
-  </Box>
+  </>
 );
 
 export const BuildInfo = () => (

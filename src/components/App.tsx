@@ -16,7 +16,7 @@ export const App = () => (
     <Details />
     <Reveal index={0}>
       <Header2 writeDelay={writeDelay(0)}>Objectives</Header2>
-      <p className="print:pr-[230px]">
+      <p>
         I love using technology to be a multiplier of human effort, especially when helping people
         pursue a cause for social good. I've spent the large majority of my career enabling all
         kinds of organizations achieve their social purpose, by ensuring that doctors are

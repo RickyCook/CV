@@ -51,7 +51,7 @@ const BoxBody = ({
 }) => {
   const shown = boxShown !== false;
   return (
-    <m.div
+    <m.aside
       aria-hidden={!shown}
       className={`whitespace-nowrap ${boxClass[position]}`}
       {...boxBodyProps(shown)}
@@ -65,7 +65,7 @@ const BoxBody = ({
         </ScreenOnly>
       </div>
       <div className="text-[0.75em] p-[15px]">{children}</div>
-    </m.div>
+    </m.aside>
   );
 };
 

@@ -3,6 +3,7 @@
 .#*
 build/
 build-server/
+cover_letters/
 node_modules/
 /contacts.js
 /contacts.ts

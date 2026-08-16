@@ -421,7 +421,7 @@ export const EmploymentHistory = () => (
         <Job
           company="Blue Bike Solutions"
           title="Senior Software Engineer"
-          fromdate="April 2017"
+          fromdate="September 2017"
           todate="September 2016"
           responsibilities={[
             `Create, and manage both software, and infrastructure
